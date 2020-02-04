@@ -4,6 +4,7 @@ import ProductGrid from "../ProductGrid/ProductGrid";
 import NavMain from "../NavMain/Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CatergoryBar from "../categoryBar/CatergoryBar";
+import FootNav from "../Footer/Footer";
 
 export default function () {
     return (
@@ -12,6 +13,7 @@ export default function () {
         <CatergoryBar/>
         {/* search/filter/sort */}
         <ProductGrid/>
+        <FootNav/>
         </>
     );
 }

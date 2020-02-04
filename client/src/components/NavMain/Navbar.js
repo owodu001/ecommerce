@@ -13,12 +13,14 @@ function NavMain() {
     <Navbar bg="dark" variant="dark">
       <Navbar.Brand href="#home">Our Store</Navbar.Brand>
       <Nav className="mr-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
         <Nav.Link>
-          <Link to="/home">Sign In</Link>
+        <Link to="/">Home</Link>
         </Nav.Link>
         <Nav.Link>
-          <Link to="/home">Cart</Link>
+          <Link to="/sign-in">Sign In</Link>
+        </Nav.Link>
+        <Nav.Link>
+          <Link to="/cart">Cart</Link>
         </Nav.Link>
       </Nav>
       <Form inline>
