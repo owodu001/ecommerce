@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Nav from "react-bootstrap/Nav";
+// import {Jumbotron, Container, Button } from "react-bootstrap";
 
 
 function NavMain() {
