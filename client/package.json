@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "bootstrap": "^4.4.1",
     "classnames": "^2.2.6",
-    "grommet": "^2.7.11",
     "jwt-decode": "^2.2.0",
     "polished": "^3.4.2",
     "react": "^16.10.2",
