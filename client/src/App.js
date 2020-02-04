@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // Import components
-import NavMain from "./components/layout/Nav";
+import NavMain from "./components/NavMain/Navbar";
 import Home from "./components/layout/Home";
 import ProductDetail from "./components/layout/ProductDetail";
 import SignIn from "./components/layout/SignIn";
