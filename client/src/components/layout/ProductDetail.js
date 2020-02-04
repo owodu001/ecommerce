@@ -7,7 +7,9 @@ import {
   Row,
   Image,
   InputGroup,
-  FormControl
+  FormControl,
+  Tab,
+  Tabs
 } from "react-bootstrap";
 
 export default function() {
@@ -54,6 +56,21 @@ export default function() {
               </Card>
             </Row>
             <Row>Product Details</Row>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+              <Tab eventKey="description" title="Description">
+                <p>Product info!</p>
+              </Tab>
+              <Tab eventKey="review" title="Reviews">
+                <p>Coming Soon!</p>
+              </Tab>
+              <Tab eventKey="custom" title="Custom Tab">
+                <p>Product Detail!</p>
+              </Tab>
+            </Tabs>
           </Col>
         </Row>
       </Container>
