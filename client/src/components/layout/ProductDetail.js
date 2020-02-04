@@ -10,6 +10,8 @@ import {
   FormControl
 } from "react-bootstrap";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 export default function() {
   return (
     <>
