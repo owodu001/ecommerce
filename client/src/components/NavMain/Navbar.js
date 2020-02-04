@@ -4,11 +4,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Nav from "react-bootstrap/Nav";
-<<<<<<< HEAD
-// import {Jumbotron, Container, Button } from "react-bootstrap";
-=======
 import { Link } from 'react-router-dom';
->>>>>>> d85993994129e78a02945bf36f1e17e68cdda02a
 
 
 function NavMain() {
