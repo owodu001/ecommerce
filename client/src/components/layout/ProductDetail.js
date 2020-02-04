@@ -7,7 +7,9 @@ import {
   Row,
   Image,
   InputGroup,
-  FormControl
+  FormControl,
+  Tab,
+  Tabs
 } from "react-bootstrap";
 
 export default function() {
@@ -35,13 +37,16 @@ export default function() {
                     button-down shirt and dress pants for the perfect mix of
                     formal and unique.
                   </Card.Text>
-                  <InputGroup className="mb-3">
+                  <InputGroup
+                    className="mb-3"
+                    style={{ width: "130px", alignContent: "center" }}
+                  >
                     <InputGroup.Prepend>
                       <Button variant="info">-</Button>{" "}
                     </InputGroup.Prepend>
                     <FormControl
                       type="text"
-                      placeholder="Input group example"
+                      placeholder="0"
                       aria-label="Input group example"
                       aria-describedby="btnGroupAddon"
                     />
@@ -53,7 +58,26 @@ export default function() {
                 </Card.Body>
               </Card>
             </Row>
-            <Row>Product Details</Row>
+            <Row style={{ fontWeight: "bold" }}>Product Details:</Row>
+            <Row>SKU: 9624</Row>
+            <Row>Size: M, L, XL </Row>
+            <Row>Categories: blazers</Row>
+            <Row>Brand: fashion, clothing, men</Row>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+              <Tab eventKey="description" title="Description">
+                <p>Product info!</p>
+              </Tab>
+              <Tab eventKey="review" title="Reviews">
+                <p>Coming Soon!</p>
+              </Tab>
+              <Tab eventKey="custom" title="Custom Tab">
+                <p>Custom Detail!</p>
+              </Tab>
+            </Tabs>
           </Col>
         </Row>
       </Container>
