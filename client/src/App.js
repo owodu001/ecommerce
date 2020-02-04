@@ -6,8 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 //Mary's Components
-import ProductGrid from "./components/build/ProductGrid"
-import ProductCard from "./components/build/ProductCard"
+import ProductGrid from "./components/product/ProductGrid"
+import ProductCard from "./components/product/ProductCard"
 
 
 import Navbar from "./components/layout/Navbar";
