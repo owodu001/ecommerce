@@ -17,6 +17,9 @@ import Navbar from "./components/layout/Navbar";
 // import PrivateRoute from "./components/private-route/PrivateRoute";
 
 
+/* Michelle's Product Component route */
+import Product from "./components/product/Product";
+
 import { Auth } from "./auth/auth";
 
 import "./App.css";
@@ -32,8 +35,9 @@ export default function() {
             <ProductCard/>
             {/* <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />*/}
-            <Route exact path="/" component={ProductGrid} /> 
+            <Route exact path="/login" component={Login} />
+            {/* /* Michelle's Product Component route */}
+            <Route exact path="/product" component={Product} />
             <Switch>
               {/* <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/games/:gameId" component={Game} /> */}
