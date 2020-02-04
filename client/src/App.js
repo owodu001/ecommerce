@@ -12,6 +12,9 @@ import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import Game from "./components/game/Game";
 
+/* Michelle's Product Component route */
+import Product from "./components/product/Product";
+
 import { Auth } from "./auth/auth";
 
 import "./App.css";
@@ -54,22 +57,22 @@ const theme = {
          font-weight: 500;
          line-height: normal;
     `
-      //   ${!props.primary &&
-      //     `
-      //     border-color: ${rgba(
-      //       normalizeColor(props.colorValue, props.theme),
-      //       0.5
-      //     )};
-      //     color: ${normalizeColor(props.colorValue, props.theme)};
-      //     :hover {
-      //        box-shadow: none;
-      //        background-color: ${rgba(
-      //          normalizeColor(props.colorValue, props.theme),
-      //          0.08
-      //        )};
-      //      }
-      //    `}
-      //  `
+    //   ${!props.primary &&
+    //     `
+    //     border-color: ${rgba(
+    //       normalizeColor(props.colorValue, props.theme),
+    //       0.5
+    //     )};
+    //     color: ${normalizeColor(props.colorValue, props.theme)};
+    //     :hover {
+    //        box-shadow: none;
+    //        background-color: ${rgba(
+    //          normalizeColor(props.colorValue, props.theme),
+    //          0.08
+    //        )};
+    //      }
+    //    `}
+    //  `
   }
 };
 
@@ -83,6 +86,8 @@ export default function() {
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+            {/* /* Michelle's Product Component route */}
+            <Route exact path="/product" component={Product} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/games/:gameId" component={Game} />
