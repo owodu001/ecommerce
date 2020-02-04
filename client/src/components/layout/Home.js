@@ -7,8 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default function () {
     return (
         <>
-        <NavMain/>
         <HeroBanner/>
+        {/* category nav */}
+        {/* search/filter/sort */}
         <ProductGrid/>
         </>
     );
