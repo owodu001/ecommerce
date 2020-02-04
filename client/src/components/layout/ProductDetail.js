@@ -10,8 +10,6 @@ import {
   FormControl
 } from "react-bootstrap";
 
-// import { Link } from "react-router-dom";
-
 export default function() {
   return (
     <>
@@ -22,8 +20,8 @@ export default function() {
           </Col>
           <Col md={6}>
             <Row>
-              <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src="http://placekitten.com/400/400" />
+              <Card>
+                <Card.Img variant="top" src="http://placekitten.com/200/200" />
                 <Card.Body>
                   <Card.Title>
                     WD·NY Black – Men's Palm Burgundy Jacket
