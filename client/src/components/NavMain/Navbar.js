@@ -6,7 +6,7 @@ import FormControl from "react-bootstrap/FormControl";
 import Nav from "react-bootstrap/Nav";
 
 
-function Navbar() {
+function NavMain() {
 
     return (
         <Navbar bg="dark" variant="dark">
@@ -23,4 +23,4 @@ function Navbar() {
       </Navbar>
     );
 }
-export default Navbar;
+export default NavMain;

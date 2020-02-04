@@ -6,11 +6,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 //Mary's Components
-import ProductGrid from "./components/build/ProductGrid"
-import ProductCard from "./components/build/ProductCard"
+import ProductGrid from "./components/product/ProductGrid"
+import ProductCard from "./components/product/ProductCard"
 
 
-import Navbar from "./components/layout/Navbar";
+import NavMain from "./components/NavMain/Navbar";
 // import Landing from "./components/layout/Landing";
 // import Register from "./components/auth/Register";
 // import Login from "./components/auth/Login";
@@ -23,6 +23,7 @@ import Product from "./components/product/Product";
 import { Auth } from "./auth/auth";
 
 import "./App.css";
+import HeroBanner from "./components/HeroBanner/HeroBanner";
 
 export default function() {
   return (
@@ -30,7 +31,9 @@ export default function() {
       <Auth>
         <Router>
           <div className="App">
-            <Navbar />
+            <NavMain />
+            <HeroBanner />
+            {/* Search/filter/sort element */}
             <ProductGrid/>
             <ProductCard/>
             {/* <Route exact path="/" component={Landing} />
