@@ -6,8 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 //Mary's Components
-import ProductGrid from "./components/product/ProductGrid"
-import ProductCard from "./components/product/ProductCard"
+import ProductGrid from "./components/ProductGrid/ProductGrid"
+import ProductCard from "./components/ProductCard/ProductCard"
 
 
 import NavMain from "./components/NavMain/Navbar";
@@ -33,9 +33,9 @@ export default function() {
           <div className="App">
             <NavMain />
             <HeroBanner />
+            {/* Category NavBar Patrick */}
             {/* Search/filter/sort element */}
             <ProductGrid/>
-            <ProductCard/>
             {/* <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />

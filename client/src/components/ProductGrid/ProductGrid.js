@@ -2,7 +2,7 @@ import React from "react";
 // import { storiesOf } from "@storybook/react";
 
 import {Container, Row, Col } from "react-bootstrap";
-import ProductCard from "./ProductCard";
+import ProductCard from "../ProductCard/ProductCard";
 
 const ProductGrid = () => (
     <Container>
