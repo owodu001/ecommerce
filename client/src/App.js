@@ -1,4 +1,6 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // Import components
@@ -8,7 +10,7 @@ import ProductDetail from "./components/layout/ProductDetail";
 import SignIn from "./components/layout/SignIn";
 import Cart from "./components/layout/Cart";
 
-export default function () {
+export default function() {
   return (
     <Router>
       <div>
