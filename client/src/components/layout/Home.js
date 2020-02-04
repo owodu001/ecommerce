@@ -3,12 +3,13 @@ import HeroBanner from "../HeroBanner/HeroBanner";
 import ProductGrid from "../ProductGrid/ProductGrid";
 import NavMain from "../NavMain/Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CatergoryBar from "../categoryBar/CatergoryBar";
 
 export default function () {
     return (
         <>
         <HeroBanner/>
-        {/* category nav */}
+        <CatergoryBar/>
         {/* search/filter/sort */}
         <ProductGrid/>
         </>
