@@ -1,39 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Navbar from "react-bootstrap/Navbar";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import FormControl from "react-bootstrap/FormControl";
+import Nav from "react-bootstrap/Nav";
+import { Link } from 'react-router-dom';
 
-export default function () {
-
-    const styles = {
-        nav: {
-            backgroundColor: "black",
-            color: "white",
-
-        },
-        navLink: {
-            listStyle: "none",
-            padding: "30px"
-        },
-        li: {
-            display: "inline",
-            textDecoration: "none",
-            paddingRight: "15px"
-        },
-        link: {
-            color: "white"
-        }
-
-    }
+export default function NavMain() {
 
     return (
-        <nav style={styles.nav}>
-            <ul style={styles.navLink}>
-                <Link to="/" style={styles.link}> <li style={styles.li}> Home</li></Link>
-                <Link to="/product" style={styles.link}> <li style={styles.li}> Product Detail</li></Link>
-                <Link to="/sign-in" style={styles.link}> <li style={styles.li}> Sign In</li></Link>
-                <Link to="/cart" style={styles.link}> <li style={styles.li}> Cart</li></Link>
-            </ul>
-        </nav>
-
-
+        <Navbar bg="dark" variant="dark">
+        <Navbar.Brand href="#home">Our Store</Navbar.Brand>
+        <Nav className="mr-auto">
+          <Nav.Link href="#home">Home</Nav.Link>
+          <Nav.Link href="#signin">Sign in</Nav.Link>
+          <Nav.Link href="#cart">Cart</Nav.Link>
+        </Nav>
+        <Form inline>
+          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+          <Button variant="outline-info">Search</Button>
+        </Form>
+      </Navbar>
     );
 }

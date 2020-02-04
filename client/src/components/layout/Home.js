@@ -1,7 +1,18 @@
 import React from "react";
+import HeroBanner from "../HeroBanner/HeroBanner";
+import ProductGrid from "../ProductGrid/ProductGrid";
+import NavMain from "../NavMain/Navbar";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import CatergoryBar from "../categoryBar/CatergoryBar";
 
 export default function () {
     return (
-        <div><h1>Home page</h1></div>
+        <>
+        <HeroBanner/>
+        <CatergoryBar/>
+        {/* search/filter/sort */}
+        <ProductGrid/>
+        </>
     );
 }
+
