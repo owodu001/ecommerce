@@ -9,6 +9,7 @@ import Home from "./components/layout/Home";
 import ProductDetail from "./components/layout/ProductDetail";
 import SignIn from "./components/layout/SignIn";
 import Cart from "./components/layout/Cart";
+import Category from "./components/layout/Category";
 
 export default function() {
   return (
@@ -20,6 +21,7 @@ export default function() {
           <Route path="/product" component={ProductDetail} />
           <Route path="/sign-in" component={SignIn} />
           <Route path="/cart" component={Cart} />
+          <Route path="/category" component={Category} />
         </Switch>
       </div>
     </Router>
