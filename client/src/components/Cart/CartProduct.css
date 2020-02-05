@@ -1,0 +1,11 @@
+.cartList{
+    text-decoration: none;
+    list-style: none;
+
+}
+
+.cartCard{
+    display: flex;
+    width: auto;
+
+}

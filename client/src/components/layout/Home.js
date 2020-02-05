@@ -10,6 +10,8 @@ import CategoryBar from "../categoryBar/CategoryBar";
 import FootNav from "../Footer/Footer";
 import Pages from "../Pagination/Pagination";
 
+
+
 export default function () {
 
     // useEffect(() => {
