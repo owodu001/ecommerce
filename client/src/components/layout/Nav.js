@@ -21,7 +21,6 @@ export default function () {
         link: {
             color: "white"
         }
-
     }
 
     return (

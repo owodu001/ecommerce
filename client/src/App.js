@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // Import components
-import Nav from "./components/layout/Nav";
+import HeroBanner from "./components/NavMain/Navbar"
 import Home from "./components/layout/Home";
 import ProductDetail from "./components/layout/ProductDetail";
 import SignIn from "./components/layout/SignIn";
@@ -12,7 +12,7 @@ export default function () {
   return (
     <Router>
       <div>
-        <Nav />
+        <HeroBanner />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/product" component={ProductDetail} />
