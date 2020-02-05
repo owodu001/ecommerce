@@ -22,7 +22,7 @@ function NavMain() {
           <Link className="navigation" to="/sign-in">Sign In</Link>
         </div>
         <div>
-          <Link className="navigation"to="/cart">Cart</Link>
+          <Link className="navigation"to="/cart">Cart () </Link>
         </div>
       </Nav>
       <Form inline>
