@@ -6,8 +6,8 @@ const SearchComp = () => (
 <Container className="SearchComp">
 <Row className="justify-content-center">
 <Col className="column" sm={3}>
-<Dropdown>
-    <Dropdown.Toggle variant="info" id="dropdown-basic">
+<Dropdown >
+    <Dropdown.Toggle className="dropd" variant="info" id="dropdown-basic">
             Sort by:
     </Dropdown.Toggle>
         <Dropdown.Menu>
@@ -18,7 +18,7 @@ const SearchComp = () => (
 </Col>
 <Col className="column" sm={3}>
 <Dropdown>
-                <Dropdown.Toggle variant="info" id="dropdown-basic">
+                <Dropdown.Toggle className="dropd" variant="info" id="dropdown-basic">
                 Filter by:
                 </Dropdown.Toggle>
             {/* UPDATE THIS DROPDOWN MENU TO FILTER BY YOUR SPECIFIC CATEGORIES */}
@@ -33,7 +33,7 @@ const SearchComp = () => (
 <Col className="column"sm={6}>
 <InputGroup className="mb-3">
         <InputGroup.Prepend>
-        <Button variant="outline-secondary">Search Products</Button>
+        <Button className="dropd" variant="outline-secondary">Search Products</Button>
         </InputGroup.Prepend>
         <FormControl aria-describedby="basic-addon1" />
     </InputGroup>

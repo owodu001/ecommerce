@@ -6,5 +6,23 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: rgba(211, 211, 211, 0.386);
+}
+
+.dropd{
+    background-color: salmon;
+    color: blanchedalmond;
+    border: none;
+    width: 175px;
+}
+
+@media screen and (max-width: 767px){
+    .dropd {
+        width: max-content;
+    }
+
+}
+
+.dropd:hover{
+    background-color:#396b87 ;
+    color: #6ecfcc;
 }
