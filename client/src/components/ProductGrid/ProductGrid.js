@@ -9,6 +9,7 @@ const ProductGrid = () => (
       <Col><ProductCard /></Col>
       <Col><ProductCard /></Col>
       <Col><ProductCard /></Col>
+      <Col><ProductCard /></Col>
     </Row>
   </Container>
 );
