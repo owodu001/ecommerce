@@ -1,0 +1,10 @@
+.searchComp{
+    margin: 20px;
+}
+
+.column{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(211, 211, 211, 0.386);
+}
