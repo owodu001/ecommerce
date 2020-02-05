@@ -1,5 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import './App.css';
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -15,12 +16,16 @@ export default function() {
     <Router>
       <div>
         <NavMain />
+        
+ 
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/product" component={ProductDetail} />
-          <Route path="/sign-in" component={SignIn} />
+           <Route path="/sign-in" component={SignIn} /> 
           <Route path="/cart" component={Cart} />
+          {/* <Route path="/sign-up" component={SignUp} /> */}
         </Switch>
+       
       </div>
     </Router>
   );
