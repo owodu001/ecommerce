@@ -1,0 +1,15 @@
+.centerThings {
+  justify-content: center;
+}
+
+.centerButton {
+  justify-content: center;
+}
+
+.font {
+  font-weight: bold;
+}
+
+.border {
+  border: solid 3px gray;
+}
