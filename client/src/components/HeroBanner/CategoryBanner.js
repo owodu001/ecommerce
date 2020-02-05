@@ -1,9 +1,9 @@
 import React from "react";
-import {Jumbotron, Container, Button } from "react-bootstrap";
+import {Jumbotron, Container } from "react-bootstrap";
 // import Container from "react-bootstrap/Container";
 // import Button from "react-bootstrap/Button";
 
-function HeroBanner() {
+function CategoryBanner() {
     return (
 <Jumbotron fluid>
   <Container>
@@ -20,4 +20,4 @@ function HeroBanner() {
 
     )};
 
-export default HeroBanner;
+export default CategoryBanner;

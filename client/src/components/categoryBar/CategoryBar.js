@@ -12,15 +12,15 @@ function CategoryBar() {
             <Nav className="justify-content-center items" activeKey="/home">
 
                 <Nav.Item className="navitem">
-                    <Link className="Category" to="/category1">Category 1</Link>
+                    <Link className="Category" to="/category">Category 1</Link>
                 </Nav.Item>
 
                 <Nav.Item className="navitem">
-                    <Link className="Category" to="/category2">Category 2</Link>
+                    <Link className="Category" to="/category">Category 2</Link>
                 </Nav.Item>
                 
                 <Nav.Item className="navitem">
-                    <Link className="Category" to="/category3">Category 3</Link>
+                    <Link className="Category" to="/category">Category 3</Link>
                 </Nav.Item>
                 
             </Nav>

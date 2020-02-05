@@ -8,7 +8,7 @@ const CartProduct = () => (
 <Container>
     <ul className="cartList">
         <li >
-        <Card>
+        <Card className="cartCard">
             <Row>
                 <Col>
             <Card.Img variant="left" src="http://placekitten.com/200/200" />
