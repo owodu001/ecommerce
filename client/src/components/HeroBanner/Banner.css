@@ -27,5 +27,9 @@
     background-color: salmon;
     color: white;
     border: none;
+}
 
+.collectionButton:hover{
+    background-color:#396b87 ;
+    color: #6ecfcc;
 }

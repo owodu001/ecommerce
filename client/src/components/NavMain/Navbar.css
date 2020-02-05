@@ -1,0 +1,16 @@
+.mainNav{
+    background-color: rgb(60, 60 , 60);
+}
+.navigation{
+    margin: 0px, 20px;
+    justify-content: space-evenly;
+    color: white;
+    padding-left: 15px;
+}
+
+.navigation:hover {
+    text-decoration: none;
+    color: salmon;
+    padding-left: 15px;
+    font-weight: 600;
+}
