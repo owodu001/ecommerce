@@ -1,19 +1,19 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./CardSubtotal.css";
-import { Button, Container, Col, Row } from "react-bootstrap";
+import "./CartSubtotal.css";
+import { Button, Container, Col, Row, Form } from "react-bootstrap";
 
 export default function() {
   return (
     <>
-      <Container>
+      <Container className="border">
         <Row className="centerThings font">Cart Totals</Row>
-        <Row>
+        <Row className="font">
           <Col>Subtotal</Col>
           <Col>$760</Col>
         </Row>
         <Row>
-          <Col>Shipping</Col>
+          <Col className="font">Shipping</Col>
           <Col>
             <Form.Group controlId="formBasicCheckbox">
               <Form.Check type="checkbox" label="Flat Rate: $1.50" />
@@ -25,14 +25,14 @@ export default function() {
           </Col>
         </Row>
         <Row>
-          <Col>Shipping Address</Col>
-          <Col>15555 Anderson Lakes Pkwy, US</Col>
+          <Col className="font">Shipping Address</Col>
+          <Col className="font">15555 Anderson Lakes Pkwy</Col>
         </Row>
         <Row>
-          <Col>Total</Col>
+          <Col className="font">Total</Col>
           <Col>$761.50</Col>
         </Row>
-        <Button className="centerThings font" variant="primary">
+        <Button className="centerThings" variant="primary">
           Proceed to Checkout
         </Button>{" "}
       </Container>
