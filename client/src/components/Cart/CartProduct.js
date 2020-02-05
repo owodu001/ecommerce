@@ -1,20 +1,25 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Container, Card, Button, InputGroup, FormControl} from "react-bootstrap";
+import "./CartProduct.css";
+
+import {Container, Card, Button, InputGroup, FormControl, Col, Row} from "react-bootstrap";
 
 const CartProduct = () => (
 <Container>
-    <ul>
+    <ul className="cartList">
         <li >
         <Card>
-            <Card.Img variant="left" src="holder.js/100px180" />
+            <Row>
+                <Col>
+            <Card.Img variant="left" src="http://placekitten.com/200/200" />
+            </Col>
+            <Col>
             <Card.Body>
                 <Card.Title>Product Name</Card.Title>
                 <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
+                $Price
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Button variant="danger">Remove</Button>
                 <InputGroup
                     className="mb-3"
                     style={{ width: "130px", alignContent: "center" }}
@@ -33,6 +38,8 @@ const CartProduct = () => (
                     </InputGroup.Append>
                   </InputGroup>
             </Card.Body>
+            </Col>
+            </Row>
             </Card>
         </li>
 
