@@ -1,0 +1,28 @@
+.CatBar{
+    height: 55px;
+    background-color: #666666;
+    color: white;
+    text-align: center;
+    /* justify-content: space-evenly; */
+    justify-content: space-around;
+}
+.items{
+    margin: 0px, 20px;
+    justify-content: space-evenly;
+}
+
+.Category {
+    color: white;
+    padding-left: 25px;
+}
+
+.Category:hover {
+    text-decoration: none;
+    color: salmon;
+    padding-left: 25px;
+}
+
+.navitem {
+padding: 15px, 15px;
+height: auto;
+}
