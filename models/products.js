@@ -1,100 +1,28 @@
-const products = [
-    {
-        id: "132123WERE01",
-        image: "https://picsum.photos/200",
-        title: "Headphones",
-        price: "$20.00",
-        quantity: "5",
-        category: "Electronics"
-    },
-    {
-        id: "132123WERE02",
-        image: "https://picsum.photos/200",
-        title: "Honor Mobile",
-        price: "$462.00",
-        quantity: "5",
-        category: "Electronics"
-    },
-    {
-        id: "132123WERE03",
-        image: "https://picsum.photos/200",
-        title: "Samsung LED TV",
-        price: "$652.00",
-        quantity: "5",
-        category: "Electronics"
-    },
-    {
-        id: "132123WERE04",
-        image: "https://picsum.photos/200",
-        title: "Motorola Bluetooth",
-        price: "$25.00",
-        quantity: "5",
-        category: "Electronics"
-    },
-    {
-        id: "132123WERE05",
-        image: "https://picsum.photos/200",
-        title: "Apple 6s",
-        price: "$782.00",
-        quantity: "5",
-        category: "Electronics"
-    },
-    {
-        id: "132123WERE06",
-        image: "https://picsum.photos/200",
-        title: "Diamond Ring",
-        price: "$237.00",
-        quantity: "5",
-        category: "Jewellery"
-    },
-    {
-        id: "132123WERE07",
-        image: "https://picsum.photos/200",
-        title: "Diamond Nacklace",
-        price: "$3579.00",
-        quantity: "5",
-        category: "Jewellery"
-    },
-    {
-        id: "132123WERE08",
-        image: "https://picsum.photos/200",
-        title: "Night lamp",
-        price: "$84.00",
-        quantity: "5",
-        category: "furniture"
-    },
-    {
-        id: "132123WERE09",
-        image: "https://picsum.photos/200",
-        title: "men's shoes",
-        price: "$67.00",
-        quantity: "5",
-        category: "shoes"
-    },
-    {
-        id: "132123WERE10",
-        image: "https://picsum.photos/200",
-        title: "Ledi's red top",
-        price: "$234.00",
-        quantity: "5",
-        category: "clothes"
-    },
-    {
-        id: "132123WERE11",
-        image: "https://picsum.photos/200",
-        title: "atest ledis shoes",
-        price: "$357.00",
-        quantity: "5",
-        category: "shoes"
-    },
-    {
-        id: "132123WERE12",
-        image: "https://picsum.photos/200",
-        title: "Woman one pis",
-        price: "$682.00",
-        quantity: "5",
-        category: "clothes"
-    }
-];
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-module.exports = products;
+// Create Schema
+const ProductSchema = new Schema({
+    title: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String,
+        required: true
+    },
+    price: {
+        type: Number,
+        required: true
+    },
+    quantity: {
+        type: Number,
+        required: true
+    },
+    category: {
+        type: String,
+        required: true
+    }
+});
+
+module.exports = Product = mongoose.model("products", ProductSchema);

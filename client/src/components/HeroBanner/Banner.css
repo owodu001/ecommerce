@@ -1,0 +1,31 @@
+.hero{
+    height: 350px;
+    margin-bottom: 0px;
+    text-align: center;
+    align-content: center;
+    justify-items: center;
+    background-color: white;
+    /* change your gradient by editing the two colors in parentheses, or add your own image:  */
+    background-image: linear-gradient( #fa8072, white);
+}
+
+.pageTitle{
+    /* change page title color and font size here! */
+    color: white;
+    font-size: 64px;
+}
+
+.details{
+     /* change hero details color and font size here! */
+    font-size: 26px;
+    color: salmon;
+}
+
+
+.collectionButton{
+    /* change main hero button color and font size here! */
+    background-color: salmon;
+    color: white;
+    border: none;
+
+}

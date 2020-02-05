@@ -1,8 +1,10 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // Import components
-import HeroBanner from "./components/NavMain/Navbar"
+import NavMain from "./components/NavMain/Navbar";
 import Home from "./components/layout/Home";
 import ProductDetail from "./components/layout/ProductDetail";
 import SignIn from "./components/layout/SignIn";
@@ -12,7 +14,7 @@ export default function () {
   return (
     <Router>
       <div>
-        <HeroBanner />
+        <NavMain />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/product" component={ProductDetail} />

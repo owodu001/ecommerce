@@ -1,0 +1,19 @@
+.contact{
+align-content: left;
+}
+
+.footlogo{
+/* align-content: center;
+align-items: center;
+justify-content: center;
+justify-items: center;
+align-self: center; */
+margin: 0px, auto;
+padding-left: 100px;
+}
+
+.sociallink{
+justify-content: right;
+justify-items: right;
+align-items: right;
+}
