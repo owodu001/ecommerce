@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext} from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CartProduct.css";
+import {CartContext} from "../../state/cartContext";
 
 import {
   Container,
@@ -14,6 +15,21 @@ import {
 
 export default function() {
   const [counter, setCounter] = useState(0);
+  const cartContextValue = useContext(CartContext);
+//
+// export default function Cart() {
+//   const cartContextValue = useContext(CartContext);
+//   return (
+//     <div>
+//       <h3>Cart</h3>
+//       <div>
+//         {cartContextValue.cart.map(i => (
+//           <Item item={i} />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
 
   return (
     <>
@@ -78,3 +94,4 @@ export default function() {
     </>
   );
 }
+
