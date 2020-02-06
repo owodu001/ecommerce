@@ -27,7 +27,6 @@ export default function() {
           <Route path="/category" component={Category} />
 
         </Switch>
-       <FootNav/>
       </div>
     </Router>
   );
