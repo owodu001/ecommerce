@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Home.css"
+import axios from "axios"
 
 import HeroBanner from "../HeroBanner/HeroBanner";
 import ProductGrid from "../ProductGrid/ProductGrid";
@@ -13,11 +14,17 @@ import Pages from "../Pagination/Pagination";
 
 
 export default function () {
+    // const [product, setProduct] = useState([]);
+    // console.log("Initial product list: ", product);
 
     // useEffect(() => {
     //     axios
     //         .get("http://localhost:5000/api/products")
-    //         .then(res => console.log(res.data));
+    //         .then(res => {
+    //             console.log(res.data);
+    //             setProduct(res.data);
+    //         });
+
     // }, []);
 
     return (
