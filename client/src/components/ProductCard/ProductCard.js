@@ -2,8 +2,9 @@ import React from "react";
 // import { storiesOf } from "@storybook/react";
 
 import Card from "react-bootstrap/card";
-import {Row, Nav, Container} from "react-bootstrap";
+import { Row, Nav, Container} from "react-bootstrap";
 import "./ProductCard.css";
+import  { Link } from 'react-router-dom';
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { findIconDefinition } from '@fortawesome/fontawesome-svg-core';
@@ -22,7 +23,9 @@ const ProductCard = () => (
           <Nav.Link href="#">Add to Cart</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link className="viewDetails" href="/productdetail">View Details</Nav.Link>
+          <Nav.Link className="viewDetails">
+          <Link className="navigation" to="/product">View Details</Link>
+          </Nav.Link>
         </Nav.Item>
         </Row>
     </Card.Body>

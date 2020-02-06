@@ -2,8 +2,10 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CartSubtotal.css";
 import { Button, Container, Col, Row, Form } from "react-bootstrap";
+import PayButton from "../../PayPalButton/PayPalButton"
 
-export default function() {
+
+export default function () {
   return (
     <>
       <Container className="border">
@@ -35,6 +37,10 @@ export default function() {
         <Button className="centerThings" variant="primary">
           Proceed to Checkout
         </Button>{" "}
+        <Button>
+          <PayButton/>
+        </Button>
+
       </Container>
     </>
   );
