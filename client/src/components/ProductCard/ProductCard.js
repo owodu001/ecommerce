@@ -13,6 +13,9 @@ const ProductCard = ({ p }) => {
         <Card.ImgOverlay>
           <Card.Title className="productName">{p.title}</Card.Title>
         </Card.ImgOverlay>
+        <Card.ImgOverlay>
+          <Card.Title className="productPrice">{p.price}</Card.Title>
+        </Card.ImgOverlay>
         <Card.Img variant="top" src={p.image} />
         <Card.Body className="cardOpts">
           <Row className="cardRow">
@@ -25,7 +28,6 @@ const ProductCard = ({ p }) => {
           </Row>
         </Card.Body>
       </Card>
-      <p>{p.price}</p>
     </div>
   );
 };
