@@ -1,6 +1,14 @@
+<<<<<<< HEAD
+.gridRow{
+    margin-bottom: 10px;
+}
+
+
+=======
 .gridRow {
   margin-bottom: 10px;
   /* display: flex;
   flex-direction: row; */
   /* width: 300px; */
 }
+>>>>>>> 9e3b0418674d3326e01b352c7c401c1af1745715

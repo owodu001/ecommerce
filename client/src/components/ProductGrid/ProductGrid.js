@@ -14,6 +14,18 @@ const ProductGrid = () => {
     });
   }, []);
 
+<<<<<<< HEAD
+const ProductGrid = () => (
+  <Container>
+    <Row className="gridRow" >
+      <Col><ProductCard /></Col>
+      <Col><ProductCard /></Col>
+      <Col><ProductCard /></Col>
+      <Col><ProductCard /></Col>
+    </Row>
+  </Container>
+);
+=======
   function filterProducts(item) {
     console.log(item);
     const filteredProduct = product.filter(product =>
@@ -36,5 +48,6 @@ const ProductGrid = () => {
     </Container>
   );
 };
+>>>>>>> 9e3b0418674d3326e01b352c7c401c1af1745715
 
 export default ProductGrid;

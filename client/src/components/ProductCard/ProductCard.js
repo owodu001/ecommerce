@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 // import { storiesOf } from "@storybook/react";
 import axios from "axios";
 import Card from "react-bootstrap/card";
-import { Row, Nav, Container, Col, Button} from "react-bootstrap";
+import { Row, Nav, Container, Col, Button } from "react-bootstrap";
 import "./ProductCard.css";
 
 
@@ -24,12 +24,12 @@ const ProductCard = ({ p }) => {
         <Card.Body className="cardOpts">
           <Row className="cardRow">
 
-          <Col>
-            <Button className ="cardButton" >Add to Cart</Button>
-          </Col>
-          <Col>
-            <Button className ="cardButton" href="/product"> View Details </Button>
-          </Col>
+            <Col>
+              <Button className="cardButton" >Add to Cart</Button>
+            </Col>
+            <Col>
+              <Button className="cardButton" href="/product"> View Details </Button>
+            </Col>
           </Row>
         </Card.Body>
       </Card>
