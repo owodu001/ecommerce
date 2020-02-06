@@ -44,7 +44,7 @@ function NavMain() {
 
         </div>
       </Nav>
-      <Form inline>
+      {/* <Form inline>
         <FormControl
           type="text"
           placeholder="Search"
@@ -60,7 +60,7 @@ function NavMain() {
         >
           Search
         </Button>
-      </Form>
+      </Form> */}
     </Navbar>
   );
 }
