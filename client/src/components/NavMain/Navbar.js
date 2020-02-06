@@ -24,7 +24,9 @@ function NavMain() {
   return (
     // {product.map(p => ())}
     <Navbar className="mainNav" bg="#575151" variant="dark">
-      <Navbar.Brand href="#home">Our Store</Navbar.Brand>
+      <Navbar.Brand>
+      <Link className="navigation" to="/">Our Store</Link>
+      </Navbar.Brand>
       <Nav className="mr-auto">
         <div>
           <Link className="navigation" to="/">
@@ -37,12 +39,14 @@ function NavMain() {
           </Link>
         </div>
         <div>
-          <Link className="navigation" to="/cart">
-            Cart
-          </Link>
+
+          <Link className="navigation" to="/cart">Cart</Link>
+
+      
+
         </div>
       </Nav>
-      <Form inline>
+      {/* <Form inline>
         <FormControl
           type="text"
           placeholder="Search"
@@ -58,7 +62,7 @@ function NavMain() {
         >
           Search
         </Button>
-      </Form>
+      </Form> */}
     </Navbar>
   );
 }

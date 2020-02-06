@@ -1,16 +1,22 @@
 const path = require("path");
 const express = require("express");
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const products = require("./models/product-Data");
+const TestProdList = require("./models/product-Data");
+
 // const passport = require("passport");
 
-// const users = require("./routes/api/users");
+const productsRT = require("./routes/api/products-routes");
 // const games = require("./routes/api/games");
 
 const port = process.env.PORT || 5000;
 
 const app = express();
+// amira-code
+// import auth route
+// const authRoute= require("./authRoutes/Auth");
+// // Route middelwares
+// app.use("api/user",authRoute);
 
 // Bodyparser middleware
 app.use(
@@ -34,26 +40,28 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // DB Config
-// const db = require("./config/keys").mongoURI;
+const db = require("./config/keys").mongoURI;
 
 // Connect to MongoDB
-// mongoose
-//   .connect(
-//     db,
-//     { useNewUrlParser: true }
-//   )
-//   .then(() => console.log("MongoDB successfully connected"))
-//   .catch(err => console.log(err));
+mongoose
+  .connect(
+    db,
+    { useNewUrlParser: true }
+  )
+  .then(() => console.log("MongoDB successfully connected"))
+  .catch(err => console.log(err));
 
 // // Passport middleware
 // app.use(passport.initialize());
 
-// Passport config
+// // Passport config
 // require("./config/passport")(passport);
 
-// Routes
-app.get("/api/products", (req, res) => res.json(products));
-app.get("/", (req, res) => res.send("server is running"));
 
+
+// Routes
+app.get("/api/productsTest", (req, res) => res.json(TestProdList));
+app.get("/", (req, res) => res.send("server is running"));
+app.use("/api/products", productsRT);
 
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));

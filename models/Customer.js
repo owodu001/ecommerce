@@ -18,15 +18,15 @@ const CustomerSchema = new Schema({
   password: {
     type: String,
     required: true
-  },
-  address: {
-    type: Object,
-    required: true
-  },
-  date: {
-    type: Date,
-    default: Date.now
-  },
+  }
+  // address: {
+  //   type: Object,
+  //   required: true
+  // },
+  // date: {
+  //   type: Date,
+  //   default: Date.now
+
 
 });
 
