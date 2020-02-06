@@ -6,8 +6,8 @@ const keys = require("../../config/keys");
 const passport = require("passport");
 
 // Load input validation
-const validateRegisterInput = require("../../validation/register");
-const validateLoginInput = require("../../validation/login");
+const validateRegisterInput = require("../../validation/sign-up");
+const validateLoginInput = require("../../validation/sign-in");
 
 // Load User model
 const User = require("../../models/User");
@@ -15,7 +15,7 @@ const User = require("../../models/User");
 // @route POST api/users/register
 // @desc Register user
 // @access Public
-router.post("/register", (req, res) => {
+router.post("/sign-up", (req, res) => {
   // Form validation
 
   const { errors, isValid } = validateRegisterInput(req.body);
@@ -53,7 +53,7 @@ router.post("/register", (req, res) => {
 // @route POST api/users/login
 // @desc Login user and return JWT token
 // @access Public
-router.post("/login", (req, res) => {
+router.post("/sign-in", (req, res) => {
   // Form validation
 
   const { errors, isValid } = validateLoginInput(req.body);
