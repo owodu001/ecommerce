@@ -6,6 +6,8 @@ import CartSubtotal from "../Cart/subtotal/CartSubtotal";
 
 export default function() {
   return (
+    <>
+    <hr/>
     <Container>
       <Row>
         <Col>
@@ -16,5 +18,6 @@ export default function() {
         </Col>
       </Row>
     </Container>
+    </>
   );
 }
