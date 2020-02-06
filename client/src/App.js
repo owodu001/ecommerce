@@ -11,6 +11,7 @@ import ProductDetail from "./components/layout/ProductDetail";
 import SignIn from "./components/layout/SignIn";
 import Cart from "./components/layout/Cart";
 import Category from "./components/layout/Category";
+import FootNav from "./components/Footer/Footer";
 
 export default function () {
   return (
@@ -24,13 +25,9 @@ export default function () {
           <Route path="/product" component={ProductDetail} />
            <Route path="/sign-in" component={SignIn} /> 
           <Route path="/cart" component={Cart} />
-<<<<<<< HEAD
           <Route path="/category" component={Category} />
-=======
-          {/* <Route path="/sign-up" component={SignUp} /> */}
->>>>>>> a7e78833078bf2911375947a8bd2f0a3ca4432f7
         </Switch>
-       
+       <FootNav/>
       </div>
     </Router>
   );

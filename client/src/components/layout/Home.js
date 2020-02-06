@@ -31,8 +31,6 @@ export default function () {
             <hr />
             <Pages />
             <hr />
-            <FootNav />
-
         </>
     );
 }
