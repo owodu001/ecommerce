@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import './App.css';
+import "./App.css";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PrivateRoute from './PrivateRoute';
@@ -38,7 +38,6 @@ export default function () {
           <Route path="/category" component={Category} />
           <PrivateRoute path="/admin" component={admin} />
         </Switch>
-       
       </div>
     </Router>
     </AuthContext.Provider>

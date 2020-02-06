@@ -7,8 +7,8 @@ export default function() {
   return (
     <>
       <Container className="border">
-        <Row className="centerThings font">Cart Totals</Row>
-        <Row className="font">
+        <Row className="centerThings font mb-3">Cart Totals</Row>
+        <Row className="font mb-3">
           <Col>Subtotal</Col>
           <Col>$760</Col>
         </Row>
@@ -24,15 +24,21 @@ export default function() {
             <p>Estimate for India</p>
           </Col>
         </Row>
-        <Row>
+        <Row className="mb-3">
           <Col className="font">Shipping Address</Col>
           <Col className="font">15555 Anderson Lakes Pkwy</Col>
         </Row>
         <Row>
-          <Col className="font">Total</Col>
+          <Col className="font mb-3">Total</Col>
           <Col>$761.50</Col>
         </Row>
-        <Button className="centerThings" variant="primary">
+        <Button
+          className="centerButton"
+          variant="primary"
+          onClick={() => {
+            console.log("What up");
+          }}
+        >
           Proceed to Checkout
         </Button>{" "}
       </Container>
