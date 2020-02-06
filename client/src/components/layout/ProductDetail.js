@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Card,
   Button,
@@ -15,6 +15,9 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function() {
+  const [counter, setCounter] = useState(0);
+  const [value, setValue] = useState("");
+
   return (
     <>
       <Container>
@@ -44,19 +47,36 @@ export default function() {
                     style={{ width: "130px", alignContent: "center" }}
                   >
                     <InputGroup.Prepend>
-                      <Button variant="info">-</Button>{" "}
+                      <Button
+                        variant="info"
+                        onClick={() => setCounter(counter - 1)}
+                      >
+                        -
+                      </Button>{" "}
                     </InputGroup.Prepend>
                     <FormControl
                       type="text"
-                      placeholder="0"
+                      placeholder={counter}
                       aria-label="Input group example"
                       aria-describedby="btnGroupAddon"
                     />
                     <InputGroup.Append>
-                      <Button variant="info">+</Button>{" "}
+                      <Button
+                        variant="info"
+                        onClick={() => setCounter(counter + 1)}
+                      >
+                        +
+                      </Button>{" "}
                     </InputGroup.Append>
                   </InputGroup>
-                  <Button variant="info">Add to Cart</Button>
+                  <Button
+                    variant="info"
+                    onClick={() => {
+                      console.log(counter);
+                    }}
+                  >
+                    Add to Cart
+                  </Button>
                 </Card.Body>
               </Card>
             </Row>

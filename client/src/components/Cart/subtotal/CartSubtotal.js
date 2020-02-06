@@ -32,7 +32,13 @@ export default function() {
           <Col className="font mb-3">Total</Col>
           <Col>$761.50</Col>
         </Row>
-        <Button className="centerButton" variant="primary">
+        <Button
+          className="centerButton"
+          variant="primary"
+          onClick={() => {
+            console.log("What up");
+          }}
+        >
           Proceed to Checkout
         </Button>{" "}
       </Container>

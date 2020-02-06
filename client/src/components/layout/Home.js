@@ -23,8 +23,6 @@ export default function() {
       <HeroBanner className="hero" spacing="base" />
       <CategoryBar />
       <hr />
-      <SearchComp />
-      <hr />
       <ProductGrid className="grid" spacing="base" />
       <hr />
       <Pages />
