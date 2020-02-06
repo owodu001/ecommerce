@@ -19,7 +19,7 @@ export default function PayButton() {
       }}
       options={{
         // The client ID needs to be the business ID from PayPal
-        // This is needed to mark sure the business gets the correct amount
+        // This is needed to make sure the business gets the correct amount
         clientId: "AYNnwwpMGdWg6a4I_1BIF5AVtfFaOKbit8A2_7AvyR4zR6UPP5Z2ccMG-jShAlBvdVYcHmlffEjPKtTN"
       }}
     />
