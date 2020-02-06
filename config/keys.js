@@ -1,5 +1,5 @@
 module.exports = {
-  mongoURI: process.env.MONGODB_URI || "mongodb://localhost/tictacdb",
+  mongoURI: process.env.MONGODB_URI || "mongodb://localhost/our_store",
   secretOrKey: "secret"
 };
 
