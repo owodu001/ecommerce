@@ -1,3 +1,7 @@
+
+/* These are the footer styles - here is where you change 
+colors for the background, fonts, and font colors.  */
+
 .footerContainer{
     background-color: #666666;
     width: 100%;
@@ -9,6 +13,10 @@
 .contact{
 align-content: left;
 }
+.contact:hover{
+    color: salmon;
+    align-content: left;
+    }
 
 .footlogo{
 margin: 0px, auto;

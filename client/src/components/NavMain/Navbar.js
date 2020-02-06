@@ -37,9 +37,11 @@ function NavMain() {
           </Link>
         </div>
         <div>
-          <Link className="navigation" to="/cart">
-            Cart
-          </Link>
+
+          <Link className="navigation" to="/cart">Cart</Link>
+
+      
+
         </div>
       </Nav>
       <Form inline>
