@@ -12,6 +12,11 @@ const productsRT = require("./routes/api/products-routes");
 const port = process.env.PORT || 5000;
 
 const app = express();
+// amira-code
+// import auth route
+// const authRoute= require("./authRoutes/Auth");
+// // Route middelwares
+// app.use("api/user",authRoute);
 
 // Bodyparser middleware
 app.use(
@@ -49,8 +54,10 @@ mongoose
 // // Passport middleware
 // app.use(passport.initialize());
 
-// Passport config
+// // Passport config
 // require("./config/passport")(passport);
+
+
 
 // Routes
 app.get("/api/productsTest", (req, res) => res.json(TestProdList));

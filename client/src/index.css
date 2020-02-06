@@ -12,7 +12,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-/* CSS Sign IN */
+/* CSS for Sign IN and sign Up */
 
 .auth-wrapper {
   display: flex;
@@ -43,10 +43,6 @@ code {
   line-height: 1;
   padding-bottom: 20px;
 }
-
-/* .custom-control-label {
-  font-weight: 400;
-} */
 
 .new {
 margin-top:20px;
