@@ -23,6 +23,9 @@ const ProductSchema = new Schema({
         type: String,
         required: true
     }
+    // images: {
+    //   type: [{type: Buffer}]
+    // }
 });
 
 module.exports = Product = mongoose.model("products", ProductSchema);

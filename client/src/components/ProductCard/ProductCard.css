@@ -15,21 +15,28 @@ border: none;
     width: fit-content;
 }
 
+.productPrice {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 5px;
+    width: fit-content;
+    position: relative;
+
+}
+
 .cardRow{
     align-content: center;
 }
 
-.cardOpts{
-    background-color: rgba(250, 128, 114, 0.714);
+.cardButton{
+    background-color: salmon;
+    width: auto;
+    border: none;
+    
 }
 
-.addToCart{
-    width: 150px;
+.cardButton:hover{
     background-color: salmon;
-
-}
-
-.viewDetails{
-    width:150px;
-    background-color: salmon;
+    width: auto;
+    border: none;
+    
 }
