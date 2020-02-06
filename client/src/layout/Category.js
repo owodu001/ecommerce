@@ -2,12 +2,12 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Home.css"
 
-import ProductGrid from "../ProductGrid/ProductGrid";
-import SearchComp from "../Search/SearchComp";
-import CategoryBanner from "../HeroBanner/CategoryBanner"
-import CategoryBar from "../categoryBar/CategoryBar";
-import FootNav from "../Footer/Footer";
-import Pages from "../Pagination/Pagination";
+import ProductGrid from "../components/ProductGrid/ProductGrid";
+import SearchComp from "../components/Search/SearchComp";
+import CategoryBanner from "../components/HeroBanner/CategoryBanner"
+import CategoryBar from "../components/categoryBar/CategoryBar";
+import FootNav from "../components/Footer/Footer";
+import Pages from "../components/Pagination/Pagination";
 // import { Link } from 'react-router-dom';
 
 //make collection page populate with selected collection items

@@ -3,13 +3,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Home.css";
 import axios from "axios";
 
-import HeroBanner from "../HeroBanner/HeroBanner";
-import ProductGrid from "../ProductGrid/ProductGrid";
-import SearchComp from "../Search/SearchComp";
+import HeroBanner from "../components/HeroBanner/HeroBanner";
+import ProductGrid from "../components/ProductGrid/ProductGrid";
+import SearchComp from "../components/Search/SearchComp";
 
-import CategoryBar from "../categoryBar/CategoryBar";
-import FootNav from "../Footer/Footer";
-import Pages from "../Pagination/Pagination";
+import CategoryBar from "../components/categoryBar/CategoryBar";
+import FootNav from "../components/Footer/Footer";
+import Pages from "../components/Pagination/Pagination";
 
 
 
