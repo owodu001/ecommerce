@@ -9,7 +9,7 @@ import "./ProductGrid.css";
 const ProductGrid = () => {
   const [product, setProduct] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:5000/api/products").then(res => {
+    axios.get("http://localhost:5000/api/productsTest").then(res => {
       setProduct(res.data);
     });
   }, []);
