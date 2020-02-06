@@ -62,7 +62,7 @@ export default function() {
                       <InputGroup.Append>
                         <Button
                           variant="info"
-                          onClick={() => console.log("why tho")}
+                          onClick={() => setCounter(parseInt(counter) + 1)}
                         >
                           +
                         </Button>{" "}

@@ -56,14 +56,15 @@ export default function() {
                     </InputGroup.Prepend>
                     <FormControl
                       type="text"
-                      placeholder={counter}
+                      value={counter}
                       aria-label="Input group example"
                       aria-describedby="btnGroupAddon"
+                      onChange={({ target }) => setCounter(target.value)}
                     />
                     <InputGroup.Append>
                       <Button
                         variant="info"
-                        onClick={() => setCounter(counter + 1)}
+                        onClick={() => setCounter(parseInt(counter) + 1)}
                       >
                         +
                       </Button>{" "}
