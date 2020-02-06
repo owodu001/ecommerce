@@ -14,6 +14,8 @@ import SignUp from "./layout/SignUp";
 import admin from "./layout/admin";
 import Cart from "./layout/Cart";
 import Category from "./layout/Category";
+import CheckoutOpt from "./components/CheckoutOpt/CheckoutOpt.js";
+import CartProvider from "./state/cartContext";
 
 import { useState } from "react";
 
@@ -26,6 +28,7 @@ export default function () {
   }
   return (
     <AuthContext.Provider value={false}>
+      <CartProvider>
     <Router>
       <div>
         <NavMain />
@@ -36,10 +39,12 @@ export default function () {
            <Route path="/sign-up" component={SignUp} /> 
           <Route path="/cart" component={Cart} />
           <Route path="/category" component={Category} />
+          <Route path="/checkout-opt" component={CheckoutOpt}/>
           <PrivateRoute path="/admin" component={admin} />
         </Switch>
       </div>
     </Router>
+    </CartProvider>
     </AuthContext.Provider>
 
   );
