@@ -12,7 +12,7 @@ export default function SignIn (props) {
   const [password, setPassword] = useState("");
   const { setAuthTokens } = useAuth();
     function postLogin() {
-    axios.post("/api/users/SignIn", {
+    axios.post("/api/users/sign-in", {
       userName,
       password
     }).then(result => {
@@ -26,12 +26,9 @@ export default function SignIn (props) {
       setIsError(true);
     });
   }
-
-
   if (isLoggedIn) {
     return <Redirect to="/" />;
   }
-
         return (
             <div className="auth-wrapper">
         <div className="auth-inner">
