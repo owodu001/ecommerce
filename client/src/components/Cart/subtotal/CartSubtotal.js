@@ -11,7 +11,7 @@ export default function() {
         <Row className="centerThings font mb-3">Cart Totals</Row>
         <Row className="font mb-3">
           <Col>Subtotal</Col>
-          <Col>$760</Col>
+          <Col>Cart Total</Col>
         </Row>
         <Row>
           <Col className="font">Shipping</Col>
@@ -26,20 +26,21 @@ export default function() {
         </Row>
         <Row>
           <Col className="font mb-3">Total</Col>
-          <Col>$761.50</Col>
+          <Col>Cart Total</Col>
         </Row>
         <Button
           className="centerButton"
           variant="primary"
+          to="/checkout-opt"
           onClick={() => {
             console.log("What up");
           }}
         >
           Proceed to Checkout
         </Button>{" "}
-        <Button>
-          <PayButton />
-        </Button>
+        {/* <Button> */}
+        <PayButton />
+        {/* </Button> */}
       </Container>
     </>
   );

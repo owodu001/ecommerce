@@ -4,7 +4,9 @@ import axios from "axios";
 import Card from "react-bootstrap/card";
 import { Row, Nav, Container, Col, Button } from "react-bootstrap";
 import "./ProductCard.css";
+
 import { Link } from "react-router-dom";
+import AddToCart from "../AddToCart/AddToCart";
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { findIconDefinition } from '@fortawesome/fontawesome-svg-core';
@@ -22,7 +24,8 @@ const ProductCard = ({ p }) => {
         <Card.Body className="cardOpts">
           <Row className="cardRow">
             <Col>
-              <Button className="cardButton">Add to Cart</Button>
+              <AddToCart item={p} />
+              {/* <Button className="cardButton" >Add to Cart</Button> */}
             </Col>
             <Col>
               {/* <Button className="cardButton" href="/product"> View Details </Button> */}

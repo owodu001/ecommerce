@@ -22,10 +22,10 @@ const ProductSchema = new Schema({
     category: {
         type: String,
         required: true
+    },
+    images: {
+        type: [{ type: Schema.Types.ObjectId, ref: "Image" }]
     }
-    // images: {
-    //   type: [{type: Buffer}]
-    // }
 });
 
 module.exports = Product = mongoose.model("products", ProductSchema);

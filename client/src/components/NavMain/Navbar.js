@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -6,10 +6,12 @@ import FormControl from "react-bootstrap/FormControl";
 import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import {CartContext} from "../../state/cartContext";
 
 import "./Navbar.css";
 
 function NavMain() {
+  const cartContextValue = useContext(CartContext);
   const [value, setValue] = useState("");
   const [view, setView] = useState({});
   const [product, setProduct] = useState([]);
@@ -40,7 +42,7 @@ function NavMain() {
         </div>
         <div>
 
-          <Link className="navigation" to="/cart">Cart</Link>
+  <Link className="navigation" to="/cart">Cart {cartContextValue.cart.length}</Link>
 
       
 
