@@ -9,23 +9,11 @@ import "./ProductGrid.css";
 const ProductGrid = () => {
   const [product, setProduct] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:5000/api/products").then(res => {
+    axios.get("http://localhost:5000/api/productsTest").then(res => {
       setProduct(res.data);
     });
   }, []);
 
-<<<<<<< HEAD
-const ProductGrid = () => (
-  <Container>
-    <Row className="gridRow" >
-      <Col><ProductCard /></Col>
-      <Col><ProductCard /></Col>
-      <Col><ProductCard /></Col>
-      <Col><ProductCard /></Col>
-    </Row>
-  </Container>
-);
-=======
   function filterProducts(item) {
     console.log(item);
     const filteredProduct = product.filter(product =>
@@ -48,6 +36,5 @@ const ProductGrid = () => (
     </Container>
   );
 };
->>>>>>> 9e3b0418674d3326e01b352c7c401c1af1745715
 
 export default ProductGrid;
