@@ -24,6 +24,7 @@ export default function() {
     <>
     <hr/>
       <Container className="detailContainer">
+       
               <Card>
                 <Row>
                   <Col >

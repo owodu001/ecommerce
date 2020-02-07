@@ -15,25 +15,7 @@ import AddToCart from "../AddToCart/AddToCart";
 
 const CartProduct = ({product}) => {
   const [counter, setCounter] = useState(0);
-//
-// export default function Cart() {
-//   const cartContextValue = useContext(CartContext);
-//   return (
-//     <div>
-//       <h3>Cart</h3>
-//       <div>
-//         {cartContextValue.cart.map(i => (
-//           <Item item={i} />
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-      // <div>
-      //   {cartContextValue.cart.map(i => (
-      //     <Item item={i} />
-      //   ))}
-      // </div>
+
   return (
     <>
       <Container>
