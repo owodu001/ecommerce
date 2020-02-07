@@ -14,8 +14,21 @@ const ProductGrid = () => {
       console.log(res.data);
     });
   }, []);
-
+  function sortProducts(item) {
+    console.log(item);
+    const filteredProduct = product.filter(product =>
+      product.title.toLowerCase().includes(item.toLowerCase())
+    );
+    setProduct([...filteredProduct]);
+  }
   function filterProducts(item) {
+    console.log(item);
+    const filteredProduct = product.filter(product =>
+      product.title.toLowerCase().includes(item.toLowerCase())
+    );
+    setProduct([...filteredProduct]);
+  }
+  function searchProducts(item) {
     console.log(item);
     const filteredProduct = product.filter(product =>
       product.title.toLowerCase().includes(item.toLowerCase())
