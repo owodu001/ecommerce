@@ -24,11 +24,6 @@ export default function() {
     <>
     <hr/>
       <Container className="detailContainer">
-        {/* <Row className="mt-5"> */}
-          {/* <Col md={6}>
-            <Image src="http://placekitten.com/400/400" rounded />
-          </Col> */}
-          {/* <Col md={6}> */}
               <Card>
                 <Row>
                   <Col >

@@ -12,9 +12,9 @@ import "./Navbar.css";
 
 function NavMain() {
   const cartContextValue = useContext(CartContext);
-  const [value, setValue] = useState("");
-  const [view, setView] = useState({});
-  const [product, setProduct] = useState([]);
+  // const [value, setValue] = useState("");
+  // const [view, setView] = useState({});
+  // const [product, setProduct] = useState([]);
 
   // useEffect(() => {
   //   axios.get("http://localhost:5000/api/products").then(res => {
