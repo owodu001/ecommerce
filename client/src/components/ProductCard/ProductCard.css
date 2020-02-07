@@ -1,6 +1,7 @@
 .productCard{
  border-radius: 0px;
 border: none;
+
 }
 
 .Card.Title{
@@ -8,25 +9,40 @@ border: none;
     background-color: white;
     height: fit-content;
 }
-
-.productName{
-    background-color: rgba(255, 255, 255, 0.6);
-    padding: 5px;
-    width: fit-content;
+.cardImage{
+    position: relative;
+    border-radius: none;
 }
 
+.productName{
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 5px;
+    width: fit-content; 
+}
+
+/* .productName:hover{
+    background-color: rgba(48, 48, 48, 0.81);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 5px;
+    width: fit-content; 
+} */
+
 .productPrice {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 5px;
     width: fit-content;
-    
+    position: absolute;
+    right: 15px;
+    bottom: 80px;
+    font-size: 22px;
 }   
 
-.cardRow{
+.cardOpts{
     align-content: center;
 }
 
 .cardButton{
+
     background-color: salmon;
     width: auto;
     border: none;
