@@ -10,13 +10,20 @@ const router = express.Router();
 // const validateLoginInput = require("../../validation/login");
 
 // Load Product model
-const dbProduct = require("../../models/Product");
+const Product = require("../../models/Product");
 
-// @route POST api/addProduct
+// @route POST api/products/add
 // @desc Add new product
 // @access Private
 
 router.post("/add", (req, res) => {
+
+    // add images to image collection
+    // might come from req.body.images (buffer)
+    // This will return the image object from db
+
+    // save image(s) id to a variable
+
     // adding product
     const title = req.body.title;
     const description = req.body.description;
@@ -24,14 +31,40 @@ router.post("/add", (req, res) => {
     const quantity = req.body.quantity;
     const category = req.body.category;
 
-    const product = new dbProduct({
+    const product = new Product({
         title,
         description,
         price,
         quantity,
         category
+        // add the images(IDs) variable
     });
-    product.save().then(product => res.json(product)).catch(err => console.log(err));
+    product.save()
+        .then(product => {
+            res.json(product);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+});
+
+router.get("/", (req, res) => {
+    Product.find({})
+        .then(products => {
+            res.json({ products });
+            console.log(" Processing GET: /api/products/");
+        })
+        .catch(err => { console.log("ERROR: ", err) });
+});
+
+// Get a specific product
+router.get("/:id", (req, res) => {
+    Product.findById(req.params.id)
+        .then(product => {
+            res.json({ product });
+            console.log(" Processing GET: /api/:id");
+        })
+        .catch(err => { console.log("ERROR: ", err) });
 });
 
 
