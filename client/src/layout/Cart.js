@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+import React, {useContext, useState, useEffect} from "react";
+=======
 import React, { useContext } from "react";
+>>>>>>> 2285185d7913c755c1c5052dc03949608330e875
 import "bootstrap/dist/css/bootstrap.min.css";
 import CartProduct from "../components/Cart/CartProduct";
 import { Col, Row, Container } from "react-bootstrap";
@@ -30,27 +34,36 @@ import { CartContext } from "../state/cartContext";
 export default function() {
   // removeProduct = id => {
 
-  // }
+  const [total, setTotal] = useState(0)
+
 
   const cartContextValue = useContext(CartContext);
 
   console.log(cartContextValue.cart);
 
+  useEffect(()=>{
+    const totalPrice = cartContextValue.cart.length !== 0 && cartContextValue.cart.reduce((a,b) => (
+      parseFloat(a.price.split("$")[1]) + parseFloat(b.price.split("$")[1])
+      ))
+      setTotal(totalPrice)
+    
+  },[cartContextValue.cart])
+
   return (
     <>
-      <hr />
-      <Container>
-        <Row>
-          <Col>
-            {cartContextValue.cart.map(item => (
-              <CartProduct key={item.id} product={item} />
-            ))}
-          </Col>
-          <Col>
-            <CartSubtotal />
-          </Col>
-        </Row>
-      </Container>
+    <hr/>
+    <Container>
+      <Row>
+        <Col>
+        {cartContextValue.cart.map(item => (
+          <CartProduct key={item.id} product={item}/>))}
+          
+        </Col>
+        <Col>
+          <CartSubtotal cartSubtotal={total} />
+        </Col>
+      </Row>
+    </Container>
     </>
   );
 }
