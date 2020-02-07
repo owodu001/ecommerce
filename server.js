@@ -6,17 +6,14 @@ const TestProdList = require("./models/product-Data");
 
 // const passport = require("passport");
 
-const productsRT = require("./routes/api/products-routes");
+const productsRT = require("./routes/api/product-routes");
+const customersRT = require("./routes/api/customer-routes");
+const ordersRT = require("./routes/api/order-routes");
 // const games = require("./routes/api/games");
 
 const port = process.env.PORT || 5000;
 
 const app = express();
-// amira-code
-// import auth route
-// const authRoute= require("./authRoutes/Auth");
-// // Route middelwares
-// app.use("api/user",authRoute);
 
 // Bodyparser middleware
 app.use(
@@ -26,7 +23,7 @@ app.use(
 );
 app.use(bodyParser.json());
 
-// ALLOW CORS
+// ALLOW CORS to allows access from cross domain to get API info
 const allowCrossDomain = function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
@@ -63,5 +60,8 @@ mongoose
 app.get("/api/productsTest", (req, res) => res.json(TestProdList));
 app.get("/", (req, res) => res.send("server is running"));
 app.use("/api/products", productsRT);
+app.use("/api/customers", customersRT);
+app.use("/api/orders", ordersRT);
+
 
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
