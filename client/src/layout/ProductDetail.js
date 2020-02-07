@@ -20,25 +20,32 @@ import AddToCart from "../components/AddToCart/AddToCart";
 export default function({ p, location }) {
   // const [counter, setCounter] = useState(0);
   // const [value, setValue] = useState("");
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState({});
 
 
-  useEffect(() => {
-    axios.get("http://localhost:5000/api/productsTest").then(res => {
-      setProduct(res.data);
-      // console.log(res.data);
-    });
-  }, []);
-
-
+  // useEffect(() => {
+  //   axios.get("http://localhost:5000/api/productsTest").then(res => {
+  //     setProduct(res.data);
+  //     console.log(res.data);
+  //   });
+  // }, []);
+  
+  
   useEffect(() => {
     const productId = location.search.split("?")[1];
-    axios.get(`/api/productsTest/${productId}`).then(res => console.log(res.data));
-    console.log({productId});
-    // const productImg = location.search.split[2];
-    // const productId = location.search.split[3];
-    // const productId = location.search.split[4];
-    // const productId = location.search.split[5];
+    
+    axios.get(`/api/productsTest/${productId}`).then(res => {
+      // const productImage = res.data.image;
+      // const productTitle = res.data.title;
+      // const productPrice = res.data.price;
+      // const productQuantity = res.data.quantity;
+      // const productCategory = res.data.category;
+      
+      setProduct(res.data);
+      console.log(res.data);
+      
+      
+      });
   }, []);
 
   return (
@@ -47,21 +54,19 @@ export default function({ p, location }) {
         <Row>
               <Card>
                 <Col>
-                <Card.Img variant="top" src="http://placekitten.com/200/200" />
+                <Card.Img variant="top" src={product.image} />
                 </Col>
                 <Col>
                 <Card.Body>
                   <Card.Title>
-                    {/* {productId} */}
+                    {product.title}
                   </Card.Title>
-                  <Card.Title>$250</Card.Title>
+                  <Card.Title>{product.price}</Card.Title>
                   <Card.Text>
-                    BUY THIS DUMB THING
             <Row style={{ fontWeight: "bold" }}>Product Details:</Row>
-            <Row>Category: </Row>
-            <Row>Size: M, L, XL </Row>
-            <Row>Categories: blazers</Row>
-            <Row>Brand: fashion, clothing, men</Row>
+            <Row>Category: {product.category}</Row>
+            <Row>Quantity: {product.quantity}</Row>
+            <Row>Product description of this amazing product that you MUST HAVE IN YOUR LIFE OR ELSE. </Row>
             </Card.Text>
                  <AddToCart/>
                 </Card.Body>

@@ -1,6 +1,7 @@
-import React, { useState} from "react";
+import React, { useState, useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CartProduct.css";
+import { CartContext } from "../../state/cartContext";
 
 import {
   Container,
@@ -13,9 +14,30 @@ import {
 } from "react-bootstrap";
 import AddToCart from "../AddToCart/AddToCart";
 
-const CartProduct = ({product}) => {
+const CartProduct = ({ product }) => {
   const [counter, setCounter] = useState(0);
 
+
+  //
+  // export default function Cart() {
+  const cartContextValue = useContext(CartContext);
+  console.log(cartContextValue);
+  //   return (
+  //     <div>
+  //       <h3>Cart</h3>
+  //       <div>
+  //         {cartContextValue.cart.map(i => (
+  //           <Item item={i} />
+  //         ))}
+  //       </div>
+  //     </div>
+  //   );
+  // }
+  // <div>
+  //   {cartContextValue.cart.map(i => (
+  //     <Item item={i} />
+  //   ))}
+  // </div>
   return (
     <>
       <Container>
@@ -24,11 +46,7 @@ const CartProduct = ({product}) => {
             <Card className="cartCard">
               <Row>
                 <Col>
-                
-                  <Card.Img
-                    variant="left"
-                    src={product.image}
-                  />
+                  <Card.Img variant="left" src={product.image} />
                 </Col>
                 <Col>
                   <Card.Body>
@@ -37,7 +55,16 @@ const CartProduct = ({product}) => {
                     <Button
                       variant="danger"
                       onClick={() => {
-                        console.log("What up");
+                        const cart = cartContextValue.cart.filter(
+                          p => product.id !== p.id
+                        );
+
+                        // stringify (javascript to string)
+                        localStorage.setItem(
+                          "shoppingcart",
+                          JSON.stringify(cart)
+                        );
+                        cartContextValue.setCart(cart);
                       }}
                     >
                       Remove
@@ -51,6 +78,6 @@ const CartProduct = ({product}) => {
       </Container>
     </>
   );
-}
+};
 
 export default CartProduct;
