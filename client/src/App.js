@@ -28,6 +28,7 @@ import { useState } from "react";
   };
   return (
     <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
+      <CartProvider>
     <Router>
       <div>
         <NavMain />
@@ -42,6 +43,7 @@ import { useState } from "react";
         </Switch>
       </div>
     </Router>
+    </CartProvider>
     </AuthContext.Provider>
   );
 }
