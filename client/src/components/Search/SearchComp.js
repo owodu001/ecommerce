@@ -10,7 +10,7 @@ import {
 } from "react-bootstrap";
 import "./SearchComp.css";
 
-const SearchComp = ({ filterProducts }) => {
+const SearchComp = ({ searchProducts }) => {
   const [value, setValue] = useState("test");
   return (
     <Container className="SearchComp">
@@ -60,7 +60,7 @@ const SearchComp = ({ filterProducts }) => {
                 variant="outline-secondary"
                 onClick={() => {
                   console.log(value);
-                  filterProducts(value);
+                  searchProducts(value);
                 }}
               >
                 Search Products

@@ -36,12 +36,5 @@ export default function () {
 
     );
 
-// export default function() {
-//   useEffect(() => {
-//     axios
-//       .get("http://localhost:5000/api/products")
-//       .then(res => console.log(res.data));
-//   }, []);
-
  
 }

@@ -4,9 +4,11 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const TestProdList = require("./models/product-Data");
 
-const passport = require("passport");
-const users = require("./routes/api/users");
-const productsRT = require("./routes/api/products-routes");
+// const passport = require("passport");
+
+const productsRT = require("./routes/api/product-routes");
+const customersRT = require("./routes/api/customer-routes");
+const ordersRT = require("./routes/api/order-routes");
 // const games = require("./routes/api/games");
 
 const port = process.env.PORT || 5000;
@@ -35,7 +37,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // DB Config
- const db = require("./config/keys").mongoURI;
+const db = require("./config/keys").mongoURI;
 
 // Connect to MongoDB
 mongoose
@@ -43,16 +45,25 @@ mongoose
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
 
-// Passport middleware
-app.use(passport.initialize());
+// // Passport middleware
+// app.use(passport.initialize());
 
-// Passport config
-require("./config/passport")(passport);
+// // Passport config
+// require("./config/passport")(passport);
 
 // Routes
-app.use("/api/users",users);
- app.get("/api/productsTest", (req, res) => res.json(TestProdList));
-// app.get("/", (req, res) => res.send("server is running"));
+app.get("/api/productsTest/:id", (req, res) => {
+  for (const p of TestProdList) {
+    if (p.id === req.params.id) {
+      return res.json(p);
+    }
+  }
+  res.json(TestProdList);
+});
+
+
+app.get("/api/productsTest", (req, res) => res.json(TestProdList));
+app.get("/", (req, res) => res.send("server is running"));
 app.use("/api/products", productsRT);
 // app.get("/api/product/:id", (req, res) => {
 //   console.log("id-----", req.params.id);
