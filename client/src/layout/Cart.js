@@ -8,10 +8,10 @@ import { CartContext } from "../state/cartContext";
 
 // THIS IS WHERE THE FUNCTIONS GO TO UPDATE TOTAL
 
-// function addToCart (){
-//   const cartProdcuts = [];
+// // function addToCart (){
+// //   const cartProdcuts = [];
 
-//   return cartProducts.map(r)
+// //   return cartProducts.map(r)
 
 // }
 

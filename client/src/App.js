@@ -19,7 +19,7 @@ import CartProvider from "./state/cartContext";
 
 import { useState } from "react";
 
-export default function() {
+ function App(props) {
   const [authTokens, setAuthTokens] = useState();
 
   const setTokens = data => {
@@ -27,24 +27,24 @@ export default function() {
     setAuthTokens(data);
   };
   return (
-    <AuthContext.Provider value={false}>
+    <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
       <CartProvider>
-        <Router>
-          <div>
-            <NavMain />
-            <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/product" component={ProductDetail} />
-              <Route path="/sign-in" component={SignIn} />
-              <Route path="/sign-up" component={SignUp} />
-              <Route path="/cart" component={Cart} />
-              <Route path="/category" component={Category} />
-              <Route path="/checkout-opt" component={CheckoutOpt} />
-              <PrivateRoute path="/admin" component={admin} />
-            </Switch>
-          </div>
-        </Router>
-      </CartProvider>
+    <Router>
+      <div>
+        <NavMain />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/product" component={ProductDetail} />
+           <Route path="/sign-in" component={SignIn} /> 
+           <Route path="/sign-up" component={SignUp} /> 
+          <Route path="/cart" component={Cart} />
+          <Route path="/category" component={Category} />
+          <PrivateRoute path="/admin" component={admin} />
+        </Switch>
+      </div>
+    </Router>
+    </CartProvider>
     </AuthContext.Provider>
   );
 }
+export default App;

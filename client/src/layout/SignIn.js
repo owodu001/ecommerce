@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React, { useState,useEffect  } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from 'axios';
 import { useAuth } from "../context/auth";
+import {Error } from "../components/authform/authform";
 
-
-export default function SignIn (props) {
+function SignIn ({ history }) {
   
-  const [isLoggedIn, setLoggedIn] = useState(false);
+ const [isLoggedIn, setLoggedIn] = useState(false);
  const [isError, setIsError] = useState(false);
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const { setAuthTokens } = useAuth();
-    function postLogin() {
-    axios.post("/api/users/SignIn", {
+  function postLogin() {
+    axios.post("/api/users/sign-in", {
       userName,
       password
     }).then(result => {
@@ -26,12 +26,13 @@ export default function SignIn (props) {
       setIsError(true);
     });
   }
-
-
-  if (isLoggedIn) {
-    return <Redirect to="/" />;
-  }
-
+ 
+  useEffect(() => {
+    // If logged in and user navigates to Login page, should redirect them to dashboard
+    if (isLoggedIn) {
+      history.push("/home");
+    }
+  }, [isLoggedIn, history]);
         return (
             <div className="auth-wrapper">
         <div className="auth-inner">
@@ -61,8 +62,10 @@ export default function SignIn (props) {
               Are you New ?
             </p>
             <a href="/sign-up"><button type="submit" className="btn btn-secondary btn-block">Create a new account</button></a> 
+            { isError &&<Error>The username or password provided were incorrect!</Error> }
           </div>
         </div>
         );
     
 }
+export default  SignIn;
