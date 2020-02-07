@@ -21,8 +21,8 @@ app.use(
 );
 app.use(bodyParser.json());
 
-// ALLOW CORS
-const allowCrossDomain = function (req, res, next) {
+// ALLOW CORS to allows access from cross domain to get API info
+const allowCrossDomain = function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
   res.header("Access-Control-Allow-Headers", "Content-Type");
@@ -39,10 +39,7 @@ if (process.env.NODE_ENV === "production") {
 
 // Connect to MongoDB
 mongoose
-  .connect(
-    db,
-    { useNewUrlParser: true }
-  )
+  .connect(db, { useNewUrlParser: true })
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
 
@@ -57,5 +54,15 @@ app.use("/api/users",users);
  app.get("/api/productsTest", (req, res) => res.json(TestProdList));
 // app.get("/", (req, res) => res.send("server is running"));
 app.use("/api/products", productsRT);
+// app.get("/api/product/:id", (req, res) => {
+//   console.log("id-----", req.params.id);
+//   TestProdList.find({
+//     id: req.params.id
+//   }).then(product => {
+//     res.json({ product });
+//   });
+// });
+app.use("/api/customers", customersRT);
+app.use("/api/orders", ordersRT);
 
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));

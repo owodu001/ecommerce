@@ -5,8 +5,8 @@ import Card from "react-bootstrap/card";
 import { Row, Nav, Container, Col, Button } from "react-bootstrap";
 import "./ProductCard.css";
 
-
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import AddToCart from "../AddToCart/AddToCart";
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { findIconDefinition } from '@fortawesome/fontawesome-svg-core';
@@ -17,18 +17,21 @@ const ProductCard = ({ p }) => {
         <Card.ImgOverlay>
           <Card.Title className="productName">{p.title}</Card.Title>
         </Card.ImgOverlay>
-        <Card.ImgOverlay>
+        <Card.ImgOverlay variant="bottom">
           <Card.Title className="productPrice">{p.price}</Card.Title>
         </Card.ImgOverlay>
-        <Card.Img variant="top" src={p.image} />
+        <Card.Img className="cardImage" variant="top" src={p.image} />
         <Card.Body className="cardOpts">
           <Row className="cardRow">
-
             <Col>
-              <Button className="cardButton" >Add to Cart</Button>
+              <AddToCart item={p} />
+              {/* <Button className="cardButton" >Add to Cart</Button> */}
             </Col>
             <Col>
-              <Button className="cardButton" href="/product"> View Details </Button>
+              {/* <Button className="cardButton" href="/product"> View Details </Button> */}
+              <Link className="cardButton" to={`/product?${p.id}`}>
+                View Details
+              </Link>
             </Col>
           </Row>
         </Card.Body>

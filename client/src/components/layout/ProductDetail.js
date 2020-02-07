@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Card,
   Button,
@@ -11,35 +11,40 @@ import {
   Tab,
   Tabs
 } from "react-bootstrap";
+import axios from "axios";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./ProductDetail.css";
-import AddToCart from "../components/AddToCart/AddToCart";
 
-export default function() {
+export default function({ p, location }) {
   const [counter, setCounter] = useState(0);
   const [value, setValue] = useState("");
+  const [product, setProduct] = useState([{}]);
+
+  //   setProduct to res.data
+  //  display {} dynamically in view
+
+  useEffect(() => {
+    const productId = location.search.split("?")[1];
+    axios.get(`/api/product/${productId}`).then(res => console.log(res.data));
+  }, []);
 
   return (
     <>
-    <hr/>
-      <Container className="detailContainer">
-        {/* <Row className="mt-5"> */}
+      {" "}
+      <Container>
+        <Row className="mt-5">
           {/* <Col md={6}>
             <Image src="http://placekitten.com/400/400" rounded />
           </Col> */}
-          {/* <Col md={6}> */}
+          <Col md={6}>
+            <Row>
               <Card>
-                <Row>
-                  <Col >
                 <Card.Img variant="top" src="http://placekitten.com/200/200" />
-                </Col>
-                <Col className="noPad">
                 <Card.Body>
                   <Card.Title>
                     WD·NY Black – Men's Palm Burgundy Jacket
                   </Card.Title>
-                  <Card.Title>$760</Card.Title>
+                  <Card.Title>$250</Card.Title>
                   <Card.Text>
                     Bring some funky nostalgia to your next event — and every
                     one after — with the Denim Blazer WD·NY Black – Men's Palm
@@ -47,13 +52,6 @@ export default function() {
                     some fun style to your dressy look. Pair it with a floral
                     button-down shirt and dress pants for the perfect mix of
                     formal and unique.
-                  </Card.Text>
-                  <Card.Text>
-                    <Row style={{ fontWeight: "bold" }}>Product Details:</Row>
-                    <Row>SKU: 9624</Row>
-                    <Row>Size: M, L, XL </Row>
-                    <Row>Categories: blazers</Row>
-                    <Row>Brand: fashion, clothing, men</Row>
                   </Card.Text>
                   <InputGroup
                     className="mb-3"
@@ -83,31 +81,40 @@ export default function() {
                       </Button>{" "}
                     </InputGroup.Append>
                   </InputGroup>
-                  <AddToCart/>
+                  <Button
+                    variant="info"
+                    onClick={() => {
+                      console.log(counter);
+                    }}
+                  >
+                    Add to Cart
+                  </Button>
                 </Card.Body>
-                </Col>
-              </Row>
               </Card>
-            </Container>
-          <hr></hr>
-        <Container className="tabsContainer">
+            </Row>
+            <Row style={{ fontWeight: "bold" }}>Product Details:</Row>
+            <Row>SKU: 9624</Row>
+            <Row>Size: M, L, XL </Row>
+            <Row>Categories: blazers</Row>
+            <Row>Brand: fashion, clothing, men</Row>
+          </Col>
+        </Row>
         <Row>
           <Col>
-            <Tabs className="tabtop"defaultActiveKey="profile" id="uncontrolled-tab-example">
-              <Tab  className="tab" eventKey="description" title="Description">
-                <p className="tabText" >Product info!</p>
+            <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+              <Tab eventKey="description" title="Description">
+                <p>Product info!</p>
               </Tab>
-              <Tab className="tab" eventKey="review" title="Reviews">
-                <p className="tabText">Coming Soon!</p>
+              <Tab eventKey="review" title="Reviews">
+                <p>Coming Soon!</p>
               </Tab>
-              <Tab className="tab" eventKey="custom" title="Custom Tab">
-                <p className="tabText">Custom Detail!</p>
+              <Tab eventKey="custom" title="Custom Tab">
+                <p>Custom Detail!</p>
               </Tab>
             </Tabs>
           </Col>
         </Row>
       </Container>
-      <hr></hr>
     </>
   );
 }

@@ -2,28 +2,30 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-import { BrowserRouter as Router, Route,Link, Switch } from "react-router-dom";
-import PrivateRoute from './PrivateRoute';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import PrivateRoute from "./PrivateRoute";
 import { AuthContext } from "./context/auth";
 // Import components
 import NavMain from "./components/NavMain/Navbar";
 import Home from "./layout/Home";
-import ProductDetail from "./layout/ProductDetail";
 import SignIn from "./layout/SignIn";
 import SignUp from "./layout/SignUp";
 import admin from "./layout/admin";
 import Cart from "./layout/Cart";
 import Category from "./layout/Category";
+import ProductDetail from "./components/layout/ProductDetail";
+import CheckoutOpt from "./components/CheckoutOpt/CheckoutOpt.js";
+import CartProvider from "./state/cartContext";
 
 import { useState } from "react";
 
  function App(props) {
   const [authTokens, setAuthTokens] = useState();
-  
-  const setTokens = (data) => {
+
+  const setTokens = data => {
     localStorage.setItem("tokens", JSON.stringify(data));
     setAuthTokens(data);
-  }
+  };
   return (
     <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
     <Router>
@@ -41,7 +43,6 @@ import { useState } from "react";
       </div>
     </Router>
     </AuthContext.Provider>
-
   );
 }
 export default App;
