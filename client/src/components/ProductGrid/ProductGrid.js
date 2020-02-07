@@ -11,6 +11,7 @@ const ProductGrid = () => {
   useEffect(() => {
     axios.get("http://localhost:5000/api/productsTest").then(res => {
       setProduct(res.data);
+      console.log(res.data);
     });
   }, []);
 
