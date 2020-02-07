@@ -13,6 +13,8 @@ import {
 } from "react-bootstrap";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./ProductDetail.css";
+import AddToCart from "../components/AddToCart/AddToCart";
 
 export default function() {
   const [counter, setCounter] = useState(0);
@@ -21,7 +23,7 @@ export default function() {
   return (
     <>
     <hr/>
-      <Container>
+      <Container className="detailContainer">
         {/* <Row className="mt-5"> */}
           {/* <Col md={6}>
             <Image src="http://placekitten.com/400/400" rounded />
@@ -29,10 +31,10 @@ export default function() {
           {/* <Col md={6}> */}
               <Card>
                 <Row>
-                  <Col>
+                  <Col >
                 <Card.Img variant="top" src="http://placekitten.com/200/200" />
                 </Col>
-                <Col>
+                <Col className="noPad">
                 <Card.Body>
                   <Card.Title>
                     WD·NY Black – Men's Palm Burgundy Jacket
@@ -81,31 +83,24 @@ export default function() {
                       </Button>{" "}
                     </InputGroup.Append>
                   </InputGroup>
-                  <Button
-                    variant="info"
-                    onClick={() => {
-                      console.log(counter);
-                    }}
-                  >
-                    Add to Cart
-                  </Button>
+                  <AddToCart/>
                 </Card.Body>
                 </Col>
               </Row>
               </Card>
             </Container>
           <hr></hr>
-        <Container>
+        <Container className="tabsContainer">
         <Row>
           <Col>
-            <Tabs className="tabContainer" defaultActiveKey="profile" id="uncontrolled-tab-example">
-              <Tab  eventKey="description" title="Description">
+            <Tabs className="tabtop"defaultActiveKey="profile" id="uncontrolled-tab-example">
+              <Tab  className="tab" eventKey="description" title="Description">
                 <p className="tabText" >Product info!</p>
               </Tab>
-              <Tab eventKey="review" title="Reviews">
+              <Tab className="tab" eventKey="review" title="Reviews">
                 <p className="tabText">Coming Soon!</p>
               </Tab>
-              <Tab eventKey="custom" title="Custom Tab">
+              <Tab className="tab" eventKey="custom" title="Custom Tab">
                 <p className="tabText">Custom Detail!</p>
               </Tab>
             </Tabs>
