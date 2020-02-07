@@ -38,15 +38,20 @@ import { CartContext } from "../state/cartContext";
 // calculateTotal
 
 export default function() {
-  const cartContextValue = useContext (CartContext);
+
+
+  const cartContextValue = useContext(CartContext)
+
+  console.log(cartContextValue.cart)
+
   return (
     <>
     <hr/>
     <Container>
       <Row>
         <Col>
-        {cartContextValue.cart.map(i => (
-          <CartProduct item={i} />))}
+        {cartContextValue.cart.map(item => (
+          <CartProduct key={item.id} product={item}/>))}
           
         </Col>
         <Col>

@@ -1,0 +1,26 @@
+.detailContainer{
+    box-shadow: 5px 5px 10px -6px rgba(0,0,0,1);
+    
+
+
+}
+.noPad{
+    padding: 0px, 0px !important;
+}
+.tabContainer{
+    height: fit-content;
+    color: salmon;
+}
+
+.tabText{
+padding: 25px;
+
+}
+.tabtop{
+    box-shadow: 5px 5px 10px -6px rgba(0,0,0,1);
+
+}
+.tab{
+    background-color: rgb(240, 240, 240);
+    box-shadow: 5px 5px 10px -6px rgba(0,0,0,1);
+}

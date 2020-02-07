@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import Navbar from "react-bootstrap/Navbar";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import FormControl from "react-bootstrap/FormControl";
+// import Button from "react-bootstrap/Button";
+// import Form from "react-bootstrap/Form";
+// import FormControl from "react-bootstrap/FormControl";
 import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -48,23 +48,6 @@ function NavMain() {
 
         </div>
       </Nav>
-      {/* <Form inline>
-        <FormControl
-          type="text"
-          placeholder="Search"
-          className="mr-sm-2"
-          value={value}
-          onChange={({ target }) => setValue(target.value)}
-        />
-        <Button
-          variant="outline-light"
-          onClick={() => {
-            console.log(value);
-          }}
-        >
-          Search
-        </Button>
-      </Form> */}
     </Navbar>
   );
 }
