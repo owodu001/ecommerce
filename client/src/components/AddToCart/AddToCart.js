@@ -28,6 +28,14 @@ export default function AddToCart ({ item }) {
       </Overlay> */}
     
        <Button onClick={()=> {
+            console.log("add to cart",item)
+            const shoppingCartLs = localStorage.getItem('shoppingcart') || "[]"
+            // parse (string to javascript)
+            const shoppingCart = JSON.parse(shoppingCartLs)
+            shoppingCart.push(item)
+            console.log(shoppingCart)
+            // stringify (javascript to string)
+            localStorage.setItem('shoppingcart', JSON.stringify(shoppingCart));
            cartContextValue.setCart([...cartContextValue.cart, item]);
        }} >
            Add to Cart
