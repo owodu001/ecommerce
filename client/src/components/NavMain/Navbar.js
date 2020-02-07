@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import {CartContext} from "../../state/cartContext";
 
+
 import "./Navbar.css";
 
 function NavMain() {
