@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route,Link, Switch } from "react-router-dom";
 import PrivateRoute from './PrivateRoute';
 import { AuthContext } from "./context/auth";
 // Import components
@@ -17,7 +17,7 @@ import Category from "./layout/Category";
 
 import { useState } from "react";
 
-export default function () {
+ function App(props) {
   const [authTokens, setAuthTokens] = useState();
   
   const setTokens = (data) => {
@@ -25,7 +25,7 @@ export default function () {
     setAuthTokens(data);
   }
   return (
-    <AuthContext.Provider value={false}>
+    <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
     <Router>
       <div>
         <NavMain />
@@ -44,3 +44,4 @@ export default function () {
 
   );
 }
+export default App;
