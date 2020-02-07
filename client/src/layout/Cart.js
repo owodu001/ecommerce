@@ -34,12 +34,8 @@ import { CartContext } from "../state/cartContext";
 export default function() {
   // removeProduct = id => {
 
-<<<<<<< HEAD
   const [total, setTotal] = useState(0)
 
-=======
-  // }
->>>>>>> 2285185d7913c755c1c5052dc03949608330e875
 
   const cartContextValue = useContext(CartContext);
 
