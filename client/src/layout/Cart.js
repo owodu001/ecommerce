@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, {useContext, useState, useEffect} from "react";
+=======
+import React, { useContext } from "react";
+>>>>>>> 2285185d7913c755c1c5052dc03949608330e875
 import "bootstrap/dist/css/bootstrap.min.css";
 import CartProduct from "../components/Cart/CartProduct";
 import { Col, Row, Container } from "react-bootstrap";
@@ -6,45 +10,40 @@ import CartSubtotal from "../components/Cart/subtotal/CartSubtotal";
 import { CartContext } from "../state/cartContext";
 // import ProductCard from "../components/ProductCard/ProductCard";
 
-
 // THIS IS WHERE THE FUNCTIONS GO TO UPDATE TOTAL
 
-// function addToCart (){
-//   const cartProdcuts = [];
+// // function addToCart (){
+// //   const cartProdcuts = [];
 
-//   return cartProducts.map(r)
-
-
+// //   return cartProducts.map(r)
 
 // }
 
-
-
 // THIS WILL ADD ANOTHER ONE OF THE PRICE VALUE TO THE TOTAL
-// plusButton 
+// plusButton
 // //if statements
-
 
 // // THIS WILL SUBTRACT ANOTHER ONE OF THE PRICE VALUE TO THE TOTAL
 // minusButton
 
-
 // // THIS WILL REMOVE ALL INSTANCES OF THIS PRODUCT FROM THE TOTAL
 // removeButton
-
-
-
 
 // calculateTotal
 
 export default function() {
+  // removeProduct = id => {
 
+<<<<<<< HEAD
   const [total, setTotal] = useState(0)
 
+=======
+  // }
+>>>>>>> 2285185d7913c755c1c5052dc03949608330e875
 
-  const cartContextValue = useContext(CartContext)
+  const cartContextValue = useContext(CartContext);
 
-  console.log(cartContextValue.cart)
+  console.log(cartContextValue.cart);
 
   useEffect(()=>{
     const totalPrice = cartContextValue.cart.length !== 0 && cartContextValue.cart.reduce((a,b) => (
