@@ -1,0 +1,15 @@
+.AddToCart{
+    background-color: #ebebeb;
+    color: black;
+    border: none;
+    border-radius: 0px;
+    margin: 0px, 0px;
+    padding: 10px, 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.AddToCart:hover{
+    background-color: #c9c9c9;
+    color: black;
+}

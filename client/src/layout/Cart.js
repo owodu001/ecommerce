@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import React, {useContext, useState, useEffect} from "react";
-=======
-import React, { useContext } from "react";
->>>>>>> 2285185d7913c755c1c5052dc03949608330e875
 import "bootstrap/dist/css/bootstrap.min.css";
 import CartProduct from "../components/Cart/CartProduct";
 import { Col, Row, Container } from "react-bootstrap";

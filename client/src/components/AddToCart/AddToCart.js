@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "react-bootstrap";
 import { CartContext } from "../../state/cartContext";
 // import CartProduct from "../Cart/CartProduct";
+import "./AddToCart.css";
 
 export default function AddToCart({ item }) {
   const [show, setShow] = useState(false);
@@ -23,7 +24,8 @@ export default function AddToCart({ item }) {
         )}
       </Overlay> */}
 
-      <Button
+      <Button className="
+      AddToCart" 
         onClick={() => {
           const cart = [...cartContextValue.cart, item];
 
@@ -32,7 +34,7 @@ export default function AddToCart({ item }) {
           cartContextValue.setCart(cart);
         }}
       >
-        Add to Cart
+        + Add to Cart
       </Button>
     </>
   );
