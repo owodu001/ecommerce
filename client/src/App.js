@@ -16,12 +16,13 @@ import Cart from "./layout/Cart";
 import Category from "./layout/Category";
 import CheckoutOpt from "./components/CheckoutOpt/CheckoutOpt.js";
 import CartProvider from "./state/cartContext";
+import AddProduct from "./components/AddProduct/AddProduct";
 
 import { useState } from "react";
 
 export default function () {
   const [authTokens, setAuthTokens] = useState();
-  
+
   const setTokens = (data) => {
     localStorage.setItem("tokens", JSON.stringify(data));
     setAuthTokens(data);
@@ -29,22 +30,22 @@ export default function () {
   return (
     <AuthContext.Provider value={false}>
       <CartProvider>
-    <Router>
-      <div>
-        <NavMain />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/product" component={ProductDetail} />
-           <Route path="/sign-in" component={SignIn} /> 
-           <Route path="/sign-up" component={SignUp} /> 
-          <Route path="/cart" component={Cart} />
-          <Route path="/category" component={Category} />
-          <Route path="/checkout-opt" component={CheckoutOpt}/>
-          <PrivateRoute path="/admin" component={admin} />
-        </Switch>
-      </div>
-    </Router>
-    </CartProvider>
+        <Router>
+          <div>
+            <NavMain />
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/product" component={ProductDetail} />
+              <Route path="/sign-in" component={SignIn} />
+              <Route path="/sign-up" component={SignUp} />
+              <Route path="/cart" component={Cart} />
+              <Route path="/category" component={Category} />
+              <Route path="/checkout-opt" component={CheckoutOpt} />
+              <PrivateRoute path="/admin" component={admin} />
+            </Switch>
+          </div>
+        </Router>
+      </CartProvider>
     </AuthContext.Provider>
 
   );

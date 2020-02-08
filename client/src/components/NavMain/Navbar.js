@@ -6,7 +6,7 @@ import FormControl from "react-bootstrap/FormControl";
 import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import {CartContext} from "../../state/cartContext";
+import { CartContext } from "../../state/cartContext";
 
 import "./Navbar.css";
 
@@ -27,7 +27,7 @@ function NavMain() {
     // {product.map(p => ())}
     <Navbar className="mainNav" bg="#575151" variant="dark">
       <Navbar.Brand>
-      <Link className="navigation" to="/">Our Store</Link>
+        <Link className="navigation" to="/">Our Store</Link>
       </Navbar.Brand>
       <Nav className="mr-auto">
         <div>
@@ -42,9 +42,9 @@ function NavMain() {
         </div>
         <div>
 
-  <Link className="navigation" to="/cart">Cart {cartContextValue.cart.length}</Link>
+          <Link className="navigation" to="/cart">Cart {cartContextValue.cart.length}</Link>
 
-      
+
 
         </div>
       </Nav>

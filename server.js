@@ -58,6 +58,14 @@ mongoose
 
 // Routes
 app.get("/api/productsTest", (req, res) => res.json(TestProdList));
+app.get("/api/productsTest/:id", (req, res) => {
+  for (const p of TestProdList) {
+    if (p.id === req.params.id) {
+      return res.json(p);
+    }
+  }
+  res.json(TestProdList);
+});
 app.get("/", (req, res) => res.send("server is running"));
 app.use("/api/products", productsRT);
 app.use("/api/customers", customersRT);

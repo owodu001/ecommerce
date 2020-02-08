@@ -1,16 +1,16 @@
 const express = require("express");
 const router = express.Router();
-// const bcrypt = require("bcryptjs");
-// const jwt = require("jsonwebtoken");
-// const keys = require("../../config/keys");
-// const passport = require("passport");
 
-// Load input validation
-// const validateRegisterInput = require("../../validation/register");
-// const validateLoginInput = require("../../validation/login");
-
-// Load Product model
+// Load Product & image model
+const Upload = require("../../models/Image");
 const Product = require("../../models/Product");
+
+router.post('/upload', Upload.single("file"), (req, res) => {
+    console.log("file: ", file);
+    console.log("req: ", req);
+    res.json({ file: req.file });
+    // res.redirect('/');
+});
 
 // @route POST api/products/add
 // @desc Add new product
@@ -18,26 +18,24 @@ const Product = require("../../models/Product");
 
 router.post("/add", (req, res) => {
 
-    // add images to image collection
-    // might come from req.body.images (buffer)
-    // This will return the image object from db
-
-    // save image(s) id to a variable
-
-    // adding product
     const title = req.body.title;
     const description = req.body.description;
     const price = req.body.price;
     const quantity = req.body.quantity;
     const category = req.body.category;
+    const image1 = req.body.image1;
+    const image2 = req.body.image2;
+    const image3 = req.body.image3;
 
     const product = new Product({
         title,
         description,
         price,
         quantity,
-        category
-        // add the images(IDs) variable
+        category,
+        image1,
+        image2,
+        image3
     });
     product.save()
         .then(product => {
@@ -66,11 +64,6 @@ router.get("/:id", (req, res) => {
         })
         .catch(err => { console.log("ERROR: ", err) });
 });
-
-
-
-
-
 
 // router.post("/register", (req, res) => {
 //     // Form validation
