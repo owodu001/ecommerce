@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 // import { storiesOf } from "@storybook/react";
 // import axios from "axios";
 import Card from "react-bootstrap/card";
-import { Row, Nav, Container, Col, Button } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
 import "./ProductCard.css";
 
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import AddToCart from "../AddToCart/AddToCart";
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

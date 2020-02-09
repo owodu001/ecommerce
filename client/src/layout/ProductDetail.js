@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from "react";
 import {
   Card,
-  Button,
   Container,
   Col,
   Row,
-  Image,
-  InputGroup,
-  FormControl,
   Tab,
   Tabs
 } from "react-bootstrap";

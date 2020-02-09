@@ -14,11 +14,10 @@ import admin from "./layout/admin";
 import Cart from "./layout/Cart";
 import Category from "./layout/Category";
 import ProductDetail from "./layout/ProductDetail";
-import CheckoutOpt from "./components/CheckoutOpt/CheckoutOpt.js";
 import CartProvider from "./state/cartContext";
 
 import { useState } from "react";
-import FootNav from "./components/Footer/Footer";
+
 
  function App(props) {
   const [authTokens, setAuthTokens] = useState();
