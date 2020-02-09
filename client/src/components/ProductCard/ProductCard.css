@@ -40,7 +40,7 @@ background: rgba(0, 0, 0, 0.995);
 }
 
 .productName:hover{
-    background-color: rgba(48, 48, 48, 0.81);
+    background-color: #42404fe5;
     color: rgb(255, 255, 255);
     padding: 5px;
     width: fit-content; 

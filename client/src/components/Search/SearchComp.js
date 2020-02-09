@@ -11,7 +11,8 @@ import {
 import "./SearchComp.css";
 
 const SearchComp = ({ searchProducts }) => {
-  const [value, setValue] = useState("test");
+  const [value, setValue] = useState("");
+
   return (
     <Container className="SearchComp">
       <Row className="justify-content-center">

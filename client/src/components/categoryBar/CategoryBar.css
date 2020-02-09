@@ -1,6 +1,6 @@
 .CatBar{
     height: 55px;
-    background-color: rgb(60, 60 , 60);
+    background-color: #42404f;
     color: white;
     text-align: center;
     /* justify-content: space-evenly; */
@@ -18,7 +18,7 @@
 
 .Category:hover {
     text-decoration: none;
-    color: salmon;
+    color: #9d94e9;
     padding-left: 25px;
 }
 
