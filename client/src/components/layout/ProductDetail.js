@@ -22,10 +22,13 @@ export default function({ p, location }) {
 
   //   setProduct to res.data
   //  display {} dynamically in view
-
+  // https://les-meilleurs.herokuapp.com/api/products/:id
   useEffect(() => {
     const productId = location.search.split("?")[1];
-    axios.get(`/api/product/${productId}`).then(res => console.log(res.data));
+    axios
+      .get(`https://les-meilleurs.herokuapp.com/api/products`)
+      .then(res => console.log(res.data[0]._id));
+    // console.log(location);
   }, []);
 
   return (

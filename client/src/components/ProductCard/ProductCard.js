@@ -29,7 +29,7 @@ const ProductCard = ({ p }) => {
             </Col>
             <Col>
               {/* <Button className="cardButton" href="/product"> View Details </Button> */}
-              <Link className="cardButton" to={`/product?${p.id}`}>
+              <Link className="cardButton" to={`/product?${p._id}`}>
                 View Details
               </Link>
             </Col>
