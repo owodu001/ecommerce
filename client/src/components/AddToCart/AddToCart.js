@@ -1,6 +1,6 @@
 import React, { useContext, useState, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Button } from "react-bootstrap";
+import { Button, Overlay, Tooltip } from "react-bootstrap";
 import { CartContext } from "../../state/cartContext";
 // import CartProduct from "../Cart/CartProduct";
 import "./AddToCart.css";
@@ -13,22 +13,10 @@ export default function AddToCart({ item }) {
 
   return (
     <>
-      {/* <Button ref={target} onClick={() => setShow(!show)}>
-        Add to Cart
-      </Button>
-      <Overlay target={target.current} show={show} placement="right">
-        {props => (
-          <Tooltip id="overlay-example" {...props}>
-            My Tooltip
-          </Tooltip>
-        )}
-      </Overlay> */}
-
-      <Button className="
-      AddToCart" 
+      <Button className="AddToCart" ref={target}
         onClick={() => {
           const cart = [...cartContextValue.cart, item];
-
+          setShow(!show)
           // stringify (javascript to string)
           localStorage.setItem("shoppingcart", JSON.stringify(cart));
           cartContextValue.setCart(cart);
@@ -36,6 +24,13 @@ export default function AddToCart({ item }) {
       >
         + Add to Cart
       </Button>
+      <Overlay className="addToCart" target={target.current} show={show} placement="bottom">
+        {props => (
+          <Tooltip id="overlay-example" {...props}>
+            Item Added
+          </Tooltip>
+        )}
+      </Overlay>
     </>
   );
 }

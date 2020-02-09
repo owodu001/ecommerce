@@ -5,6 +5,8 @@ import ProductCard from "../ProductCard/ProductCard";
 import SearchComp from "../Search/SearchComp";
 import axios from "axios";
 import "./ProductGrid.css";
+import FootNav from "../Footer/Footer";
+import Pages from "../Pagination/Pagination";
 
 const ProductGrid = () => {
   const [product, setProduct] = useState([]);
@@ -37,6 +39,7 @@ const ProductGrid = () => {
   }
 
   return (
+    <>
     <Container>
       <SearchComp filterProducts={filterProducts} />
 
@@ -48,6 +51,8 @@ const ProductGrid = () => {
         ))}
       </Row>
     </Container>
+    
+    </>
   );
 };
 

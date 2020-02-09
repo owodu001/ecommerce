@@ -1,13 +1,15 @@
 .footerContainer{
-    background-color: #666666;
+    background-color: #42404f;
     width: 100%;
     padding: 15px;
-    position: absolute;
+    position: relative;
     bottom: 0;
+    margin-top: 150px;
 }
 
 .contact{
 align-content: left;
+color: white;
 }
 
 .footlogo{

@@ -5,15 +5,16 @@ import {Jumbotron, Container } from "react-bootstrap";
 
 function CategoryBanner() {
     return (
-<Jumbotron fluid>
+  
+<Jumbotron className="CategoryHero" fluid>
   <Container>
-    <h1>The Big Sale</h1>
-    <p>
+    <h1 className="pageTitle">The Big Sale</h1>
+    <p className="details">
       Everything 0% - 100% Off!
     </p>
 
     {/* add in a button here  */}
-    {/* <Button href="#">View Sale Collection</Button> */}
+    {/* <Button href="#" className="collectionButton" >View Sale Collection</Button> */}
 
   </Container>
 </Jumbotron>

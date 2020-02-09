@@ -18,7 +18,7 @@ export default function () {
         <CategoryBanner className="hero" spacing="base"/>
         <CategoryBar/>
         <hr/>
-        <SearchComp/>
+        {/* <SearchComp/> */}
         <hr/>
         <ProductGrid className="grid" spacing="base"/>
         <hr/>

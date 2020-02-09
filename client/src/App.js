@@ -18,6 +18,7 @@ import CheckoutOpt from "./components/CheckoutOpt/CheckoutOpt.js";
 import CartProvider from "./state/cartContext";
 
 import { useState } from "react";
+import FootNav from "./components/Footer/Footer";
 
  function App(props) {
   const [authTokens, setAuthTokens] = useState();

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import {Row, Col} from "react-bootstrap";
 import "./Home.css";
 import axios from "axios";
 
@@ -10,6 +11,7 @@ import SearchComp from "../components/Search/SearchComp";
 import CategoryBar from "../components/categoryBar/CategoryBar";
 import FootNav from "../components/Footer/Footer";
 import Pages from "../components/Pagination/Pagination";
+import { Container } from "react-bootstrap";
 
 
 
@@ -18,12 +20,13 @@ export default function () {
 
     useEffect(() => {
         axios
-            .get("http://localhost:5000/api/products")
+            .get("https://les-meilleurs.herokuapp.com/api/products")
             .then(res => console.log(res.data));
     }, []);
 
     return (
         <>
+            <div className="MainContent">
             <HeroBanner className="hero" spacing="base" />
             <CategoryBar />
             <hr />
@@ -31,7 +34,8 @@ export default function () {
             <hr />
             <Pages />
             <hr />
-            {/* <FootNav/> */}
+            </div>
+            <FootNav/>
         </>
 
     );

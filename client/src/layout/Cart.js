@@ -53,7 +53,7 @@ export default function() {
         <Col>
         {cartContextValue.cart.map(item => (
           <CartProduct key={item.id} product={item}/>))}
-          
+        
         </Col>
         <Col>
           <CartSubtotal cartSubtotal={total} />
