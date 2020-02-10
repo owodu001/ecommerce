@@ -8,11 +8,10 @@ import "./ProductGrid.css";
 // import FootNav from "../Footer/Footer";
 // import Pages from "../Pagination/Pagination";
 
-
 const ProductGrid = () => {
   const [product, setProduct] = useState([]);
   useEffect(() => {
-    axios.get("/api/productsTest").then(res => {
+    axios.get("https://les-meilleurs.herokuapp.com/api/products").then(res => {
       setProduct(res.data);
       console.log(res.data);
     });
@@ -41,18 +40,17 @@ const ProductGrid = () => {
 
   return (
     <>
-    <Container>
-      <SearchComp filterProducts={filterProducts} />
+      <Container>
+        <SearchComp filterProducts={filterProducts} />
 
-      <Row className="gridRow">
-        {product.map(p => (
-          <Col lg={4} md={6} sm={12} key={p.id}>
-            <ProductCard p={p} key={p.id}/>
-          </Col>
-        ))}
-      </Row>
-    </Container>
-    
+        <Row className="gridRow">
+          {product.map(p => (
+            <Col lg={4} md={6} sm={12} key={p.id}>
+              <ProductCard p={p} key={p.id} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </>
   );
 };

@@ -43,7 +43,7 @@ const CartProduct = ({ product }) => {
             <Card className="cartCard">
               <Row>
                 <Col>
-                  <Card.Img variant="left" src={product.image} />
+                  <Card.Img variant="left" src={product.image1} alt="image" />
                 </Col>
                 <Col>
                   <Card.Body>
@@ -53,7 +53,7 @@ const CartProduct = ({ product }) => {
                       variant="danger"
                       onClick={() => {
                         const cart = cartContextValue.cart.filter(
-                          p => product.id !== p.id
+                          p => product._id !== p._id
                         );
 
                         // stringify (javascript to string)
