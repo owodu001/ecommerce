@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -30,8 +30,6 @@ import AddProduct from "./components/AddProduct/AddProduct";
     localStorage.setItem("tokens", JSON.stringify(data));
     setAuthTokens(data);
   };
-
-function App(props) {
 
   return (
     <Auth>

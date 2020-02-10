@@ -12,6 +12,7 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./ProductDetail.css";
 import AddToCart from "../components/AddToCart/AddToCart";
+import FootNav from "../components/Footer/Footer"
 
 export default function({ p, location }) {
   // const [counter, setCounter] = useState(0);
@@ -46,46 +47,89 @@ export default function({ p, location }) {
 
   return (
     <>
-      <Container>
-        <Row>
-              <Card>
-                <Col>
-                <Card.Img variant="top" src={product.image} />
-                </Col>
-                <Col>
+      <Container >
+        <Card className="detailsContainer">
+            <Row>
+              <Col>
+                <Card.Img className="detailsImages" src={product.image} />
+              </Col>
+              <Col className="noPad">
                 <Card.Body>
                   <Card.Title>
                     {product.title}
                   </Card.Title>
+                  
                   <Card.Title>{product.price}</Card.Title>
-                  <Card.Text>
-            <Row style={{ fontWeight: "bold" }}>Product Details:</Row>
-            <Row>Category: {product.category}</Row>
-            <Row>Quantity: {product.quantity}</Row>
-            <Row>Product description of this amazing product that you MUST HAVE IN YOUR LIFE OR ELSE. </Row>
+            <Card.Text>
+              <Row style={{ fontWeight: "bold" }}>Product Details:</Row>
+              <br/>
+              <Row>This is a product description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh cras pulvinar mattis nunc sed blandit libero volutpat. </Row>
+              <Row><strong>Category :  </strong> {product.category}</Row>
+              <Row><strong>Quantity : </strong> {product.quantity}</Row>
             </Card.Text>
+            <br/>
+            <br/>
                  <AddToCart/>
-                </Card.Body>
+                 <br/>
+                 </Card.Body>
+                 <Row className="Thumbs">
+                 <Card.Img thumbnail className="thumbnail" src={product.image} />
+                <Card.Img thumbnail className="thumbnail" src={product.image} />
+                <Card.Img thumbnail className="thumbnail" src={product.image} />
+                </Row>
                 </Col>
-              </Card>
               </Row>
+              </Card>
+            </Container>
+
+        <Container >
+        <Card className="MobiledetailsContainer">
+                <Card.Img className="detailsImages" variant="top" src={product.image} />
+      
+                <Card.Body>
+                      <Card.Title>
+                        <strong>{product.title}</strong>
+                      </Card.Title>
+                      
+                      <Card.Title>{product.price}</Card.Title>
+                      <Card.Text>
+                        <Row style={{ fontWeight: "bold" }}>Product Details:</Row>
+                        <br/>
+                        <Row>This is a product description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh cras pulvinar mattis nunc sed blandit libero volutpat. </Row>
+                        <Row><strong>Category :  </strong> {product.category}</Row>
+                        <Row><strong>Quantity : </strong> {product.quantity}</Row>
+                      </Card.Text>
+                      <br/>
+                      <br/>
+                    <AddToCart/>
+                    <br/>
+                    <hr/>
+              <Row className="Thumbs">
+                  <Card.Img thumbnail className="thumbnail" src={product.image} />
+                  <Card.Img thumbnail className="thumbnail" src={product.image} />
+                  <Card.Img thumbnail className="thumbnail" src={product.image} />
+              </Row>
+              </Card.Body>
+             
+              </Card>
             </Container>
 
         <Container className="tabsContainer">
           <Col>
-            <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+            <Tabs className="tabtop" defaultActiveKey="profile" id="uncontrolled-tab-example">
               <Tab eventKey="description" title="Description">
-                <p>Product info!</p>
+                <p className="tab">Product info!</p>
               </Tab>
               <Tab eventKey="review" title="Reviews">
-                <p>Coming Soon!</p>
+                <p className="tab">Coming Soon!</p>
               </Tab>
               <Tab eventKey="custom" title="Custom Tab">
-                <p>Custom Detail!</p>
+                <p className="tab">Custom Detail!</p>
               </Tab>
             </Tabs>
           </Col>
         </Container>
+        <FootNav/>
         </>
   
   );

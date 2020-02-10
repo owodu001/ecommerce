@@ -20,9 +20,9 @@ export default function () {
         {/* <SearchComp/> */}
         <hr/>
         <ProductGrid className="grid" spacing="base"/>
-        <hr/>
+        {/* <hr/>
         <Pages/>
-        <hr/>
+        <hr/> */}
         <FootNav/>
         
         </>

@@ -30,8 +30,6 @@ export default function () {
             <hr />
             <ProductGrid className="grid" spacing="base" />
             <hr />
-            <Pages />
-            <hr />
             </div>
             <FootNav/>
         </>

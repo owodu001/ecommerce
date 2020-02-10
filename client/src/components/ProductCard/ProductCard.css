@@ -40,30 +40,12 @@ background: rgba(0, 0, 0, 0.995);
 }
 
 .productName:hover{
-    background-color: rgba(48, 48, 48, 0.81);
+    background-color: #42404fe5;
     color: rgb(255, 255, 255);
     padding: 5px;
     width: fit-content; 
 }
 
-/* .productPrice {
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 5px;
-    width: fit-content;
-    position: absolute;
-    right: 15px;
-    bottom: 80px;
-    font-size: 22px;
-    z-index: 999;
-    text-decoration: none;
-
-}   
-.productPrice:hover{
-    background-color: rgba(48, 48, 48, 0.81);
-    color: rgb(255, 255, 255);
-    padding: 5px;
-    width: fit-content; 
-}*/
 
 .cardOpts{
     align-content: center;
@@ -110,4 +92,9 @@ a:hover{
     text-transform: none;
     color: black;
     
+}
+
+.FAIcon{
+    margin-left: 5px;
+    margin-right: 5px;
 }
