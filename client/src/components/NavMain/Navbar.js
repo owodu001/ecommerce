@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import Navbar from "react-bootstrap/Navbar";
+import { AuthContext, useAuth } from "../../auth/auth";
 // import Button from "react-bootstrap/Button";
 // import Form from "react-bootstrap/Form";
 // import FormControl from "react-bootstrap/FormControl";
@@ -13,6 +14,7 @@ import { CartContext } from "../../state/cartContext";
 import "./Navbar.css";
 
 function NavMain() {
+  const { user } = useContext(AuthContext);
   const cartContextValue = useContext(CartContext);
 
 
@@ -30,7 +32,8 @@ function NavMain() {
           </Link>
         </div>
         <div>
-          <Link className="navigation" to="/login"> Sign In </Link>
+          {user && <Link className="navigation" to="/login"> Sign Out </Link>}
+          {!user && <Link className="navigation" to="/login"> Sign In </Link>}
         </div>
         <div>
 

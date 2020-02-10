@@ -16,6 +16,7 @@ import ProductDetail from "./layout/ProductDetail";
 // import CheckoutOpt from "./components/CheckoutOpt/CheckoutOpt.js";
 import CartProvider from "./state/cartContext";
 import AddProduct from "./components/AddProduct/AddProduct";
+import PrivateRoute from "./components/private-route/PrivateRoute";
 // import PrivateRoute from "./components/private-route/PrivateRoute"
 
 
@@ -31,7 +32,7 @@ function App(props) {
               <Route path="/product" component={ProductDetail} />
               <Route path="/login" component={Login} />
               <Route path="/register" component={Register} />
-              <Route path="/cart" component={Cart} />
+              <PrivateRoute path="/cart" component={Cart} />
               <Route path="/category" component={Category} />
               <Route path="/add-product" component={AddProduct} />
             </Switch>
