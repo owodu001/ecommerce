@@ -1,24 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Route, Redirect } from "react-router-dom";
-import { useAuth } from "./context/auth";
+import PropTypes from "prop-types";
 
+import { AuthContext } from "./auth/auth";
 
-function PrivateRoute({ component: Component, ...rest }) {
-  const { authTokens } = useAuth();
+export default function PrivateRoute({ component: Component, ...rest }) {
+  const { user } = useContext(AuthContext);
 
   return (
     <Route
       {...rest}
-      render={props =>
-        authTokens ? (
-          <Component {...props} />
-        ) : (
-          <Redirect to="/sign-in" />
-         
-        )
+      render={
+        props =>
+          user ? <Component {...props} /> : <div>You are not authenticated</div> //<Redirect to="/login" />
       }
     />
   );
 }
 
-export default PrivateRoute;
+PrivateRoute.propTypes = {
+  auth: PropTypes.object.isRequired
+};

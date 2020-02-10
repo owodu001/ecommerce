@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CartProduct from "../components/Cart/CartProduct";
 import { Col, Row, Container } from "react-bootstrap";
@@ -20,7 +20,9 @@ import { CartContext } from "../state/cartContext";
 // calculateTotal
 export default function() {
   // removeProduct = id => {
-  // }
+
+  const [total, setTotal] = useState(0)
+
   const cartContextValue = useContext(CartContext);
   console.log(cartContextValue.cart);
   return (

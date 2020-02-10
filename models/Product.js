@@ -23,8 +23,14 @@ const ProductSchema = new Schema({
         type: String,
         required: true
     },
-    images: {
-        type: [{ type: Schema.Types.ObjectId, ref: "Image" }]
+    image1: {
+        type: String,
+    },
+    image2: {
+        type: String,
+    },
+    image3: {
+        type: String,
     }
 });
 

@@ -8,6 +8,7 @@ import "./ProductGrid.css";
 // import FootNav from "../Footer/Footer";
 // import Pages from "../Pagination/Pagination";
 
+
 const ProductGrid = () => {
   const [product, setProduct] = useState([]);
   useEffect(() => {
@@ -45,8 +46,8 @@ const ProductGrid = () => {
 
       <Row className="gridRow">
         {product.map(p => (
-          <Col lg={4} md={6} sm={12}>
-            <ProductCard p={p} />
+          <Col lg={4} md={6} sm={12} key={p.id}>
+            <ProductCard p={p} key={p.id}/>
           </Col>
         ))}
       </Row>
