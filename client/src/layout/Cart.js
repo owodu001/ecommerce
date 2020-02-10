@@ -28,10 +28,8 @@ export default function () {
   useEffect(() => {
     let tempValue = 0;
     cartContextValue.cart.forEach((item, i) => {
-      console.log(item)
-      console.log(parseFloat(item.price.split("$")[1], i))
-      tempValue += parseFloat(item.price.split("$")[1])
-    })
+      tempValue += item.price;
+    });
     console.log(tempValue)
     setTotal(tempValue)
   }, [cartContextValue.cart])
@@ -41,12 +39,12 @@ export default function () {
       <hr />
       <Container>
         <Row>
-          <Col>
+          <Col lg={8} sm={12} >
             {cartContextValue.cart.map(item => (
               <CartProduct key={item._id} product={item} />
             ))}
           </Col>
-          <Col>
+          <Col lg={4} sm={12}>
             <CartSubtotal cartSubtotal={total} />
           </Col>
         </Row>

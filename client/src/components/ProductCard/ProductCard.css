@@ -11,24 +11,9 @@
     border-radius: 0px;
     box-shadow: 3px 3px 20px 0px rgba(0,0,0,0.5);
     transition: .5s ease;
+    width: 350px;
 }
 
-/* .contentOverlay{
-background: rgba(0, 0, 0, 0.995);
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  opacity: 0;
-  transition: all 0.4s ease-in-out 0s;
-}
-
-.contentOverlay:hover{
-  opacity: 1;
-} */
 
 .productName{
     background-color: rgba(255, 255, 255, 0.7);
