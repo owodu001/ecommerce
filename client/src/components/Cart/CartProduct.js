@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CartProduct.css";
 import { CartContext } from "../../state/cartContext";
@@ -14,7 +14,7 @@ import {
 
 
 const CartProduct = ({ product }) => {
-  // const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(0);
 
   // export default function Cart() {
   const cartContextValue = useContext(CartContext);

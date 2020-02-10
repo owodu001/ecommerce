@@ -10,8 +10,8 @@ import {
 } from "react-bootstrap";
 import "./SearchComp.css";
 
-const SearchComp = ({ searchProducts }) => {
-  const [value, setValue] = useState("");
+const SearchComp = ({ filterProducts }) => {
+  const [value, setValue] = useState("test");
 
   return (
     <Container className="SearchComp">
@@ -35,24 +35,7 @@ const SearchComp = ({ searchProducts }) => {
             </Dropdown.Menu>
           </Dropdown>
         </Col>
-        {/* <Col className="column" sm={3}>
-          <Dropdown>
-            <Dropdown.Toggle
-              className="dropd"
-              variant="info"
-              id="dropdown-basic"
-            >
-              Filter by:
-            </Dropdown.Toggle> */}
-            {/* UPDATE THIS DROPDOWN MENU TO FILTER BY YOUR SPECIFIC CATEGORIES */}
-            {/* <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1">Category 1</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Category 2</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Category 3</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Category 4</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        </Col> */}
+        
         <Col className="column" sm={6}>
           <InputGroup className="mb-3">
             <InputGroup.Prepend>
@@ -60,14 +43,14 @@ const SearchComp = ({ searchProducts }) => {
                 className="searchBtn"
                 onClick={() => {
                   console.log(value);
-                  searchProducts(value);
+                  filterProducts(value);
                 }}
               >
                 Search Products
               </Button>
             </InputGroup.Prepend>
             <FormControl
-              className="searchInput"
+            className="searchInput"
               aria-describedby="basic-addon1"
               value={value}
               onChange={e => setValue(e.target.value)}
@@ -78,5 +61,4 @@ const SearchComp = ({ searchProducts }) => {
     </Container>
   );
 };
-
 export default SearchComp;
