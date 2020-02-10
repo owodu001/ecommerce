@@ -28,11 +28,6 @@ import AddProduct from "./components/AddProduct/AddProduct";
     setAuthTokens(data);
   };
 
-<<<<<<< HEAD
-//function App(props) {
-
-=======
->>>>>>> 09cd8f0d20aeb0c4d0e82d57c113391e2fbde113
   return (
     <Auth>
       <CartProvider>
