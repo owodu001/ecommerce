@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { AuthContext } from "./auth/auth";
 // Import components
@@ -20,6 +19,7 @@ import AddProduct from "./components/AddProduct/AddProduct";
 
 
 
+
  function App(props) {
   const [authTokens, setAuthTokens] = useState();
 
@@ -27,6 +27,7 @@ import AddProduct from "./components/AddProduct/AddProduct";
     localStorage.setItem("tokens", JSON.stringify(data));
     setAuthTokens(data);
   };
+
   return (
     <Auth>
       <CartProvider>

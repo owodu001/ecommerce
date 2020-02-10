@@ -24,7 +24,6 @@ const ProductCard = ({ p }) => {
         <a href={`/product?${p.id}`}>
         <Card.ImgOverlay>
           <Card.Title className="productName" >{p.title} – {p.price}</Card.Title>
-
         </Card.ImgOverlay>
         
         <Card.Img className="cardImage" variant="top" src={p.image} />

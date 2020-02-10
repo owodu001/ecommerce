@@ -4,6 +4,7 @@ import CartProduct from "../components/Cart/CartProduct";
 import { Col, Row, Container } from "react-bootstrap";
 import CartSubtotal from "../components/Cart/subtotal/CartSubtotal";
 import { CartContext } from "../state/cartContext";
+
 // import ProductCard from "../components/ProductCard/ProductCard";
 // THIS IS WHERE THE FUNCTIONS GO TO UPDATE TOTAL
 // // function addToCart (){
@@ -18,6 +19,7 @@ import { CartContext } from "../state/cartContext";
 // // THIS WILL REMOVE ALL INSTANCES OF THIS PRODUCT FROM THE TOTAL
 // removeButton
 // calculateTotal
+
 export default function () {
   // removeProduct = id => {
   const [total, setTotal] = useState(0)
@@ -33,6 +35,7 @@ export default function () {
     console.log(tempValue)
     setTotal(tempValue)
   }, [cartContextValue.cart])
+
   return (
     <>
       <hr />

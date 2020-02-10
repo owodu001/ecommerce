@@ -19,6 +19,17 @@
     background-image: linear-gradient( #6e6c80, white);
 
 }
+.CategoryHero{
+    height: 350px;
+    margin-bottom: 0px;
+    text-align: center;
+    align-content: center;
+    justify-items: center;
+    background-color: white;
+    /* change your gradient by editing the two colors in parentheses, or add your own image:  */
+    background-image: linear-gradient( #fa8072, white);
+
+}
 
 .pageTitle{
     /* change page title color and font size here! */
@@ -55,6 +66,7 @@
 .collectionButton:hover{
     background-color:#aca6db ;
     color: #42404f;
+
 }
 
 .btnText{

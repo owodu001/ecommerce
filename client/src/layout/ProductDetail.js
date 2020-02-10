@@ -15,34 +15,19 @@ import AddToCart from "../components/AddToCart/AddToCart";
 import FootNav from "../components/Footer/Footer"
 
 export default function({ p, location }) {
-  // const [counter, setCounter] = useState(0);
-  // const [value, setValue] = useState("");
+  const [counter, setCounter] = useState(0);
+  const [value, setValue] = useState("");
   const [product, setProduct] = useState({});
-
-
-  // useEffect(() => {
-  //   axios.get("http://localhost:5000/api/productsTest").then(res => {
-  //     setProduct(res.data);
-  //     console.log(res.data);
-  //   });
-  // }, []);
-  
-  
+  //   setProduct to res.data
+  //  display {} dynamically in view
+  // https://les-meilleurs.herokuapp.com/api/products/:id
   useEffect(() => {
     const productId = location.search.split("?")[1];
-    
-    axios.get(`/api/productsTest/${productId}`).then(res => {
-      // const productImage = res.data.image;
-      // const productTitle = res.data.title;
-      // const productPrice = res.data.price;
-      // const productQuantity = res.data.quantity;
-      // const productCategory = res.data.category;
-      
-      setProduct(res.data);
-      console.log(res.data);
-      
-      
-      });
+    console.log(productId);
+    axios
+      .get(`https://les-meilleurs.herokuapp.com/api/products/${productId}`)
+      .then(res => setProduct(res.data));
+    // console.log(location);
   }, []);
 
   return (
@@ -51,7 +36,7 @@ export default function({ p, location }) {
         <Card className="detailsContainer">
             <Row>
               <Col>
-                <Card.Img className="detailsImages" src={product.image} />
+                <Card.Img className="detailsImages" src={product.image1} alt="product image 1"/>
               </Col>
               <Col className="noPad">
                 <Card.Body>
@@ -63,9 +48,7 @@ export default function({ p, location }) {
             <Card.Text>
               <Row style={{ fontWeight: "bold" }}>Product Details:</Row>
               <br/>
-              <Row>This is a product description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh cras pulvinar mattis nunc sed blandit libero volutpat. </Row>
-              <Row><strong>Category :  </strong> {product.category}</Row>
-              <Row><strong>Quantity : </strong> {product.quantity}</Row>
+              <Row>{product.description}</Row>
             </Card.Text>
             <br/>
             <br/>
@@ -73,9 +56,9 @@ export default function({ p, location }) {
                  <br/>
                  </Card.Body>
                  <Row className="Thumbs">
-                 <Card.Img thumbnail className="thumbnail" src={product.image} />
-                <Card.Img thumbnail className="thumbnail" src={product.image} />
-                <Card.Img thumbnail className="thumbnail" src={product.image} />
+                 <Card.Img thumbnail className="thumbnail" src={product.image1} />
+                <Card.Img thumbnail className="thumbnail" src={product.image2} />
+                <Card.Img thumbnail className="thumbnail" src={product.image3} />
                 </Row>
                 </Col>
               </Row>
@@ -84,7 +67,7 @@ export default function({ p, location }) {
 
         <Container >
         <Card className="MobiledetailsContainer">
-                <Card.Img className="detailsImages" variant="top" src={product.image} />
+                <Card.Img className="detailsImages" variant="top" src={product.image1} />
       
                 <Card.Body>
                       <Card.Title>
@@ -95,7 +78,7 @@ export default function({ p, location }) {
                       <Card.Text>
                         <Row style={{ fontWeight: "bold" }}>Product Details:</Row>
                         <br/>
-                        <Row>This is a product description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh cras pulvinar mattis nunc sed blandit libero volutpat. </Row>
+                        <Row>{product.description}</Row>
                         <Row><strong>Category :  </strong> {product.category}</Row>
                         <Row><strong>Quantity : </strong> {product.quantity}</Row>
                       </Card.Text>
@@ -105,9 +88,9 @@ export default function({ p, location }) {
                     <br/>
                     <hr/>
               <Row className="Thumbs">
-                  <Card.Img thumbnail className="thumbnail" src={product.image} />
-                  <Card.Img thumbnail className="thumbnail" src={product.image} />
-                  <Card.Img thumbnail className="thumbnail" src={product.image} />
+                  <Card.Img thumbnail className="thumbnail" src={product.image1} />
+                  <Card.Img thumbnail className="thumbnail" src={product.image2} />
+                  {/* <Card.Img thumbnail className="thumbnail" src={product.image3} /> */}
               </Row>
               </Card.Body>
              
