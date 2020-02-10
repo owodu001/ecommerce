@@ -19,20 +19,17 @@ import { CartContext } from "../state/cartContext";
 // removeButton
 // calculateTotal
 export default function() {
-
-  const [total, setTotal] = useState(0)
+  const [total, setTotal] = useState(0);
   const cartContextValue = useContext(CartContext);
   console.log(cartContextValue.cart);
   useEffect(() => {
     let tempValue = 0;
     cartContextValue.cart.forEach((item, i) => {
-      console.log(item)
-      console.log(parseFloat(item.price.split("$")[1], i))
-      tempValue += parseFloat(item.price.split("$")[1])
-    })
-    console.log(tempValue)
-    setTotal(tempValue)
-  }, [cartContextValue.cart])
+      tempValue += item.price;
+    });
+    // console.log(tempValue);
+    setTotal(tempValue);
+  }, [cartContextValue.cart]);
   return (
     <>
       <hr />
@@ -44,7 +41,7 @@ export default function() {
             ))}
           </Col>
           <Col>
-            <CartSubtotal cartSubtotal={total}/>
+            <CartSubtotal cartSubtotal={total} />
           </Col>
         </Row>
       </Container>
