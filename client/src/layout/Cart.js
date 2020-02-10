@@ -37,10 +37,14 @@ export default function () {
   console.log(cartContextValue.cart);
 
   useEffect(() => {
-    const totalPrice = cartContextValue.cart.length !== 0 && cartContextValue.cart.reduce((a, b) => (
-      parseFloat(a.price.split("$")[1]) + parseFloat(b.price.split("$")[1])
-    ))
-    setTotal(totalPrice)
+    let tempValue = 0;
+    cartContextValue.cart.forEach((item, i) => {
+      console.log(item)
+      console.log(parseFloat(item.price.split("$")[1], i))
+      tempValue += parseFloat(item.price.split("$")[1])
+    })
+    console.log(tempValue)
+    setTotal(tempValue)
 
   }, [cartContextValue.cart])
 
