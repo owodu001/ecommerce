@@ -27,6 +27,17 @@
     font-family: 'Bebas Neue', cursive;
 }
 
+@media only screen and (max-width: 600px) {
+    .pageTitle{
+        font-size: 56px;
+        margin-top: 15px;
+    }
+
+    .CategoryHero{
+        height: fit-content;
+    }
+}
+
 .details{
      /* change hero details color and font size here! */
     font-size: 26px;
@@ -42,8 +53,8 @@
 }
 
 .collectionButton:hover{
-    background-color:#396b87 ;
-    color: #6ecfcc;
+    background-color:#aca6db ;
+    color: #42404f;
 }
 
 .btnText{

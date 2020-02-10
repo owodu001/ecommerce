@@ -5,6 +5,15 @@ import { CartContext } from "../../state/cartContext";
 // import CartProduct from "../Cart/CartProduct";
 import "./AddToCart.css";
 
+
+//Icons from Font Awesome - make sure you have the font-awesome packages installed. https://fontawesome.com/how-to-use/on-the-web/using-with/react
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+// Basic Icons
+import {faCartPlus } from "@fortawesome/free-solid-svg-icons"
+
+
+
 export default function AddToCart({ item }) {
   const [show, setShow] = useState(false);
   const target = useRef(null);
@@ -21,8 +30,8 @@ export default function AddToCart({ item }) {
           localStorage.setItem("shoppingcart", JSON.stringify(cart));
           cartContextValue.setCart(cart);
         }}
-      >
-        + Add to Cart
+      ><FontAwesomeIcon icon={faCartPlus} className="FAIcon"/>
+        Add to Cart
       </Button>
       <Overlay className="addToCart" target={target.current} show={show} placement="bottom">
         {props => (

@@ -47,8 +47,8 @@ export default function({ p, location }) {
 
   return (
     <>
-      <Container className="detailsContainer">
-        <Card>
+      <Container >
+        <Card className="detailsContainer">
             <Row>
               <Col>
                 <Card.Img className="detailsImages" src={product.image} />
@@ -72,11 +72,45 @@ export default function({ p, location }) {
                  <AddToCart/>
                  <br/>
                  </Card.Body>
+                 <Row className="Thumbs">
                  <Card.Img thumbnail className="thumbnail" src={product.image} />
                 <Card.Img thumbnail className="thumbnail" src={product.image} />
                 <Card.Img thumbnail className="thumbnail" src={product.image} />
+                </Row>
                 </Col>
               </Row>
+              </Card>
+            </Container>
+
+        <Container >
+        <Card className="MobiledetailsContainer">
+                <Card.Img className="detailsImages" variant="top" src={product.image} />
+      
+                <Card.Body>
+                      <Card.Title>
+                        <strong>{product.title}</strong>
+                      </Card.Title>
+                      
+                      <Card.Title>{product.price}</Card.Title>
+                      <Card.Text>
+                        <Row style={{ fontWeight: "bold" }}>Product Details:</Row>
+                        <br/>
+                        <Row>This is a product description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh cras pulvinar mattis nunc sed blandit libero volutpat. </Row>
+                        <Row><strong>Category :  </strong> {product.category}</Row>
+                        <Row><strong>Quantity : </strong> {product.quantity}</Row>
+                      </Card.Text>
+                      <br/>
+                      <br/>
+                    <AddToCart/>
+                    <br/>
+                    <hr/>
+              <Row className="Thumbs">
+                  <Card.Img thumbnail className="thumbnail" src={product.image} />
+                  <Card.Img thumbnail className="thumbnail" src={product.image} />
+                  <Card.Img thumbnail className="thumbnail" src={product.image} />
+              </Row>
+              </Card.Body>
+             
               </Card>
             </Container>
 

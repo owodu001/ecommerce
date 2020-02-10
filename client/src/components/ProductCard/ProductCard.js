@@ -8,8 +8,14 @@ import "./ProductCard.css";
 // import { Link } from "react-router-dom";
 import AddToCart from "../AddToCart/AddToCart";
 
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { findIconDefinition } from '@fortawesome/fontawesome-svg-core';
+//Icons from Font Awesome - make sure you have the font-awesome packages installed. https://fontawesome.com/how-to-use/on-the-web/using-with/react
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+// Basic Icons
+import {faCartPlus } from "@fortawesome/free-solid-svg-icons"
+import {faEllipsisH } from "@fortawesome/free-solid-svg-icons"
+
+
 const ProductCard = ({ p }) => {
 
   return (
@@ -18,9 +24,7 @@ const ProductCard = ({ p }) => {
         <a href={`/product?${p.id}`}>
         <Card.ImgOverlay>
           <Card.Title className="productName" >{p.title} – {p.price}</Card.Title>
-        {/* </Card.ImgOverlay>
-        <Card.ImgOverlay variant="bottom"> */}
-          {/* <Card.Title className="productPrice"></Card.Title> */}
+
         </Card.ImgOverlay>
         
         <Card.Img className="cardImage" variant="top" src={p.image} />
@@ -32,7 +36,7 @@ const ProductCard = ({ p }) => {
             </Col>
             <Col >
               <Button className="cardButton" href={`/product?${p.id}`}>
-                View Details
+                View Details<FontAwesomeIcon icon={faEllipsisH} className="FAIcon"/>
               </Button>
             </Col>
           </Row>

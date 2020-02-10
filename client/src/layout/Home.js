@@ -31,9 +31,9 @@ export default function () {
             <CategoryBar />
             <hr />
             <ProductGrid className="grid" spacing="base" />
-            <hr />
+            {/* <hr />
             <Pages />
-            <hr />
+            <hr /> */}
             </div>
             <FootNav/>
         </>

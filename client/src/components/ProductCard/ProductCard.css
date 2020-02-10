@@ -12,23 +12,6 @@
     transition: .5s ease;
 }
 
-/* .contentOverlay{
-background: rgba(0, 0, 0, 0.995);
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  opacity: 0;
-  transition: all 0.4s ease-in-out 0s;
-}
-
-.contentOverlay:hover{
-  opacity: 1;
-} */
-
 .productName{
     background-color: rgba(255, 255, 255, 0.7);
     padding: 5px;
@@ -45,25 +28,6 @@ background: rgba(0, 0, 0, 0.995);
     padding: 5px;
     width: fit-content; 
 }
-
-/* .productPrice {
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 5px;
-    width: fit-content;
-    position: absolute;
-    right: 15px;
-    bottom: 80px;
-    font-size: 22px;
-    z-index: 999;
-    text-decoration: none;
-
-}   
-.productPrice:hover{
-    background-color: rgba(48, 48, 48, 0.81);
-    color: rgb(255, 255, 255);
-    padding: 5px;
-    width: fit-content; 
-}*/
 
 .cardOpts{
     align-content: center;
@@ -110,4 +74,9 @@ a:hover{
     text-transform: none;
     color: black;
     
+}
+
+.FAIcon{
+    margin-left: 5px;
+    margin-right: 5px;
 }

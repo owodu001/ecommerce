@@ -45,7 +45,7 @@ const ProductGrid = () => {
 
       <Row className="gridRow">
         {product.map(p => (
-          <Col md={4}>
+          <Col lg={4} md={6} sm={12}>
             <ProductCard p={p} />
           </Col>
         ))}
