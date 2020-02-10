@@ -12,30 +12,42 @@ import AddToCart from "../AddToCart/AddToCart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Basic Icons
-import {faCartPlus } from "@fortawesome/free-solid-svg-icons"
-import {faEllipsisH } from "@fortawesome/free-solid-svg-icons"
-
+import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 
 const ProductCard = ({ p }) => {
-
   return (
     <div>
-      <Card  className="productCard">
+      <Card className="productCard">
         <a href={`/product?${p.id}`}>
-        <Card.ImgOverlay>
-          <Card.Title className="productName" >{p.title} – {p.price}</Card.Title>
-        </Card.ImgOverlay>
-        
-        <Card.Img className="cardImage" variant="top" src={p.image} />
+          <Card.ImgOverlay>
+            <Card.Title className="productName">
+              {p.title} – {p.price}
+            </Card.Title>
+          </Card.ImgOverlay>
+          <Card.Img
+            className="cardImage"
+            variant="top"
+            src={p.image2}
+            alt="image"
+          />
+
+          <Card.Img className="cardImage" variant="top" src={p.image} />
         </a>
         <Card.Body className="cardOpts">
-          <Row >
+          <Row>
             <Col className="cardCol">
               <AddToCart className="cardButton" item={p} />
             </Col>
-            <Col >
-              <Button className="cardButton" href={`/product?${p.id}`}>
-                View Details<FontAwesomeIcon icon={faEllipsisH} className="FAIcon"/>
+            {/* <Col> */}
+            {/* <Button className="cardButton" href="/product"> View Details </Button> */}
+            {/* <Link className="cardButton" to={`/product?${p._id}`}> */}
+            {/* View Details */}
+            {/* </Link> */}
+            <Col>
+              <Button className="cardButton" href={`/product?${p._id}`}>
+                View Details
+                <FontAwesomeIcon icon={faEllipsisH} className="FAIcon" />
               </Button>
             </Col>
           </Row>
