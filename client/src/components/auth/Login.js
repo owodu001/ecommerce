@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { AuthContext, useAuth } from "../../auth/auth";
+import { AuthContext } from "../../auth/auth";
 
 export default function Login({ history }) {
   // todo: errors my friend...

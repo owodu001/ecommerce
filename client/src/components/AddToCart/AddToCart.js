@@ -1,11 +1,19 @@
 import React, { useContext, useState, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Button } from "react-bootstrap";
+import { Button, Overlay, Tooltip } from "react-bootstrap";
 import { CartContext } from "../../state/cartContext";
 import { AuthContext, useAuth } from "../../auth/auth";
 
 // import CartProduct from "../Cart/CartProduct";
+import "./AddToCart.css";
+
+//Icons from Font Awesome - make sure you have the font-awesome packages installed. https://fontawesome.com/how-to-use/on-the-web/using-with/react
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+// Basic Icons
+import {faCartPlus } from "@fortawesome/free-solid-svg-icons"
+
 
 export default function AddToCart({ item }) {
   const { user } = useContext(AuthContext);
@@ -17,32 +25,30 @@ export default function AddToCart({ item }) {
 
   return (
     <>
-      {/* <Button ref={target} onClick={() => setShow(!show)}>
-        Add to Cart
-      </Button>
-      <Overlay target={target.current} show={show} placement="right">
-        {props => (
-          <Tooltip id="overlay-example" {...props}>
-            My Tooltip
-          </Tooltip>
-        )}
-      </Overlay> */}
-
-      <Button
+      <Button className="AddToCart" ref={target}
         onClick={() => {
           if (!user) {
             return history.push("/login");
           }
 
           const cart = [...cartContextValue.cart, item];
-
+          setShow(!show)
           // stringify (javascript to string)
           localStorage.setItem("shoppingcart", JSON.stringify(cart));
           cartContextValue.setCart(cart);
         }}
-      >
-        Add to Cart
+
+      ><FontAwesomeIcon icon={faCartPlus} className="FAIcon"/>
+      
+Add to Cart
       </Button>
+      <Overlay className="addToCart" target={target.current} show={show} placement="bottom">
+        {props => (
+          <Tooltip id="overlay-example" {...props}>
+            Item Added
+          </Tooltip>
+        )}
+      </Overlay>
     </>
   );
 }

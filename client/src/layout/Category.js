@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Home.css"
 
 import ProductGrid from "../components/ProductGrid/ProductGrid";
-import SearchComp from "../components/Search/SearchComp";
 import CategoryBanner from "../components/HeroBanner/CategoryBanner"
 import CategoryBar from "../components/categoryBar/CategoryBar";
 import FootNav from "../components/Footer/Footer";
@@ -18,12 +17,12 @@ export default function () {
         <CategoryBanner className="hero" spacing="base"/>
         <CategoryBar/>
         <hr/>
-        <SearchComp/>
+        {/* <SearchComp/> */}
         <hr/>
         <ProductGrid className="grid" spacing="base"/>
-        <hr/>
+        {/* <hr/>
         <Pages/>
-        <hr/>
+        <hr/> */}
         <FootNav/>
         
         </>

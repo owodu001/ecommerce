@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
+
+import categories from "../../customSettings/productCategory";
+
 
 export default function AddProduct() {
     const [title, setTitle] = useState("");
@@ -11,6 +14,12 @@ export default function AddProduct() {
     const [image1, setImage1] = useState("");
     const [image2, setImage2] = useState("");
     const [image3, setImage3] = useState("");
+    const [numCategory, setNumCategory] = useState(0);
+
+    useEffect(() => {
+        console.log(categories);
+
+    }, [])
 
     function handleClick() {
         // axios.post("https:// les-meilleurs.herokuapp.com/api/products/add", {
@@ -47,7 +56,12 @@ export default function AddProduct() {
 
                     <div className="form-group">
                         <label>Category</label>
-                        <input type="input" className="form-control" placeholder="Category" value={category} onChange={({ target }) => setCategory(target.value)} />
+                        <select className="form-control">
+                            {categories.map(category => { <option> {category}</option> })}
+                            {/* <option> category 1</option>
+                            <option> category 2</option>
+                            <option> category 2</option> */}
+                        </select>
                     </div>
 
                     <div className="form-group">

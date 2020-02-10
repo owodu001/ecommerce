@@ -1,22 +1,15 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import { AuthContext, useAuth } from "../../auth/auth";
-// import Button from "react-bootstrap/Button";
-// import Form from "react-bootstrap/Form";
-// import FormControl from "react-bootstrap/FormControl";
 import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
-import axios from "axios";
+
 import { CartContext } from "../../state/cartContext";
-
-
 import "./Navbar.css";
 
 function NavMain() {
   const { user, logoutUser } = useContext(AuthContext);
   const cartContextValue = useContext(CartContext);
-
-
 
   return (
     <Navbar className="mainNav" bg="#575151" variant="dark">

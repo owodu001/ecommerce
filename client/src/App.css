@@ -1,3 +1,10 @@
+body{
+    background-color: rgba(0, 0, 0, 0.036);
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+
+
 .footerContainer{
     background-color: #666666;
     width: 100%;

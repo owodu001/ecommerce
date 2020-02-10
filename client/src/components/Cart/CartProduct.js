@@ -1,24 +1,21 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CartProduct.css";
 import { CartContext } from "../../state/cartContext";
+// import AddToCart from "../AddToCart/AddToCart";
 
 import {
   Container,
   Card,
   Button,
-  InputGroup,
-  FormControl,
   Col,
   Row
 } from "react-bootstrap";
-import AddToCart from "../AddToCart/AddToCart";
+
 
 const CartProduct = ({ product }) => {
-  const [counter, setCounter] = useState(0);
+  // const [counter, setCounter] = useState(0);
 
-
-  //
   // export default function Cart() {
   const cartContextValue = useContext(CartContext);
   console.log(cartContextValue);
