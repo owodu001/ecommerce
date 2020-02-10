@@ -4,13 +4,13 @@ import "./CartSubtotal.css";
 import { Button, Container, Col, Row, Form } from "react-bootstrap";
 import PayButton from "../../PayPalButton/PayPalButton";
 
-export default function({cartSubtotal}) {
+export default function CartSubtotal({cartSubtotal}) {
   return (
     <>
       <Container className="border">
         <Row className="centerThings font mb-3">Cart Totals</Row>
         <Row className="font mb-3">
-          <Col>Subtotal ${cartSubtotal}</Col>
+          <Col>Total ${cartSubtotal}</Col>
           <Col>Cart Total</Col>
         </Row>
         <Row>
@@ -39,7 +39,7 @@ export default function({cartSubtotal}) {
           Proceed to Checkout
         </Button>{" "}
         {/* <Button> */}
-        <PayButton />
+        <PayButton cartSubtotal={cartSubtotal} />
         {/* </Button> */}
       </Container>
     </>

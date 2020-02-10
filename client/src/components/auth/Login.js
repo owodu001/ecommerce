@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { AuthContext } from "../../auth/auth";
+import { AuthContext, useAuth } from "../../auth/auth";
 
 export default function Login({ history }) {
   // todo: errors my friend...
@@ -10,6 +10,7 @@ export default function Login({ history }) {
   useEffect(() => {
     // If logged in and user navigates to Login page, should redirect them to dashboard
     if (user) {
+      debugger;
       history.push("/");
     }
   }, [user, history]);
