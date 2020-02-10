@@ -1,7 +1,10 @@
 import React, { useContext, useState, useRef } from "react";
+import { useHistory } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Overlay, Tooltip } from "react-bootstrap";
 import { CartContext } from "../../state/cartContext";
+import { AuthContext, useAuth } from "../../auth/auth";
+
 // import CartProduct from "../Cart/CartProduct";
 import "./AddToCart.css";
 
@@ -13,6 +16,8 @@ import {faCartPlus } from "@fortawesome/free-solid-svg-icons"
 
 
 export default function AddToCart({ item }) {
+  const { user } = useContext(AuthContext);
+  let history = useHistory();
   const [show, setShow] = useState(false);
   const target = useRef(null);
   const cartContextValue = useContext(CartContext);
@@ -22,6 +27,10 @@ export default function AddToCart({ item }) {
     <>
       <Button className="AddToCart" ref={target}
         onClick={() => {
+          if (!user) {
+            return history.push("/login");
+          }
+
           const cart = [...cartContextValue.cart, item];
           setShow(!show)
           // stringify (javascript to string)

@@ -53,6 +53,7 @@ router.post("/register", (req, res) => {
             dbUser.save()
               .then(user => {
                 console.log("User is registered up successfully!")
+                res.json(user)
               })
               .catch(err => {
                 console.log(err);
