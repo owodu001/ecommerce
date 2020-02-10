@@ -1,33 +1,52 @@
 .productCard{
- border-radius: 0px;
-border: none;
-
+ border-radius: -2px;
+    border: none;
+    margin-bottom: 25px;
+    width: 100%;
 }
 
-.Card.Title{
-    color: black;
-    background-color: white;
-    height: fit-content;
-}
 .cardImage{
     position: relative;
-    border-radius: none;
+    border-radius: 0px;
+    box-shadow: 3px 3px 20px 0px rgba(0,0,0,0.5);
+    transition: .5s ease;
 }
+
+/* .contentOverlay{
+background: rgba(0, 0, 0, 0.995);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.contentOverlay:hover{
+  opacity: 1;
+} */
 
 .productName{
     background-color: rgba(255, 255, 255, 0.7);
     padding: 5px;
+    width: fit-content;
+    position: absolute;
+    font-size: 22px;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.productName:hover{
+    background-color: rgba(48, 48, 48, 0.81);
+    color: rgb(255, 255, 255);
+    padding: 5px;
     width: fit-content; 
 }
 
-/* .productName:hover{
-    background-color: rgba(48, 48, 48, 0.81);
-    color: rgba(255, 255, 255, 0.7);
-    padding: 5px;
-    width: fit-content; 
-} */
-
-.productPrice {
+/* .productPrice {
     background-color: rgba(255, 255, 255, 0.7);
     padding: 5px;
     width: fit-content;
@@ -35,23 +54,60 @@ border: none;
     right: 15px;
     bottom: 80px;
     font-size: 22px;
+    z-index: 999;
+    text-decoration: none;
+
 }   
+.productPrice:hover{
+    background-color: rgba(48, 48, 48, 0.81);
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    width: fit-content; 
+}*/
 
 .cardOpts{
     align-content: center;
+    position: absolute;
+    bottom: -50px;
+    width: 100%;
+    margin-bottom: 30px;
+    margin-left: 7px;
+    /* margin: 0px;
+    padding:0px; */
 }
+
 
 .cardButton{
-
-    background-color: salmon;
-    width: auto;
+    background-color: #ebebeb;
+    color: black;
     border: none;
-    
+    border-radius: 0px;
+    padding: 10px, 10px;
+    margin: 0px, 0px;
+    /* padding: 10px, 10px; */
+    width: 100%;
+    height: 100%;
+    box-shadow: 3px 3px 20px 0px rgba(0,0,0,0.3);
 }
 
+.cardCol{
+    padding:0px;
+}
 .cardButton:hover{
-    background-color: salmon;
-    width: auto;
-    border: none;
+    background-color: #c9c9c9;
+    color: black;
+
+}
+
+a{
+    text-decoration: none;
+    text-transform: none;
+    color: black;
+}
+
+a:hover{
+    text-decoration: none;
+    text-transform: none;
+    color: black;
     
 }

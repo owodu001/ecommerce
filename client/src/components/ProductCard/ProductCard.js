@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 // import { storiesOf } from "@storybook/react";
 // import axios from "axios";
 import Card from "react-bootstrap/card";
-import { Row, Nav, Container, Col, Button } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
 import "./ProductCard.css";
 
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import AddToCart from "../AddToCart/AddToCart";
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,25 +14,26 @@ const ProductCard = ({ p }) => {
 
   return (
     <div>
-      <Card className="productCard">
+      <Card  className="productCard">
+        <a href={`/product?${p.id}`}>
         <Card.ImgOverlay>
-          <Card.Title className="productName">{p.title}</Card.Title>
+          <Card.Title className="productName" >{p.title} – {p.price}</Card.Title>
+        {/* </Card.ImgOverlay>
+        <Card.ImgOverlay variant="bottom"> */}
+          {/* <Card.Title className="productPrice"></Card.Title> */}
         </Card.ImgOverlay>
-        <Card.ImgOverlay variant="bottom">
-          <Card.Title className="productPrice">{p.price}</Card.Title>
-        </Card.ImgOverlay>
+        
         <Card.Img className="cardImage" variant="top" src={p.image} />
+        </a>
         <Card.Body className="cardOpts">
-          <Row className="cardRow">
-            <Col>
-              <AddToCart item={p} />
-              {/* <Button className="cardButton" >Add to Cart</Button> */}
+          <Row >
+            <Col className="cardCol">
+              <AddToCart className="cardButton" item={p} />
             </Col>
-            <Col>
-              {/* <Button className="cardButton" href="/product"> View Details </Button> */}
-              <Link className="cardButton" to={`/product?${p.id}`}>
+            <Col >
+              <Button className="cardButton" href={`/product?${p.id}`}>
                 View Details
-              </Link>
+              </Button>
             </Col>
           </Row>
         </Card.Body>

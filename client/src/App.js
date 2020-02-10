@@ -13,13 +13,26 @@ import Register from "./components/auth/Register";
 import Cart from "./layout/Cart";
 import Category from "./layout/Category";
 import ProductDetail from "./layout/ProductDetail";
+
 // import CheckoutOpt from "./components/CheckoutOpt/CheckoutOpt.js";
+
 import CartProvider from "./state/cartContext";
 import AddProduct from "./components/AddProduct/AddProduct";
 // import PrivateRoute from "./components/private-route/PrivateRoute"
 
 
+
+
+ function App(props) {
+  const [authTokens, setAuthTokens] = useState();
+
+  const setTokens = data => {
+    localStorage.setItem("tokens", JSON.stringify(data));
+    setAuthTokens(data);
+  };
+
 function App(props) {
+
   return (
     <Auth>
       <CartProvider>

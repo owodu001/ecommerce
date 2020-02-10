@@ -9,10 +9,16 @@
 }
 
 .dropd{
-    background-color: salmon;
-    color: blanchedalmond;
+    background-color: #ebebeb;
+    color: black;
     border: none;
-    width: 175px;
+    border-radius: 0px;
+    margin: 0px, 0px;
+    padding: 10px, 10px;
+    width: 80%;
+    /* height: 100%; */
+    box-shadow: 3px 3px 20px 0px rgba(0,0,0,0.3);
+    margin-bottom: 25px;
 }
 
 @media screen and (max-width: 767px){

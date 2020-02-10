@@ -12,6 +12,7 @@ function FootNav() {
         <Container className="footerContainer"fluid>
             <Row>
                 <Col className="contact">
+                    <h4>Contact Us:</h4>
                     <p>0-000-000-0000</p>
                     <p>emailUs@Business.com</p>
                     <p>Street Address,

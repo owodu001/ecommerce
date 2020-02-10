@@ -8,11 +8,23 @@
     /* change your gradient by editing the two colors in parentheses, or add your own image:  */
     background-image: linear-gradient( #fa8072, white);
 }
+.CategoryHero{
+    height: 350px;
+    margin-bottom: 0px;
+    text-align: center;
+    align-content: center;
+    justify-items: center;
+    background-color: white;
+    /* change your gradient by editing the two colors in parentheses, or add your own image:  */
+    background-image: linear-gradient( #fa8072, white);
+
+}
 
 .pageTitle{
     /* change page title color and font size here! */
     color: white;
-    font-size: 64px;
+    font-size: 80px;
+    font-family: 'Grand Hotel', cursive;
 }
 
 .details{
@@ -24,12 +36,17 @@
 
 .collectionButton{
     /* change main hero button color and font size here! */
-    background-color: salmon;
-    color: white;
+    background-color: #666666;
     border: none;
+    border-radius: 0px;
 }
 
 .collectionButton:hover{
     background-color:#396b87 ;
     color: #6ecfcc;
+}
+
+.btnText{
+    text-decoration: none;
+    color: white;
 }
