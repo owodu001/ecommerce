@@ -57,10 +57,10 @@ export default function AddProduct() {
                     <div className="form-group">
                         <label>Category</label>
                         <select className="form-control">
-                            {categories.map(category => { <option> {category}</option> })}
-                            {/* <option> category 1</option>
+                            {/* {categories.map(category => { <option> {category}</option> })} */}
+                            <option> category 1</option>
                             <option> category 2</option>
-                            <option> category 2</option> */}
+                            <option> category 2</option>
                         </select>
                     </div>
 

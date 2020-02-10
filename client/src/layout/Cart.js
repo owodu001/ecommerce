@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CartProduct from "../components/Cart/CartProduct";
 import { Col, Row, Container } from "react-bootstrap";
@@ -19,12 +19,20 @@ import { CartContext } from "../state/cartContext";
 // removeButton
 // calculateTotal
 export default function() {
-  // removeProduct = id => {
 
   const [total, setTotal] = useState(0)
-
   const cartContextValue = useContext(CartContext);
   console.log(cartContextValue.cart);
+  useEffect(() => {
+    let tempValue = 0;
+    cartContextValue.cart.forEach((item, i) => {
+      console.log(item)
+      console.log(parseFloat(item.price.split("$")[1], i))
+      tempValue += parseFloat(item.price.split("$")[1])
+    })
+    console.log(tempValue)
+    setTotal(tempValue)
+  }, [cartContextValue.cart])
   return (
     <>
       <hr />
@@ -32,11 +40,11 @@ export default function() {
         <Row>
           <Col>
             {cartContextValue.cart.map(item => (
-              <CartProduct key={item.id} product={item} />
+              <CartProduct key={item._id} product={item} />
             ))}
           </Col>
           <Col>
-            <CartSubtotal />
+            <CartSubtotal cartSubtotal={total}/>
           </Col>
         </Row>
       </Container>

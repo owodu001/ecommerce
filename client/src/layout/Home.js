@@ -11,30 +11,24 @@ import ProductGrid from "../components/ProductGrid/ProductGrid";
 import CategoryBar from "../components/categoryBar/CategoryBar";
 import FootNav from "../components/Footer/Footer";
 import Pages from "../components/Pagination/Pagination";
-// import { Container } from "react-bootstrap";
 
+export default function() {
+  useEffect(() => {
+    axios
+      .get("https://les-meilleurs.herokuapp.com/api/products")
+      .then(res => console.log(res.data));
+  }, []);
 
-export default function () {
-
-    useEffect(() => {
-        axios
-            .get("https://les-meilleurs.herokuapp.com/api/products")
-            .then(res => console.log(res.data));
-    }, []);
-
-    return (
-        <>
-            <div className="MainContent">
-            <HeroBanner className="hero" spacing="base" />
-            <CategoryBar />
-            <hr />
-            <ProductGrid className="grid" spacing="base" />
-            <hr />
-            </div>
-            <FootNav/>
-        </>
-
-    );
-
-
+  return (
+    <>
+      <div className="MainContent">
+        <HeroBanner className="hero" spacing="base" />
+        <CategoryBar />
+        <hr />
+        <ProductGrid className="grid" spacing="base" />
+        <hr />
+      </div>
+      <FootNav />
+    </>
+  );
 }
