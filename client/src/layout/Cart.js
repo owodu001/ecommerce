@@ -43,7 +43,7 @@ export default function() {
         <Row>
           <Col>
             {cartContextValue.cart.map(item => (
-              <CartProduct key={item.id} product={item} />
+              <CartProduct key={item._id} product={item} />
             ))}
           </Col>
           <Col>

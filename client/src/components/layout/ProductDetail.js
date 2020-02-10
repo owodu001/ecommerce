@@ -14,20 +14,23 @@ import {
 import axios from "axios";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import AddToCart from "../AddToCart/AddToCart";
+import ProductCard from "../ProductCard/ProductCard";
 
 export default function({ p, location }) {
   const [counter, setCounter] = useState(0);
   const [value, setValue] = useState("");
-  const [product, setProduct] = useState([{}]);
+  const [product, setProduct] = useState({});
 
   //   setProduct to res.data
   //  display {} dynamically in view
   // https://les-meilleurs.herokuapp.com/api/products/:id
   useEffect(() => {
     const productId = location.search.split("?")[1];
+    console.log(productId);
     axios
-      .get(`https://les-meilleurs.herokuapp.com/api/products`)
-      .then(res => console.log(res.data[0]._id));
+      .get(`https://les-meilleurs.herokuapp.com/api/products/${productId}`)
+      .then(res => setProduct(res.data));
     // console.log(location);
   }, []);
 
@@ -42,20 +45,11 @@ export default function({ p, location }) {
           <Col md={6}>
             <Row>
               <Card>
-                <Card.Img variant="top" src="http://placekitten.com/200/200" />
+                <Card.Img variant="top" src={product.image1} alt="image" />
                 <Card.Body>
-                  <Card.Title>
-                    WD·NY Black – Men's Palm Burgundy Jacket
-                  </Card.Title>
-                  <Card.Title>$250</Card.Title>
-                  <Card.Text>
-                    Bring some funky nostalgia to your next event — and every
-                    one after — with the Denim Blazer WD·NY Black – Men's Palm
-                    Burgundy Jacket. This suit jacket is the perfect way to add
-                    some fun style to your dressy look. Pair it with a floral
-                    button-down shirt and dress pants for the perfect mix of
-                    formal and unique.
-                  </Card.Text>
+                  <Card.Title>{product.title}</Card.Title>
+                  <Card.Title>${product.price}</Card.Title>
+                  <Card.Text>{product.description}</Card.Text>
                   <InputGroup
                     className="mb-3"
                     style={{ width: "130px", alignContent: "center" }}
@@ -84,22 +78,18 @@ export default function({ p, location }) {
                       </Button>{" "}
                     </InputGroup.Append>
                   </InputGroup>
-                  <Button
+                  <AddToCart item={p} />
+                  {/* <Button
                     variant="info"
                     onClick={() => {
                       console.log(counter);
                     }}
                   >
                     Add to Cart
-                  </Button>
+                  </Button> */}
                 </Card.Body>
               </Card>
             </Row>
-            <Row style={{ fontWeight: "bold" }}>Product Details:</Row>
-            <Row>SKU: 9624</Row>
-            <Row>Size: M, L, XL </Row>
-            <Row>Categories: blazers</Row>
-            <Row>Brand: fashion, clothing, men</Row>
           </Col>
         </Row>
         <Row>

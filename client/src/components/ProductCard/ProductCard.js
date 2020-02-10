@@ -20,7 +20,12 @@ const ProductCard = ({ p }) => {
         <Card.ImgOverlay variant="bottom">
           <Card.Title className="productPrice">{p.price}</Card.Title>
         </Card.ImgOverlay>
-        <Card.Img className="cardImage" variant="top" src={p.image} />
+        <Card.Img
+          className="cardImage"
+          variant="top"
+          src={p.image2}
+          alt="image"
+        />
         <Card.Body className="cardOpts">
           <Row className="cardRow">
             <Col>
