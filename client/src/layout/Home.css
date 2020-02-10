@@ -1,33 +1,16 @@
-/* .hero{
-   margin-bottom: none;
+.MainContent{
+  margin-bottom: 50px;
 
-} */
+
+}
 
 hr {
     margin-top: 3rem;
     margin-bottom: 3rem;
     border: 0
   }
-
-.CategoryBar {
-
-
-}
-
-.SearchComp{
-
-
-}
     
 .grid{
     margin-top: 15px;
 
-}
-
-.footerContainer{
-  background-color: #666666;
-  width: 100%;
-  padding: 15px;
-  position: absolute;
-  bottom: 0;
 }

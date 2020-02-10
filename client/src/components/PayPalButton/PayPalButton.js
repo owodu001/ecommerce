@@ -1,10 +1,10 @@
 import React from "react";
 import { PayPalButton } from "react-paypal-button-v2";
 
-export default function PayButton() {
+export default function PayButton({cartSubtotal}) {
   return (
     <PayPalButton
-      amount="0.01"
+      amount= {cartSubtotal} 
       // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
       onSuccess={(details, data) => {
         alert("Transaction completed by " + details.payer.name.given_name);

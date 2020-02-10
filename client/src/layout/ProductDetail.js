@@ -1,117 +1,148 @@
-// import React, { useState } from "react";
-// import {
-//   Card,
-//   Button,
-//   Container,
-//   Col,
-//   Row,
-//   Image,
-//   InputGroup,
-//   FormControl,
-//   Tab,
-//   Tabs
-// } from "react-bootstrap";
+// import React, { useState, useEffect } from "react";
+// import { Card, Container, Col, Row, Tab, Tabs } from "react-bootstrap";
+// import axios from "axios";
 
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "./ProductDetail.css";
 // import AddToCart from "../components/AddToCart/AddToCart";
+// import FootNav from "../components/Footer/Footer";
 
-// export default function() {
-//   const [counter, setCounter] = useState(0);
-//   const [value, setValue] = useState("");
+import React, { useState, useEffect } from "react";
+import { Card, Container, Col, Row, Tab, Tabs } from "react-bootstrap";
+import axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./ProductDetail.css";
+import AddToCart from "../components/AddToCart/AddToCart";
+import FootNav from "../components/Footer/Footer";
 
-//   return (
-//     <>
-//       <hr />
-//       <Container className="detailContainer">
-//         {/* <Row className="mt-5"> */}
-//         {/* <Col md={6}>
-//             <Image src="http://placekitten.com/400/400" rounded />
-//           </Col> */}
-//         {/* <Col md={6}> */}
-//         <Card>
-//           <Row>
-//             <Col>
-//               <Card.Img variant="top" src="http://placekitten.com/200/200" />
-//             </Col>
-//             <Col className="noPad">
-//               <Card.Body>
-//                 <Card.Title>
-//                   WD·NY Black – Men's Palm Burgundy Jacket hghgjhgjhk
-//                 </Card.Title>
-//                 <Card.Title>$760</Card.Title>
-//                 <Card.Text>
-//                   Bring some funky nostalgia to your next event — and every one
-//                   after — with the Denim Blazer WD·NY Black – Men's Palm
-//                   Burgundy Jacket. This suit jacket is the perfect way to add
-//                   some fun style to your dressy look. Pair it with a floral
-//                   button-down shirt and dress pants for the perfect mix of
-//                   formal and unique.
-//                 </Card.Text>
-//                 <Card.Text>
-//                   <Row style={{ fontWeight: "bold" }}>Product Details:</Row>
-//                   <Row>SKU: 9624</Row>
-//                   <Row>Size: M, L, XL </Row>
-//                   <Row>Categories: blazers</Row>
-//                   <Row>Brand: fashion, clothing, men</Row>
-//                 </Card.Text>
-//                 <InputGroup
-//                   className="mb-3"
-//                   style={{ width: "130px", alignContent: "center" }}
-//                 >
-//                   <InputGroup.Prepend>
-//                     <Button
-//                       variant="info"
-//                       onClick={() => setCounter(counter - 1)}
-//                     >
-//                       -
-//                     </Button>{" "}
-//                   </InputGroup.Prepend>
-//                   <FormControl
-//                     type="text"
-//                     value={counter}
-//                     aria-label="Input group example"
-//                     aria-describedby="btnGroupAddon"
-//                     onChange={({ target }) => setCounter(target.value)}
-//                   />
-//                   <InputGroup.Append>
-//                     <Button
-//                       variant="info"
-//                       onClick={() => setCounter(parseInt(counter) + 1)}
-//                     >
-//                       +
-//                     </Button>{" "}
-//                   </InputGroup.Append>
-//                 </InputGroup>
-//                 <AddToCart />
-//               </Card.Body>
-//             </Col>
-//           </Row>
-//         </Card>
-//       </Container>
-//       <hr></hr>
-//       <Container className="tabsContainer">
-//         <Row>
-//           <Col>
-//             <Tabs
-//               className="tabtop"
-//               defaultActiveKey="profile"
-//               id="uncontrolled-tab-example"
-//             >
-//               <Tab className="tab" eventKey="description" title="Description">
-//                 <p className="tabText">Product info!</p>
-//               </Tab>
-//               <Tab className="tab" eventKey="review" title="Reviews">
-//                 <p className="tabText">Coming Soon!</p>
-//               </Tab>
-//               <Tab className="tab" eventKey="custom" title="Custom Tab">
-//                 <p className="tabText">Custom Detail!</p>
-//               </Tab>
-//             </Tabs>
-//           </Col>
-//         </Row>
-//       </Container>
-//       <hr></hr>
-//     </>
-//   );
-// }
+export default function({ p, location }) {
+  // const [counter, setCounter] = useState(0);
+  // const [value, setValue] = useState("");
+  const [product, setProduct] = useState({});
+
+  // useEffect(() => {
+  //   axios.get("http://localhost:5000/api/productsTest").then(res => {
+  //     setProduct(res.data);
+  //     console.log(res.data);
+  //   });
+  // }, []);
+  useEffect(() => {
+    const productId = location.search.split("?")[1];
+    console.log(productId);
+    axios
+      .get(`https://les-meilleurs.herokuapp.com/api/products/${productId}`)
+      .then(res => setProduct(res.data));
+    // console.log(location);
+  }, []);
+
+  //     setProduct(res.data);
+  //     console.log(res.data);
+  //   });
+  // }, []);
+
+  return (
+    <>
+      <Container>
+        <Card className="detailsContainer">
+          <Row>
+            <Col>
+              <Card.Img
+                className="detailsImages"
+                src={product.image1}
+                alt="product image 1"
+              />
+            </Col>
+            <Col className="noPad">
+              <Card.Body>
+                <Card.Title>{product.title}</Card.Title>
+                <Card.Title>{product.price}</Card.Title>
+                <Card.Text>
+                  <Row style={{ fontWeight: "bold" }}>Product Details:</Row>
+                  <br />
+                  <Row>{product.description}</Row>
+                </Card.Text>
+                <br />
+                <br />
+                <AddToCart />
+                <br />
+              </Card.Body>
+              <Row className="Thumbs">
+                <Card.Img
+                  thumbnail
+                  className="thumbnail"
+                  src={product.image1}
+                />
+                <Card.Img
+                  thumbnail
+                  className="thumbnail"
+                  src={product.image2}
+                />
+                <Card.Img
+                  thumbnail
+                  className="thumbnail"
+                  src={product.image1}
+                />
+              </Row>
+            </Col>
+          </Row>
+        </Card>
+      </Container>
+      <Container>
+        <Card className="MobiledetailsContainer">
+          <Card.Img
+            className="detailsImages"
+            variant="top"
+            src={product.image1}
+          />
+          <Card.Body>
+            <Card.Title>
+              <strong>{product.title}</strong>
+            </Card.Title>
+            <Card.Title>{product.price}</Card.Title>
+            <Card.Text>
+              <Row style={{ fontWeight: "bold" }}>Product Details:</Row>
+              <br />
+              <Row>{product.description}</Row>
+              <Row>
+                <strong>Category : </strong> {product.category}
+              </Row>
+              <Row>
+                <strong>Quantity : </strong> {product.quantity}
+              </Row>
+            </Card.Text>
+            <br />
+            <br />
+            <AddToCart />
+            <br />
+            <hr />
+            <Row className="Thumbs">
+              <Card.Img thumbnail className="thumbnail" src={product.image1} />
+              <Card.Img thumbnail className="thumbnail" src={product.image2} />
+              {/* <Card.Img thumbnail className="thumbnail" src={product.image3} /> */}
+            </Row>
+          </Card.Body>
+        </Card>
+      </Container>
+      <Container className="tabsContainer">
+        <Col>
+          <Tabs
+            className="tabtop"
+            defaultActiveKey="profile"
+            id="uncontrolled-tab-example"
+          >
+            <Tab eventKey="description" title="Description">
+              <p className="tab">Product info!</p>
+            </Tab>
+            <Tab eventKey="review" title="Reviews">
+              <p className="tab">Coming Soon!</p>
+            </Tab>
+            <Tab eventKey="custom" title="Custom Tab">
+              <p className="tab">Custom Detail!</p>
+            </Tab>
+          </Tabs>
+        </Col>
+      </Container>
+      <FootNav />
+    </>
+  );
+}

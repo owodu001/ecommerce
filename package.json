@@ -4,7 +4,7 @@
   "description": "Mern Auth Example",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
@@ -20,21 +20,19 @@
     "@fortawesome/react-fontawesome": "^0.1.8",
     "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.19.0",
     "bootstrap": "^4.4.1",
-    "concurrently": "^4.0.1",
-    "express": "^4.16.4",
-    "grommet": "^2.10.0",
-    "grommet-icons": "^4.4.0",
+    "concurrently": "^4.1.2",
+    "express": "^4.17.1",
     "is-empty": "^1.2.0",
-    "jsonwebtoken": "^8.3.0",
-    "mongoose": "^5.7.5",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.8.11",
     "nodemon": "1.19.4",
-    "passport": "^0.4.0",
+    "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-paypal-button-v2": "^2.6.1",
     "styled-components": "^5.0.0",
-    "validator": "^10.9.0"
+    "validator": "^10.11.0"
   }
 }

@@ -8,21 +8,36 @@
     text-align: center;
 }
 
-.dropd{
-    background-color: salmon;
-    color: blanchedalmond;
+
+.searchBtn{
+    background-color: #ebebeb;
+    color: black;
     border: none;
-    width: 175px;
+    border-radius: 0px;
+    margin: 0px, 0px;
+    padding: 10px, 10px;
+
+    width: 100%;
+
+    /* height: 100%; */
+    box-shadow: 3px 3px 20px 0px rgba(0,0,0,0.3);
+    margin-bottom: 25px;
 }
 
 @media screen and (max-width: 767px){
     .dropd {
-        width: max-content;
+        width: 100%;
     }
 
 }
 
-.dropd:hover{
-    background-color:#396b87 ;
-    color: #6ecfcc;
+.searchBtn:hover{
+    background-color:#42404f;
+    color: white;
+}
+
+.searchInput{
+    width: 50%;
+    box-shadow: 3px 3px 20px 0px rgba(0,0,0,0.3);
+    background-color: white;
 }

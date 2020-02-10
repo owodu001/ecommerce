@@ -13,7 +13,7 @@ function HeroBanner() {
     <p className="details">
       Read more details about our amazing sale!!
     </p>
-    <Button className="collectionButton" ><Link to="/category">View Sale Category</Link></Button>
+    <Button className="collectionButton" ><Link className="btnText" to="/category">View Sale Category</Link></Button>
   </Container>
 </Jumbotron>
 
