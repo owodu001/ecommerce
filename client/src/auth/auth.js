@@ -42,8 +42,8 @@ export const registerUser = setErrors => (userData, history) => {
   axios
     .post("/api/users/register", userData)
     .then(res => {
-      history.push("/login")
-      console.log("registered")
+      history.push("/login");
+      console.log("registered");
     })
     .catch(err => {
       console.log(err);
@@ -54,24 +54,25 @@ export const registerUser = setErrors => (userData, history) => {
 export function useAuth() {
   const [user, setUser] = useState(null);
   const [errors, setErrors] = useState({});
-  useEffect(() => {
-    if (localStorage.jwtToken) {
-      // Set auth token header auth
-      const token = localStorage.jwtToken;
-      setAuthToken(token);
-      // Decode token and get user info and exp
-      const decoded = jwt_decode(token);
-      // Set user and isAuthenticated
-      setUser(decoded);
-      // Check for expired token
-      const currentTime = Date.now() / 1000; // to get in milliseconds
-      if (decoded.exp < currentTime) {
-        // Logout user
-        logoutUser(setUser);
+  // useEffect(() => {
+  //   if (localStorage.jwtToken) {
+  //     // Set auth token header auth
+  //     const token = localStorage.jwtToken;
+  //     setAuthToken(token);
+  //     // Decode token and get user info and exp
+  //     const decoded = jwt_decode(token);
+  //     // Set user and isAuthenticated
+  //     debugger;
+  //     setUser(decoded);
+  //     // Check for expired token
+  //     const currentTime = Date.now() / 1000; // to get in milliseconds
+  //     if (decoded.exp < currentTime) {
+  //       // Logout user
+  //       logoutUser(setUser);
 
-      }
-    }
-  }, [user]);
+  //     }
+  //   }
+  // }, [user]);
 
   return {
     user,
