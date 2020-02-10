@@ -7,7 +7,7 @@ const TestProdList = require("./models/product-Data");
 // const passport = require("passport");
 
 const productsRT = require("./routes/api/product-routes");
-const customersRT = require("./routes/api/customer-routes");
+const customersRT = require("./routes/api/users-routes");
 const ordersRT = require("./routes/api/order-routes");
 // const games = require("./routes/api/games");
 
@@ -24,7 +24,7 @@ app.use(
 app.use(bodyParser.json());
 
 // ALLOW CORS to allows access from cross domain to get API info
-const allowCrossDomain = function(req, res, next) {
+const allowCrossDomain = function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
   res.header("Access-Control-Allow-Headers", "Content-Type");
@@ -41,7 +41,10 @@ const db = require("./config/keys").mongoURI;
 
 // Connect to MongoDB
 mongoose
-  .connect(db, { useNewUrlParser: true })
+  .connect(
+    db,
+    { useNewUrlParser: true }
+  )
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
 
@@ -51,7 +54,10 @@ mongoose
 // // Passport config
 // require("./config/passport")(passport);
 
+
+
 // Routes
+app.get("/api/productsTest", (req, res) => res.json(TestProdList));
 app.get("/api/productsTest/:id", (req, res) => {
   for (const p of TestProdList) {
     if (p.id === req.params.id) {
@@ -60,20 +66,10 @@ app.get("/api/productsTest/:id", (req, res) => {
   }
   res.json(TestProdList);
 });
-
-
-app.get("/api/productsTest", (req, res) => res.json(TestProdList));
 app.get("/", (req, res) => res.send("server is running"));
 app.use("/api/products", productsRT);
-// app.get("/api/product/:id", (req, res) => {
-//   console.log("id-----", req.params.id);
-//   TestProdList.find({
-//     id: req.params.id
-//   }).then(product => {
-//     res.json({ product });
-//   });
-// });
-app.use("/api/customers", customersRT);
+app.use("/api/users", customersRT);
 app.use("/api/orders", ordersRT);
+
 
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));

@@ -6,6 +6,7 @@ import SearchComp from "../Search/SearchComp";
 import axios from "axios";
 import "./ProductGrid.css";
 
+
 const ProductGrid = () => {
   const [product, setProduct] = useState([]);
   useEffect(() => {
@@ -42,8 +43,8 @@ const ProductGrid = () => {
 
       <Row className="gridRow">
         {product.map(p => (
-          <Col md={4}>
-            <ProductCard p={p} />
+          <Col md={4} key={p.id}>
+            <ProductCard p={p} key={p.id} />
           </Col>
         ))}
       </Row>
