@@ -1,9 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
-import classnames from "classnames";
-import { Box, Button, FormField, TextInput } from "grommet";
-import { AuthContext } from "../../auth/auth";
+import { AuthContext, useAuth } from "../../auth/auth";
 
 export default function Login({ history }) {
   // todo: errors my friend...
@@ -14,84 +10,63 @@ export default function Login({ history }) {
   useEffect(() => {
     // If logged in and user navigates to Login page, should redirect them to dashboard
     if (user) {
-      history.push("/dashboard");
+      debugger;
+      history.push("/");
     }
   }, [user, history]);
 
   return (
-    <Box justify="center" align="center" style={{ marginTop: "4rem" }}>
-      <Link to="/">Back to home</Link>
-      <div style={{ paddingLeft: "11.250px" }}>
-        <h4>
-          <b>Login</b> below
-        </h4>
-        <p>
-          Don't have an account? <Link to="/register">Register</Link>
-        </p>
-      </div>
-      <form
-        noValidate
-        onSubmit={e => {
-          e.preventDefault();
+    <form
+      noValidate
+      onSubmit={e => {
+        e.preventDefault();
 
-          const userData = {
-            email,
-            password
-          };
+        const userData = {
+          email,
+          password
+        };
 
-          loginUser(userData);
-        }}
-      >
-        <div>
-          <FormField label="Email">
-            <TextInput
-              placeholder="type here"
-              onChange={e => setEmail(e.target.value)}
+        loginUser(userData);
+      }}
+    >
+      <div className="auth-wrapper">
+        <div className="auth-inner">
+          <h3>Sign In</h3>
+
+          <div className="form-group">
+            <label>Email address</label>
+            <input type="email" className="form-control" placeholder="Enter email"
+              type="username"
               value={email}
-              error={errors.email}
-              id="email"
-              type="email"
-              className={classnames("", {
-                invalid: errors.email || errors.emailnotfound
-              })}
+              onChange={e => { setEmail(e.target.value); }}
             />
-          </FormField>
+            <span>
+              {errors.email}
+              {errors.emailnotfound}
+            </span>
+          </div>
 
-          <span style={{ color: "red" }}>
-            {errors.email}
-            {errors.emailnotfound}
-          </span>
-        </div>
-        <div>
-          <FormField label="Password">
-            <TextInput
-              placeholder="type here"
-              onChange={e => setPassword(e.target.value)}
-              value={password}
-              error={errors.password}
-              id="password"
-              type="password"
-              className={classnames("", {
-                invalid: errors.password || errors.passwordincorrect
-              })}
+          <div className="form-group">
+            <label>Password</label>
+            <input type="password" className="form-control" placeholder="Enter password"
+              value={password} onChange={e => { setPassword(e.target.value); }}
             />
-          </FormField>
-
-          <span style={{ color: "red" }}>
+          </div>
+          <span>
             {errors.password}
             {errors.passwordincorrect}
           </span>
+
+          <button type="submit" className="btn btn-primary btn-block">Log In</button>
+
+          <p className=" new text-center">
+            Are you New ? <a href="/register">Register</a>
+          </p>
+
         </div>
-        <div style={{ paddingLeft: "11.250px" }}>
-          <Button type="submit" label="login" />
-        </div>
-      </form>
-    </Box>
+      </div>
+
+    </form>
+
   );
 }
-
-Login.propTypes = {
-  loginUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired
-};

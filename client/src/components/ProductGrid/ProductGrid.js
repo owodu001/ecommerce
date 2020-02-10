@@ -8,10 +8,11 @@ import "./ProductGrid.css";
 // import FootNav from "../Footer/Footer";
 // import Pages from "../Pagination/Pagination";
 
+
 const ProductGrid = () => {
   const [product, setProduct] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:5000/api/productsTest").then(res => {
+    axios.get("/api/productsTest").then(res => {
       setProduct(res.data);
       console.log(res.data);
     });
@@ -45,8 +46,8 @@ const ProductGrid = () => {
 
       <Row className="gridRow">
         {product.map(p => (
-          <Col md={4}>
-            <ProductCard p={p} />
+          <Col md={4} key={p.id}>
+            <ProductCard p={p} key={p.id} />
           </Col>
         ))}
       </Row>

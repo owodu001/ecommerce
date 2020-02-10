@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import {Row, Col} from "react-bootstrap";
 import "./Home.css";
@@ -12,8 +12,6 @@ import CategoryBar from "../components/categoryBar/CategoryBar";
 import FootNav from "../components/Footer/Footer";
 import Pages from "../components/Pagination/Pagination";
 // import { Container } from "react-bootstrap";
-
-
 
 
 export default function () {
@@ -40,5 +38,5 @@ export default function () {
 
     );
 
- 
+
 }

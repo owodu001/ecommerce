@@ -32,7 +32,6 @@ export default function () {
 
   const [total, setTotal] = useState(0)
 
-
   const cartContextValue = useContext(CartContext);
 
   console.log(cartContextValue.cart);
