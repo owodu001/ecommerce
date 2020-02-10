@@ -1,34 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import PrivateRoute from './PrivateRoute';
-import { AuthContext } from "./context/auth";
+import { AuthContext } from "./auth/auth";
 // Import components
+import { Auth } from "./auth/auth";
 import NavMain from "./components/NavMain/Navbar";
 import Home from "./layout/Home";
-import ProductDetail from "./layout/ProductDetail";
-import SignIn from "./layout/SignIn";
-import SignUp from "./layout/SignUp";
-import admin from "./layout/admin";
+import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
 import Cart from "./layout/Cart";
 import Category from "./layout/Category";
-import CheckoutOpt from "./components/CheckoutOpt/CheckoutOpt.js";
+import ProductDetail from "./layout/ProductDetail";
+// import CheckoutOpt from "./components/CheckoutOpt/CheckoutOpt.js";
 import CartProvider from "./state/cartContext";
 import AddProduct from "./components/AddProduct/AddProduct";
+// import PrivateRoute from "./components/private-route/PrivateRoute"
 
-import { useState } from "react";
 
-export default function () {
-  const [authTokens, setAuthTokens] = useState();
-
-  const setTokens = (data) => {
-    localStorage.setItem("tokens", JSON.stringify(data));
-    setAuthTokens(data);
-  }
+function App(props) {
   return (
-    <AuthContext.Provider value={false}>
+    <Auth>
       <CartProvider>
         <Router>
           <div>
@@ -36,17 +29,16 @@ export default function () {
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/product" component={ProductDetail} />
-              <Route path="/sign-in" component={SignIn} />
-              <Route path="/sign-up" component={SignUp} />
+              <Route path="/login" component={Login} />
+              <Route path="/register" component={Register} />
               <Route path="/cart" component={Cart} />
               <Route path="/category" component={Category} />
-              <Route path="/checkout-opt" component={CheckoutOpt} />
-              <PrivateRoute path="/admin" component={admin} />
+              <Route path="/add-product" component={AddProduct} />
             </Switch>
           </div>
         </Router>
       </CartProvider>
-    </AuthContext.Provider>
-
+    </Auth>
   );
 }
+export default App;

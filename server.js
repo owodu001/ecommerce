@@ -7,7 +7,7 @@ const TestProdList = require("./models/product-Data");
 // const passport = require("passport");
 
 const productsRT = require("./routes/api/product-routes");
-const customersRT = require("./routes/api/customer-routes");
+const customersRT = require("./routes/api/users-routes");
 const ordersRT = require("./routes/api/order-routes");
 // const games = require("./routes/api/games");
 
@@ -68,7 +68,7 @@ app.get("/api/productsTest/:id", (req, res) => {
 });
 app.get("/", (req, res) => res.send("server is running"));
 app.use("/api/products", productsRT);
-app.use("/api/customers", customersRT);
+app.use("/api/users", customersRT);
 app.use("/api/orders", ordersRT);
 
 

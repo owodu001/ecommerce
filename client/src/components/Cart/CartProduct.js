@@ -1,7 +1,7 @@
-import React, { useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CartProduct.css";
-import {CartContext} from "../../state/cartContext";
+import { CartContext } from "../../state/cartContext";
 
 import {
   Container,
@@ -12,25 +12,32 @@ import {
   Col,
   Row
 } from "react-bootstrap";
+import AddToCart from "../AddToCart/AddToCart";
 
-export default function() {
+const CartProduct = ({ product }) => {
   const [counter, setCounter] = useState(0);
-  const cartContextValue = useContext(CartContext);
-//
-// export default function Cart() {
-//   const cartContextValue = useContext(CartContext);
-//   return (
-//     <div>
-//       <h3>Cart</h3>
-//       <div>
-//         {cartContextValue.cart.map(i => (
-//           <Item item={i} />
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
 
+
+  //
+  // export default function Cart() {
+  const cartContextValue = useContext(CartContext);
+  console.log(cartContextValue);
+  //   return (
+  //     <div>
+  //       <h3>Cart</h3>
+  //       <div>
+  //         {cartContextValue.cart.map(i => (
+  //           <Item item={i} />
+  //         ))}
+  //       </div>
+  //     </div>
+  //   );
+  // }
+  // <div>
+  //   {cartContextValue.cart.map(i => (
+  //     <Item item={i} />
+  //   ))}
+  // </div>
   return (
     <>
       <Container>
@@ -39,51 +46,29 @@ export default function() {
             <Card className="cartCard">
               <Row>
                 <Col>
-                  <Card.Img
-                    variant="left"
-                    src="http://placekitten.com/200/200"
-                  />
+                  <Card.Img variant="left" src={product.image} />
                 </Col>
                 <Col>
                   <Card.Body>
-                    <Card.Title>Product Name</Card.Title>
-                    <Card.Text>$Price</Card.Text>
+                    <Card.Title>{product.title}</Card.Title>
+                    <Card.Text>{product.price}</Card.Text>
                     <Button
                       variant="danger"
                       onClick={() => {
-                        console.log("What up");
+                        const cart = cartContextValue.cart.filter(
+                          p => product.id !== p.id
+                        );
+
+                        // stringify (javascript to string)
+                        localStorage.setItem(
+                          "shoppingcart",
+                          JSON.stringify(cart)
+                        );
+                        cartContextValue.setCart(cart);
                       }}
                     >
                       Remove
                     </Button>
-                    <InputGroup
-                      className="mb-3"
-                      style={{ width: "130px", alignContent: "center" }}
-                    >
-                      <InputGroup.Prepend>
-                        <Button
-                          variant="info"
-                          onClick={() => setCounter(counter - 1)}
-                        >
-                          -
-                        </Button>{" "}
-                      </InputGroup.Prepend>
-                      <FormControl
-                        type="text"
-                        value={counter}
-                        aria-label="Input group example"
-                        aria-describedby="btnGroupAddon"
-                        onChange={({ target }) => setCounter(target.value)}
-                      />
-                      <InputGroup.Append>
-                        <Button
-                          variant="info"
-                          onClick={() => setCounter(parseInt(counter) + 1)}
-                        >
-                          +
-                        </Button>{" "}
-                      </InputGroup.Append>
-                    </InputGroup>
                   </Card.Body>
                 </Col>
               </Row>
@@ -93,5 +78,6 @@ export default function() {
       </Container>
     </>
   );
-}
+};
 
+export default CartProduct;

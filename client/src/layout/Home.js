@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Home.css";
 import axios from "axios";
@@ -12,16 +12,7 @@ import FootNav from "../components/Footer/Footer";
 import Pages from "../components/Pagination/Pagination";
 
 
-
-
 export default function () {
-
-    useEffect(() => {
-        axios
-            .get("http://localhost:5000/api/products")
-            .then(res => console.log(res.data));
-    }, []);
-
     return (
         <>
             <HeroBanner className="hero" spacing="base" />
@@ -36,12 +27,5 @@ export default function () {
 
     );
 
-// export default function() {
-//   useEffect(() => {
-//     axios
-//       .get("http://localhost:5000/api/products")
-//       .then(res => console.log(res.data));
-//   }, []);
 
- 
 }

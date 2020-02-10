@@ -1,16 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-// Load Product & image model
-const Upload = require("../../models/Image");
+// Load Product
 const Product = require("../../models/Product");
-
-router.post('/upload', Upload.single("file"), (req, res) => {
-    console.log("file: ", file);
-    console.log("req: ", req);
-    res.json({ file: req.file });
-    // res.redirect('/');
-});
 
 // @route POST api/products/add
 // @desc Add new product
