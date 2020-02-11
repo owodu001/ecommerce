@@ -9,7 +9,7 @@ const products = [
     },
     {
         id: "132123WERE02",
-        image: "https://picsum.photos/200",
+        image: "https://images-na.ssl-images-amazon.com/images/I/51-oeeCf1zL._AC_SL1024_.jpg",
         title: "Honor Mobile",
         price: "$462.00",
         quantity: "5",
@@ -17,7 +17,7 @@ const products = [
     },
     {
         id: "132123WERE03",
-        image: "https://picsum.photos/200",
+        image: "https://images-na.ssl-images-amazon.com/images/I/616PPIgQgUL._AC_SL1500_.jpg",
         title: "Samsung LED TV",
         price: "$652.00",
         quantity: "5",
@@ -33,7 +33,7 @@ const products = [
     },
     {
         id: "132123WERE05",
-        image: "https://picsum.photos/200",
+        image: "https://images-na.ssl-images-amazon.com/images/I/413cU6KK6QL._AC_SL1024_.jpg",
         title: "Apple 6s",
         price: "$782.00",
         quantity: "5",

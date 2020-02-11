@@ -23,7 +23,12 @@ For deploying to Heroku, please refer to [this](https://www.youtube.com/watch?v=
 
 ## Paypal Setup
 
-
+1. Go to [Paypal Developer Account](https://developer.paypal.com/developer/accounts/) to create an account with PayPal. In order to process transactions and manage your application you must have a business account. 
+2. Once you create a developer Sandbox account you will click on the myApps & Credentials on the left hand side.
+3. Click on the blue Button to create an App and fill out the requested information.
+4. You will receive a client Key which you will need to copy and paste into the file on line 23 “PayPalButton.js” in the Client - SRC - Components - PayPal folder. 
+5. Please read Paypal terms of use.
+ 
 
 
 ## Design Customization

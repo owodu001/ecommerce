@@ -46,18 +46,18 @@
 
 .collectionButton{
     /* change main hero button color and font size here! */
-    background-color: #42404f;
+    /* background-color: #42404f; */
     border: none;
     border-radius: 0px;
 }
 
-.collectionButton:hover{
+/* .collectionButton:hover{
     background-color:#aca6db ;
     color: #42404f;
 
-}
+} */
 
 .btnText{
     text-decoration: none;
-    color: white;
+    /* color: white; */
 }

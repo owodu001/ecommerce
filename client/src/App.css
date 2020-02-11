@@ -5,21 +5,16 @@ body{
     font-family: 'Josefin Sans', sans-serif;
 }
 /* NAV STYLING ============================================================== */
+
 .mainNav{
-    background-color: #42404f;
+    background-color: rgb(63, 57, 82);
 }
 .navigation{
-    margin: 0px, 20px;
-    justify-content: space-evenly;
     color: white;
-    padding-left: 15px;
 }
 
 .navigation:hover {
-    text-decoration: none;
     color: #aca6db;
-    padding-left: 15px;
-    font-weight: 600;
 }
 /* MAIN HERO STYLING ========================================================================== */
 
@@ -45,15 +40,28 @@ body{
 .CategoryHero{
     background-color: white;
     /* change your gradient by editing the two colors in parentheses, or add your own image:  */
-    background-image: linear-gradient( #6e6c80, white);
+    background-image: linear-gradient( rgb(63, 57, 82), white);
 }
 
+.collectionButton{
+    /* change main hero button color and font size here! */
+    background-color: #aca6db ;
+}
+
+.collectionButton:hover{
+    background-color:#aca6db ;
+    color: rgb(63, 57, 82);
+}
+
+.btnText{
+    color: rgb(63, 57, 82);
+}
 
 /* CATEGORY NAVBAR STYLING ========================================================================== */
 
 .CategoryBar{
     height: 55px;
-    background-color: #42404f;
+    background-color: rgb(63, 57, 82);
 }
 
 .Category {
@@ -67,16 +75,13 @@ body{
 
 /* FOOTER STYLING ======================================================================= */
 .footerContainer{
-    background-color: #42404f;
+    background-color: rgb(63, 57, 82);
 }
 
-.searchBtn{
-    background-color: #ebebeb;
-    color: black;
-    border: none;
-    border-radius: 0px;
-}
-.searchBtn:hover{
-    background-color:#42404f;
+.footLink {
     color: white;
+}
+
+.footLink:hover{
+    color: #aca6db;
 }

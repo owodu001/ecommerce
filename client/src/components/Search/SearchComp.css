@@ -32,6 +32,10 @@
     background-color:#42404f;
     color: white;
 }
+.searchBtn:active{
+    background-color:#42404f;
+    color: white;
+}
 
 .searchInput{
     width: 50%;

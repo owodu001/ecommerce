@@ -1,4 +1,5 @@
 .footerContainer{
+    /* changing the color here will overwrite it on src/app.css */
     /* background-color: #42404f; */
     width: 100%;
     padding: 25px;
@@ -7,10 +8,6 @@
     margin-top: 50px;
 }
 
-.contact{
-align-content: left;
-color: white;
-}
 
 .footlogo{
 /* margin: 0px, auto;
@@ -19,13 +16,21 @@ align-content: center;
 }
 
 .logo{
+   justify-content: center;
+   display: flex;
+   padding-top: 35px;
+}
+
+.logoContainer{ 
     margin: 10px, auto;
     text-align: center;
     justify-content: center;
     padding-top: 35px;
-}
-
-.logoFrame{
+    margin: 0px, auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: white;
 }
 
 .sociallink{
@@ -38,21 +43,22 @@ text-align: right;
     margin-left: 10px;
 }
 
-.contact:hover{
+/* .contact:hover{
     color: #aca6db;
-}
+} */
 .footLink {
     text-decoration: none;
+    /* color: white; */
 }
 
 .footLink:hover{
     text-decoration: none;
-    color: #aca6db;
-
+    /* color: #aca6db; */
 }
+
 .sociallink:hover{
     text-align: right;
-    color: #aca6db;
+    /* color: #aca6db; */
     }
 
     @media only screen and (max-width: 768px) {
