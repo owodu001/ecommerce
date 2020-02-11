@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import { AuthContext } from "../../auth/auth";
 
@@ -74,7 +75,7 @@ export default function Register({ history }) {
           </div>
           <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
           <p className="forgot-password text-right">
-            Already registered? <a href="/login">Login</a>
+            Already registered? <Link to="/login">Login</Link>
           </p>
         </form>
       </div>

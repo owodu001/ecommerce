@@ -45,14 +45,12 @@ mongoose
     db,
     { useNewUrlParser: true }
   )
-  .then(() => console.log("MongoDB successfully connected"))
+  .then(() => {
+    console.log("MongoDB successfully connected")
+  })
   .catch(err => console.log(err));
 
-// // Passport middleware
-// app.use(passport.initialize());
 
-// // Passport config
-// require("./config/passport")(passport);
 
 
 
