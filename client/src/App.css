@@ -53,6 +53,12 @@ body{
     color: rgb(63, 57, 82);
 }
 
+.collectionButton:active{
+    background-color:#aca6db ;
+    color: rgb(63, 57, 82);
+}
+
+
 .btnText{
     color: rgb(63, 57, 82);
 }

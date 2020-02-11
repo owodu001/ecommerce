@@ -38,7 +38,7 @@ export default function ({ p, location }) {
             <Col className="noPad">
               <Card.Body>
                 <Card.Title>{product.title}</Card.Title>
-                <Card.Title>{product.price}</Card.Title>
+                <Card.Title>${product.price}</Card.Title>
                 <Card.Text>
                   <Row style={{ fontWeight: "bold" }}>Product Details:</Row>
                   <br />
