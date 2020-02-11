@@ -19,7 +19,7 @@ const ProductCard = ({ p }) => {
   return (
     <div>
       <Card className="productCard">
-        <a href={`/product?${p.id}`}>
+        <a href={`/product?${p._id}`}>
           <Card.ImgOverlay>
             <Card.Title className="productName">
               {p.title} – ${p.price}
@@ -31,8 +31,6 @@ const ProductCard = ({ p }) => {
             src={p.image1}
             alt="image"
           />
-
-          <Card.Img className="cardImage" variant="top" src={p.image1} />
         </a>
         <Card.Body className="cardOpts">
           <Row>
