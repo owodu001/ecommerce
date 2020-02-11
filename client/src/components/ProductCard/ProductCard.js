@@ -1,8 +1,10 @@
 import React from "react";
 // import { storiesOf } from "@storybook/react";
 // import axios from "axios";
-import Card from "react-bootstrap/card";
-import { Row, Col } from "react-bootstrap";
+
+// import Card from "react-bootstrap/card";
+import { Row, Col, Button, Card } from "react-bootstrap";
+
 import "./ProductCard.css";
 
 // import { Link } from "react-router-dom";
