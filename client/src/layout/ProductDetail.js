@@ -37,6 +37,7 @@ export default function({ p, location }) {
                 className="detailsImages"
                 src={product.image1}
                 alt="product image 1"
+            
               />
             </Col>
             <Col className="noPad">

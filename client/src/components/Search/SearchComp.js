@@ -10,14 +10,23 @@ import {
 } from "react-bootstrap";
 import "./SearchComp.css";
 
-const SearchComp = ({ filterProducts }) => {
+
+const SearchComp = ({ filterProducts , sortPriceLow}) => {
   const [value, setValue] = useState("test");
+  const [productsByPrice, setProductsByPrice] = useState([]);
 
   return (
     <Container className="SearchComp">
       <Row className="justify-content-center">
-        <Col className="column" lg={6} sm={3}>
-          <Dropdown>
+        <Col className="column" lg={6} sm={12}>
+          <Button className="searchBtn"
+                onClick={() => {
+                  console.log();
+                  sortPriceLow();
+                }}>
+            Sort Price Low to High
+          </Button>
+           <Dropdown>
             <Dropdown.Toggle
               className="searchBtn"
               variant="info"
@@ -26,17 +35,18 @@ const SearchComp = ({ filterProducts }) => {
               Sort by:
             </Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1">
+            {/* value={productsByPrice} onChange={setProductsByPrice()} */}
+               <Dropdown.Item>
                 Price: Low to High
               </Dropdown.Item>
               <Dropdown.Item href="#/action-2">
                 Price: High to Low
-              </Dropdown.Item>
+                </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </Col>
         
-        <Col className="column" sm={6}>
+        <Col className="column" lg={6} sm={12}>
           <InputGroup className="mb-3">
             <InputGroup.Prepend>
               <Button

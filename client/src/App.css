@@ -1,40 +1,73 @@
 body{
-    background-color: rgba(0, 0, 0, 0.036);
+    /* This is the main background color  */
+    background-color: rgb(245, 245, 245);
+    /* this is the main font for the store  */
     font-family: 'Josefin Sans', sans-serif;
 }
+/* NAV STYLING ============================================================== */
+.mainNav{
+    background-color: #42404f;
+}
+.navigation{
+    margin: 0px, 20px;
+    justify-content: space-evenly;
+    color: white;
+    padding-left: 15px;
+}
+
+.navigation:hover {
+    text-decoration: none;
+    color: #aca6db;
+    padding-left: 15px;
+    font-weight: 600;
+}
+/* MAIN HERO STYLING ========================================================================== */
+
+.hero{
+    background-color: white;
+    /* change your gradient by editing the two colors in parentheses, or add your own image:  */
+    background-image: linear-gradient( #6e6c80, white);
+}
+
+.pageTitle{
+    /* change page title color and font size here! */
+    color: white;
+    font-size: 80px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.details{
+    /* change hero details color and font size here! */
+   font-size: 26px;
+   color: black;
+}
+
+.CategoryHero{
+    background-color: white;
+    /* change your gradient by editing the two colors in parentheses, or add your own image:  */
+    background-image: linear-gradient( #6e6c80, white);
+}
 
 
+/* CATEGORY NAVBAR STYLING ========================================================================== */
 
+.CategoryBar{
+    height: 55px;
+    background-color: #42404f;
+}
 
+.Category {
+    color: white;
+    padding-left: 25px;
+}
 
+.Category:hover {
+    color: #aca6db;
+}
 
-
-
-
-
-
-
-
-
-
-
-/* ========FOOTER STYLING ======================================================= */
+/* FOOTER STYLING ======================================================================= */
 .footerContainer{
-    background-color: #666666;
-    width: 100%;
-    padding: 15px;
-    position: absolute;
-    bottom: 0;
-}
-
-.searchComp{
-    margin: 20px;
-}
-
-.column{
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    background-color: #42404f;
 }
 
 .searchBtn{
@@ -42,28 +75,8 @@ body{
     color: black;
     border: none;
     border-radius: 0px;
-    margin: 0px, 0px;
-    padding: 10px, 10px;
-    width: 100%;
-    /* height: 100%; */
-    box-shadow: 3px 3px 20px 0px rgba(0,0,0,0.3);
-    margin-bottom: 25px;
 }
-
-@media screen and (max-width: 767px){
-    .dropd {
-        width: 100%;
-    }
-}
-
 .searchBtn:hover{
     background-color:#42404f;
     color: white;
 }
-
-.searchInput{
-    width: 50%;
-    box-shadow: 3px 3px 20px 0px rgba(0,0,0,0.3);
-    background-color: white;
-}
-

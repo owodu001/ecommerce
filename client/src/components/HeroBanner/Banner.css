@@ -4,9 +4,9 @@
     text-align: center;
     align-content: center;
     justify-items: center;
-    background-color: white;
     /* change your gradient by editing the two colors in parentheses, or add your own image:  */
-    background-image: linear-gradient( #6e6c80, white);
+    /* background-image: linear-gradient( #6e6c80, white); */
+    /* background-color: white; */
 }
 .CategoryHero{
     height: 350px;
@@ -14,29 +14,17 @@
     text-align: center;
     align-content: center;
     justify-items: center;
-    background-color: white;
     /* change your gradient by editing the two colors in parentheses, or add your own image:  */
-    background-image: linear-gradient( #6e6c80, white);
-
-}
-.CategoryHero{
-    height: 350px;
-    margin-bottom: 0px;
-    text-align: center;
-    align-content: center;
-    justify-items: center;
-    background-color: white;
-    /* change your gradient by editing the two colors in parentheses, or add your own image:  */
-    background-image: linear-gradient( #fa8072, white);
-
+    /* background-image: linear-gradient( #716d9a, white);
+    background-color: white; */
 }
 
-.pageTitle{
-    /* change page title color and font size here! */
+/* .pageTitle{
+    change page title color and font size here!
     color: white;
     font-size: 80px;
     font-family: 'Bebas Neue', cursive;
-}
+} */
 
 @media only screen and (max-width: 600px) {
     .pageTitle{
@@ -51,9 +39,9 @@
 
 .details{
      /* change hero details color and font size here! */
-    font-size: 26px;
-    color: black;
-}
+    /* font-size: 26px;
+    color: black; */
+} 
 
 
 .collectionButton{
