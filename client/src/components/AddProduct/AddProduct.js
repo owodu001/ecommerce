@@ -1,20 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
+
+import categories from "../../customSettings/productCategory";
+
 
 export default function AddProduct() {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
-    const [category, setCategory] = useState("");
+    const [category, setCategory] = useState(categories[0]);
     const [quantity, setQuantity] = useState("");
     const [price, setPrice] = useState("");
     const [image1, setImage1] = useState("");
     const [image2, setImage2] = useState("");
     const [image3, setImage3] = useState("");
+    const [numCategory, setNumCategory] = useState(0);
+
+    useEffect(() => {
+        console.log(categories);
+
+    }, [])
 
     function handleClick() {
         // axios.post("https:// les-meilleurs.herokuapp.com/api/products/add", {
-        axios.post("http://localhost:5000/api/products/add", {
+        axios.post("/api/products/add", {
             title,
             description,
             category,
@@ -47,7 +56,13 @@ export default function AddProduct() {
 
                     <div className="form-group">
                         <label>Category</label>
-                        <input type="input" className="form-control" placeholder="Category" value={category} onChange={({ target }) => setCategory(target.value)} />
+                        <select className="form-control" value={category} onChange={({ target }) => setCategory(target.value)}>
+                            {categories.map(category => { return <option key={category} value={category}> {category}</option> })}
+                            {/* <option> category 1</option>
+                            <option> category 2</option>
+                            <option> category 2</option> */}
+                        </select>
+                        <p>{category}</p>
                     </div>
 
                     <div className="form-group">

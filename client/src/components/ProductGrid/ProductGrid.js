@@ -11,7 +11,7 @@ import "./ProductGrid.css";
 const ProductGrid = () => {
   const [product, setProduct] = useState([]);
   useEffect(() => {
-    axios.get("https://les-meilleurs.herokuapp.com/api/products").then(res => {
+    axios.get("/api/products").then(res => {
       setProduct(res.data);
       console.log(res.data);
     });
