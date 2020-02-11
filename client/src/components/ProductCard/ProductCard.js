@@ -28,11 +28,9 @@ const ProductCard = ({ p }) => {
           <Card.Img
             className="cardImage"
             variant="top"
-            src={p.image2}
+            src={p.image1}
             alt="image"
           />
-
-          <Card.Img className="cardImage" variant="top" src={p.image} />
         </a>
         <Card.Body className="cardOpts">
           <Row>
