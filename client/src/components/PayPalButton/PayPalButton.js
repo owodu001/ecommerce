@@ -1,15 +1,19 @@
 import React from "react";
 import { PayPalButton } from "react-paypal-button-v2";
+import {useHistory} from 'react-router-dom'
 
-export default function PayButton({ cartSubtotal }) {
+
+export default function PayButton(props) {
+
+  let history = useHistory();
   return (
     <PayPalButton
-      amount={cartSubtotal}
+      amount={props.cartSubtotal}
       // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
       onSuccess={(details, data) => {
         alert("Transaction completed by " + details.payer.name.given_name);
         localStorage.removeItem("shoppingcart");
-        window.location.reload();
+        history.push("/")
 
         // OPTIONAL: Call your server to save the transaction
         return fetch("/paypal-transaction-complete", {
