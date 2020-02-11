@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../../auth/auth";
+import { Link } from "react-router-dom";
 
 export default function Login({ history }) {
   // todo: errors my friend...
@@ -59,7 +60,7 @@ export default function Login({ history }) {
           <button type="submit" className="btn btn-primary btn-block">Log In</button>
 
           <p className=" new text-center">
-            Are you New ? <a href="/register">Register</a>
+            Are you New ? <Link to="/register">Register</Link>
           </p>
 
         </div>
