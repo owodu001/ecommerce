@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./Footer.css"
-import Link from "react-router-dom";
+import { Link } from "react-router-dom";
 // Social Link Icons from Font Awesome - make sure you have the font-awesome packages installed. https://fontawesome.com/how-to-use/on-the-web/using-with/react
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
