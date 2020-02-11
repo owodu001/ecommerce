@@ -4,10 +4,17 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CategoryBar.css";
 
+
+// import custom settins of categories - dynamically display category names in navbar
+// import "";
+// map over that json file 
+// set [1]
+
+
 function CategoryBar() {
   return (
     // add as many nav.items as shop categories your shop has
-    <Navbar className="CatBar">
+    <Navbar className="CategoryBar">
       <Nav className="justify-content-center items" activeKey="/home">
         <Nav.Item className="navitem">
           <Link className="Category" to="/category">

@@ -1,7 +1,7 @@
-.CatBar{
-    height: 55px;
+.CategoryBar{
+    /* height: 55px;
     background-color: #42404f;
-    color: white;
+    color: white; */
     text-align: center;
     /* justify-content: space-evenly; */
     justify-content: space-around;
@@ -12,13 +12,13 @@
 }
 
 .Category {
-    color: white;
+    /* color: white; */
     padding-left: 25px;
 }
 
 .Category:hover {
     text-decoration: none;
-    color: #aca6db;
+    /* color: #aca6db; */
     padding-left: 25px;
 }
 

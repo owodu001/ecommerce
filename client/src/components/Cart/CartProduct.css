@@ -1,11 +1,23 @@
+.cartContainer{
+    text-align: center;
+}
+
 .cartList{
     text-decoration: none;
     list-style: none;
-
 }
 
 .cartCard{
     display: flex;
     width: auto;
-
+    padding: 15px;
+    border-radius: 0px;
+    box-shadow: 3px 3px 20px 0px rgba(0,0,0,0.5);
+    text-align: center;
 }
+
+.cartThumb{
+    width: 250px;
+    background-color: white;
+}
+

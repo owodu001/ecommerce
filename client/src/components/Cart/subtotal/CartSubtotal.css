@@ -11,6 +11,9 @@
   font-weight: bold;
 }
 
-.border {
-  border: solid 3px gray;
+.subtotal {
+  border: solid 1px rgba(128, 128, 128, 0.413);
+  background-color: white;
+  padding: 15px;
+  box-shadow: 3px 3px 20px 0px rgba(0,0,0,0.5);
 }

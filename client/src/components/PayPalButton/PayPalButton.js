@@ -8,6 +8,8 @@ export default function PayButton({cartSubtotal}) {
       // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
       onSuccess={(details, data) => {
         alert("Transaction completed by " + details.payer.name.given_name);
+        localStorage.removeItem("shoppingcart");
+        window.location.reload();
       
         // OPTIONAL: Call your server to save the transaction
         return fetch("/paypal-transaction-complete", {

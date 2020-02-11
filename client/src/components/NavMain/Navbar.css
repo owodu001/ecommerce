@@ -1,16 +1,16 @@
 .mainNav{
-    background-color: #42404f;
+    /* background-color: #42404f; */
 }
 .navigation{
     margin: 0px, 20px;
     justify-content: space-evenly;
-    color: white;
+    /* color: white; */
     padding-left: 15px;
 }
 
 .navigation:hover {
     text-decoration: none;
-    color: #aca6db;
+    /* color: #aca6db; */
     padding-left: 15px;
     font-weight: 600;
 }
