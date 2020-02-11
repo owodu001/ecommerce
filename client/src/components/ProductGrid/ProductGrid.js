@@ -26,6 +26,7 @@ const ProductGrid = () => {
 
   function sortPriceLow() {
     let sortedArray = productsByPrice;
+
       sortedArray.sort(function(a, b) {
         var productA = a.price;
         var productB = b.price;
@@ -42,6 +43,7 @@ const ProductGrid = () => {
     }
 
 // this function is what makes the search feature work 
+
   function filterProducts(item) {
     console.log(item);
     const filteredProduct = product.filter(product =>
@@ -57,11 +59,14 @@ const ProductGrid = () => {
   //   setProduct([...filteredProduct]);
   // }
 
-  console.log(product)
+  console.log(product);
   return (
     <>
       <Container>
-        <SearchComp filterProducts={filterProducts} sortPriceLow={sortPriceLow}/>
+        <SearchComp
+          filterProducts={filterProducts}
+          sortPriceLow={sortPriceLow}
+        />
 
         <Row className="gridRow">
           {product.map(p => (
