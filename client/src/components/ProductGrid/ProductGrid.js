@@ -1,20 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 import { Container, Row, Col } from "react-bootstrap";
 import ProductCard from "../ProductCard/ProductCard";
 import SearchComp from "../Search/SearchComp";
 import axios from "axios";
 import "./ProductGrid.css";
+import { AuthContext } from "../../auth/auth";
 // import FootNav from "../Footer/Footer";
 // import Pages from "../Pagination/Pagination";
 
 const ProductGrid = () => {
+  const { user } = useContext(AuthContext);
   const [product, setProduct] = useState([]);
   
   const [productsByPrice, setProductsByPrice] = useState(product);
   
   useEffect(() => {
-    axios.get("https://les-meilleurs.herokuapp.com/api/products").then(res => {
+    // axios.get("https://les-meilleurs.herokuapp.com/api/products").then(res => {
+    axios.get("/api/products").then(res => {
       setProduct(res.data);
       setProductsByPrice(res.data)
       console.log(res.data);
@@ -54,6 +57,7 @@ const ProductGrid = () => {
   //   setProduct([...filteredProduct]);
   // }
 
+  console.log(product)
   return (
     <>
       <Container>
