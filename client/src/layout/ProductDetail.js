@@ -5,16 +5,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./ProductDetail.css";
 import AddToCart from "../components/AddToCart/AddToCart";
 import FootNav from "../components/Footer/Footer";
-export default function({ p, location }) {
-  // const [counter, setCounter] = useState(0);
-  // const [value, setValue] = useState("");
+export default function ({ p, location }) {
+
   const [product, setProduct] = useState({});
-  // useEffect(() => {
-  //   axios.get("http://localhost:5000/api/productsTest").then(res => {
-  //     setProduct(res.data);
-  //     console.log(res.data);
-  //   });
-  // }, []);
+
   useEffect(() => {
     const productId = location.search.split("?")[1];
     console.log(productId);
@@ -28,6 +22,7 @@ export default function({ p, location }) {
   //     console.log(res.data);
   //   });
   // }, []);
+  console.log(product)
   return (
     <>
       <Container>
@@ -100,7 +95,7 @@ export default function({ p, location }) {
             </Card.Text>
             <br />
             <br />
-            <AddToCart />
+            <AddToCart item={product} />
             <br />
             <hr />
             <Row className="Thumbs">
