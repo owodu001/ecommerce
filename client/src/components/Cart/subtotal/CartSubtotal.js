@@ -24,10 +24,10 @@ export default function CartSubtotal({cartSubtotal}) {
             </Form.Group>
           </Col> */}
         </Row>
-        <Row>
+        {/* <Row>
           <Col className="font mb-3">Total</Col>
           <Col>Cart Total</Col>
-        </Row>
+        </Row> */}
         
         <PayButton cartSubtotal={cartSubtotal} />
         

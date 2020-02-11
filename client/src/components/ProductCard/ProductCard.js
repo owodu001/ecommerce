@@ -4,7 +4,6 @@ import React from "react";
 import Card from "react-bootstrap/card";
 import { Row, Col } from "react-bootstrap";
 import "./ProductCard.css";
-import {Link } from "react-router-dom";
 
 // import { Link } from "react-router-dom";
 import AddToCart from "../AddToCart/AddToCart";
