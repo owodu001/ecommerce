@@ -14,7 +14,7 @@ export default function CartSubtotal({cartSubtotal}) {
           <Col>Cart Total</Col>
         </Row>
         <Row>
-          <Col className="font">Shipping</Col>
+          {/* <Col className="font">Shipping</Col>
           <Col>
             <Form.Group controlId="formBasicCheckbox">
               <Form.Check type="checkbox" label="Flat Rate: $1.50" />
@@ -22,7 +22,7 @@ export default function CartSubtotal({cartSubtotal}) {
             <Form.Group controlId="formBasicCheckbox">
               <Form.Check type="checkbox" label="Local Pickup: $2.00" />
             </Form.Group>
-          </Col>
+          </Col> */}
         </Row>
         <Row>
           <Col className="font mb-3">Total</Col>
