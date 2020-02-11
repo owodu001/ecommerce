@@ -2,7 +2,7 @@ import React from "react";
 // import { storiesOf } from "@storybook/react";
 // import axios from "axios";
 import Card from "react-bootstrap/card";
-import { Row, Col, Button } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import "./ProductCard.css";
 
 // import { Link } from "react-router-dom";
@@ -44,10 +44,11 @@ const ProductCard = ({ p }) => {
             {/* View Details */}
             {/* </Link> */}
             <Col>
-              <Link className="cardButton" to={`/product?${p._id}`}>
+            <div className="cardButton">
+              <Link  to={`/product?${p._id}`}>
                 View Details
                 <FontAwesomeIcon icon={faEllipsisH} className="FAIcon" />
-              </Link>
+              </Link></div>
             </Col>
           </Row>
         </Card.Body>
