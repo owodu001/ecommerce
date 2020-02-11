@@ -58,9 +58,6 @@ export default function AddProduct() {
                         <label>Category</label>
                         <select className="form-control" value={category} onChange={({ target }) => setCategory(target.value)}>
                             {categories.map(category => { return <option key={category} value={category}> {category}</option> })}
-                            {/* <option> category 1</option>
-                            <option> category 2</option>
-                            <option> category 2</option> */}
                         </select>
                         <p>{category}</p>
                     </div>
