@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CartProduct.css";
 import { CartContext } from "../../state/cartContext";
@@ -14,7 +14,7 @@ import {
 
 
 const CartProduct = ({ product }) => {
-  // const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(0);
 
   // export default function Cart() {
   const cartContextValue = useContext(CartContext);
@@ -37,18 +37,18 @@ const CartProduct = ({ product }) => {
   // </div>
   return (
     <>
-      <Container>
+      <Container className="cartContainer">
         <ul className="cartList">
           <li>
             <Card className="cartCard">
               <Row>
                 <Col>
-                  <Card.Img variant="left" src={product.image1} alt="image" />
+                  <Card.Img className="cartThumb" variant="left" src={product.image1} alt="image" />
                 </Col>
                 <Col>
                   <Card.Body>
                     <Card.Title>{product.title}</Card.Title>
-                    <Card.Text>{product.price}</Card.Text>
+                    <Card.Text>$ {product.price}</Card.Text>
                     <Button
                       variant="danger"
                       onClick={() => {

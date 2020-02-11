@@ -1,12 +1,3 @@
-// import React, { useState, useEffect } from "react";
-// import { Card, Container, Col, Row, Tab, Tabs } from "react-bootstrap";
-// import axios from "axios";
-
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "./ProductDetail.css";
-// import AddToCart from "../components/AddToCart/AddToCart";
-// import FootNav from "../components/Footer/Footer";
-
 import React, { useState, useEffect } from "react";
 import { Card, Container, Col, Row, Tab, Tabs } from "react-bootstrap";
 import axios from "axios";
@@ -14,12 +5,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./ProductDetail.css";
 import AddToCart from "../components/AddToCart/AddToCart";
 import FootNav from "../components/Footer/Footer";
-
 export default function({ p, location }) {
   // const [counter, setCounter] = useState(0);
   // const [value, setValue] = useState("");
   const [product, setProduct] = useState({});
-
   // useEffect(() => {
   //   axios.get("http://localhost:5000/api/productsTest").then(res => {
   //     setProduct(res.data);
@@ -30,16 +19,15 @@ export default function({ p, location }) {
     const productId = location.search.split("?")[1];
     console.log(productId);
     axios
-      .get(`https://les-meilleurs.herokuapp.com/api/products/${productId}`)
+      // .get(`https://les-meilleurs.herokuapp.com/api/products/${productId}`)
+      .get(`/api/products/${productId}`)
       .then(res => setProduct(res.data));
     // console.log(location);
   }, []);
-
   //     setProduct(res.data);
   //     console.log(res.data);
   //   });
   // }, []);
-
   return (
     <>
       <Container>

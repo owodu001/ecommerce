@@ -1,14 +1,87 @@
 body{
-    background-color: rgba(0, 0, 0, 0.036);
+    /* This is the main background color  */
+    background-color: rgb(245, 245, 245);
+    /* this is the main font for the store  */
     font-family: 'Josefin Sans', sans-serif;
 }
+/* NAV STYLING ============================================================== */
 
+.mainNav{
+    background-color: rgb(63, 57, 82);
+}
+.navigation{
+    color: white;
+}
 
+.navigation:hover {
+    color: #aca6db;
+}
+/* MAIN HERO STYLING ========================================================================== */
 
+.hero{
+    background-color: white;
+    /* change your gradient by editing the two colors in parentheses, or add your own image:  */
+    background-image: linear-gradient( #6e6c80, white);
+}
+
+.pageTitle{
+    /* change page title color and font size here! */
+    color: white;
+    font-size: 80px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.details{
+    /* change hero details color and font size here! */
+   font-size: 26px;
+   color: black;
+}
+
+.CategoryHero{
+    background-color: white;
+    /* change your gradient by editing the two colors in parentheses, or add your own image:  */
+    background-image: linear-gradient( rgb(63, 57, 82), white);
+}
+
+.collectionButton{
+    /* change main hero button color and font size here! */
+    background-color: #aca6db ;
+}
+
+.collectionButton:hover{
+    background-color:#aca6db ;
+    color: rgb(63, 57, 82);
+}
+
+.btnText{
+    color: rgb(63, 57, 82);
+}
+
+/* CATEGORY NAVBAR STYLING ========================================================================== */
+
+.CategoryBar{
+    height: 55px;
+    background-color: rgb(63, 57, 82);
+}
+
+.Category {
+    color: white;
+    padding-left: 25px;
+}
+
+.Category:hover {
+    color: #aca6db;
+}
+
+/* FOOTER STYLING ======================================================================= */
 .footerContainer{
-    background-color: #666666;
-    width: 100%;
-    padding: 15px;
-    position: absolute;
-    bottom: 0;
+    background-color: rgb(63, 57, 82);
+}
+
+.footLink {
+    color: white;
+}
+
+.footLink:hover{
+    color: #aca6db;
 }

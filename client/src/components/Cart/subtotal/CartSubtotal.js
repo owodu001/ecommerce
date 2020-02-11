@@ -7,10 +7,10 @@ import PayButton from "../../PayPalButton/PayPalButton";
 export default function CartSubtotal({cartSubtotal}) {
   return (
     <>
-      <Container className="border">
+      <Container className="subtotal">
         <Row className="centerThings font mb-3">Cart Totals</Row>
         <Row className="font mb-3">
-          <Col>Total ${cartSubtotal}</Col>
+          <Col>Total $ {cartSubtotal}</Col>
           <Col>Cart Total</Col>
         </Row>
         <Row>
@@ -28,19 +28,9 @@ export default function CartSubtotal({cartSubtotal}) {
           <Col className="font mb-3">Total</Col>
           <Col>Cart Total</Col>
         </Row>
-        <Button
-          className="centerButton"
-          variant="primary"
-          to="/checkout-opt"
-          onClick={() => {
-            console.log("What up");
-          }}
-        >
-          Proceed to Checkout
-        </Button>{" "}
-        {/* <Button> */}
+        
         <PayButton cartSubtotal={cartSubtotal} />
-        {/* </Button> */}
+        
       </Container>
     </>
   );

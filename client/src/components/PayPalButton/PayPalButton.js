@@ -10,6 +10,7 @@ export default function PayButton({ cartSubtotal }) {
         alert("Transaction completed by " + details.payer.name.given_name);
         localStorage.removeItem("shoppingcart");
         window.location.reload();
+
         // OPTIONAL: Call your server to save the transaction
         return fetch("/paypal-transaction-complete", {
           method: "post",
