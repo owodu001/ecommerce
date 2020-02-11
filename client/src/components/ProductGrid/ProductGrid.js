@@ -12,32 +12,36 @@ import { AuthContext } from "../../auth/auth";
 const ProductGrid = () => {
   const { user } = useContext(AuthContext);
   const [product, setProduct] = useState([]);
+  
+  const [productsByPrice, setProductsByPrice] = useState(product);
+  
   useEffect(() => {
     // axios.get("https://les-meilleurs.herokuapp.com/api/products").then(res => {
     axios.get("/api/products").then(res => {
       setProduct(res.data);
+      setProductsByPrice(res.data)
       console.log(res.data);
     });
   }, []);
 
-  const [productsByPrice, setProductsByPrice] = useState([]);
-
   function sortPriceLow() {
     let sortedArray = productsByPrice;
-    sortedArray.sort(function(a, b) {
-      var productA = a.price;
-      var productB = b.price;
-      if (productA < productB) {
-        return -1;
-      }
-      if (productA > productB) {
-        return 1;
-      }
-      return 0;
-    });
-    setProductsByPrice([...sortedArray]);
-  }
+      sortedArray.sort(function(a, b) {
+        var productA = a.price;
+        var productB = b.price;
+        if (productA < productB) {
+          return -1;
+        }
+        if (productA > productB) {
+          return 1;
+        }
+        return 0;
+      });
+      console.log(">>>>>>>>>>>>>>> wtf",[...sortedArray]);
+      setProductsByPrice([...sortedArray]);
+    }
 
+// this function is what makes the search feature work 
   function filterProducts(item) {
     console.log(item);
     const filteredProduct = product.filter(product =>
@@ -45,13 +49,13 @@ const ProductGrid = () => {
     );
     setProduct([...filteredProduct]);
   }
-  function searchProducts(item) {
-    console.log(item);
-    const filteredProduct = product.filter(product =>
-      product.title.toLowerCase().includes(item.toLowerCase())
-    );
-    setProduct([...filteredProduct]);
-  }
+  // function searchProducts(item) {
+  //   console.log(item);
+  //   const filteredProduct = product.filter(product =>
+  //     product.title.toLowerCase().includes(item.toLowerCase())
+  //   );
+  //   setProduct([...filteredProduct]);
+  // }
 
   console.log(product);
   return (

@@ -21,29 +21,10 @@ const SearchComp = ({ filterProducts , sortPriceLow}) => {
         <Col className="column" lg={6} sm={12}>
           <Button className="searchBtn"
                 onClick={() => {
-                  console.log();
                   sortPriceLow();
                 }}>
             Sort Price Low to High
           </Button>
-           <Dropdown>
-            <Dropdown.Toggle
-              className="searchBtn"
-              variant="info"
-              id="dropdown-basic"
-            >
-              Sort by:
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-            {/* value={productsByPrice} onChange={setProductsByPrice()} */}
-               <Dropdown.Item>
-                Price: Low to High
-              </Dropdown.Item>
-              <Dropdown.Item href="#/action-2">
-                Price: High to Low
-                </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
         </Col>
         
         <Col className="column" lg={6} sm={12}>

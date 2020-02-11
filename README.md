@@ -72,3 +72,12 @@ To change fonts across the site, you will need to edit /client/src/app.css. This
 Within /client/src/app.css - you can adjust colors in common places by finding all instances of the same color, and editing them together. 
 
 
+
+
+
+
+### Future Developments 
+ + Add Accessibility features
+ + Incorporate SEO 
+ + Add Pagination for large stores
+ 
