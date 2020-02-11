@@ -37,7 +37,8 @@ function FootNav() {
                 <Col className="logo">
                     {/* link logo image in src  */}
                     {/* <img src="" alt="business logo" className="footlogo"/> */}
-                    <FontAwesomeIcon icon={faCircle} size="6x"/>
+                    {/* <FontAwesomeIcon icon={faCircle} size="6x"/> */}
+                    <div className="logoContainer">Logo</div>
                 </Col>
 
                 {/* Here is where you will add the links to your social profiles within the href quotes. 

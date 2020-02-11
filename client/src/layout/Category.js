@@ -11,6 +11,9 @@ import Pages from "../components/Pagination/Pagination";
 
 //make collection page populate with selected collection items
 
+
+
+
 export default function () {
     return (
         <>
