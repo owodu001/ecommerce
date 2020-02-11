@@ -105,7 +105,7 @@ router.post("/login", (req, res) => {
           payload,
           keys.secretOrKey,
           {
-            expiresIn: 60 // 1 min in seconds NOTE: You want a higher number.
+            expiresIn: 60 * 60 * 24 // 1 min in seconds NOTE: You want a higher number.
           },
           (err, token) => {
             console.log("USER: > ", user);

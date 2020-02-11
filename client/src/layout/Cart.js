@@ -20,9 +20,9 @@ import { CartContext } from "../state/cartContext";
 // removeButton
 // calculateTotal
 
-export default function () {
+export default function() {
   // removeProduct = id => {
-  const [total, setTotal] = useState(0)
+  const [total, setTotal] = useState(0);
   const cartContextValue = useContext(CartContext);
   console.log(cartContextValue.cart);
   useEffect(() => {
@@ -30,16 +30,16 @@ export default function () {
     cartContextValue.cart.forEach((item, i) => {
       tempValue += item.price;
     });
-    console.log(tempValue)
-    setTotal(tempValue)
-  }, [cartContextValue.cart])
+    console.log(tempValue);
+    setTotal(tempValue);
+  }, [cartContextValue.cart]);
 
   return (
     <>
       <hr />
       <Container>
         <Row>
-          <Col lg={8} sm={12} >
+          <Col lg={8} sm={12}>
             {cartContextValue.cart.map(item => (
               <CartProduct key={item._id} product={item} />
             ))}
