@@ -57,11 +57,14 @@ const ProductGrid = () => {
   //   setProduct([...filteredProduct]);
   // }
 
-  console.log(product)
+  console.log(product);
   return (
     <>
       <Container>
-        <SearchComp filterProducts={filterProducts} sortPriceLow={sortPriceLow}/>
+        <SearchComp
+          filterProducts={filterProducts}
+          sortPriceLow={sortPriceLow}
+        />
 
         <Row className="gridRow">
           {product.map(p => (
