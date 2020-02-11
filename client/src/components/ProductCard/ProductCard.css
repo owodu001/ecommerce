@@ -18,7 +18,7 @@
 .productName{
     background-color: rgba(255, 255, 255, 0.7);
     padding: 5px;
-    width: fit-content;
+    width: 90%;
     position: absolute;
     font-size: 22px;
     z-index: 999;
@@ -29,7 +29,11 @@
     background-color: #42404fe5;
     color: rgb(255, 255, 255);
     padding: 5px;
-    width: fit-content; 
+    width: 90%;
+    position: absolute;
+    font-size: 22px;
+    z-index: 999;
+    text-decoration: none;
 }
 
 
