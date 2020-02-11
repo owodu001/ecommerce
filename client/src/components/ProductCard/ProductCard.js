@@ -1,8 +1,10 @@
 import React from "react";
 // import { storiesOf } from "@storybook/react";
 // import axios from "axios";
+
 // import Card from "react-bootstrap/card";
 import { Row, Col, Button, Card } from "react-bootstrap";
+
 import "./ProductCard.css";
 
 // import { Link } from "react-router-dom";
@@ -14,6 +16,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // Basic Icons
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ p }) => {
   return (
@@ -43,10 +46,11 @@ const ProductCard = ({ p }) => {
             {/* View Details */}
             {/* </Link> */}
             <Col>
-              <Button className="cardButton" href={`/product?${p._id}`}>
+            <div className="cardButton">
+              <Link  to={`/product?${p._id}`}>
                 View Details
                 <FontAwesomeIcon icon={faEllipsisH} className="FAIcon" />
-              </Button>
+              </Link></div>
             </Col>
           </Row>
         </Card.Body>
