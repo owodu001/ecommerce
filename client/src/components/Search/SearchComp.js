@@ -12,7 +12,7 @@ import "./SearchComp.css";
 
 
 const SearchComp = ({ filterProducts , sortPriceLow}) => {
-  const [value, setValue] = useState("test");
+  const [value, setValue] = useState("");
   const [productsByPrice, setProductsByPrice] = useState([]);
 
   return (
@@ -44,6 +44,7 @@ const SearchComp = ({ filterProducts , sortPriceLow}) => {
             className="searchInput"
               aria-describedby="basic-addon1"
               value={value}
+              placeholder="Search products"
               onChange={e => setValue(e.target.value)}
             />
           </InputGroup>
