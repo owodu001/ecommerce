@@ -10,14 +10,16 @@ import "./ProductGrid.css";
 
 const ProductGrid = () => {
   const [product, setProduct] = useState([]);
+  
+  const [productsByPrice, setProductsByPrice] = useState(product);
+  
   useEffect(() => {
     axios.get("https://les-meilleurs.herokuapp.com/api/products").then(res => {
       setProduct(res.data);
+      setProductsByPrice(res.data)
       console.log(res.data);
     });
   }, []);
-
-  const [productsByPrice, setProductsByPrice] = useState([]);
 
   function sortPriceLow() {
     let sortedArray = productsByPrice;
@@ -32,10 +34,11 @@ const ProductGrid = () => {
         }
         return 0;
       });
+      console.log(">>>>>>>>>>>>>>> wtf",[...sortedArray]);
       setProductsByPrice([...sortedArray]);
     }
 
-
+// this function is what makes the search feature work 
   function filterProducts(item) {
     console.log(item);
     const filteredProduct = product.filter(product =>
@@ -43,13 +46,13 @@ const ProductGrid = () => {
     );
     setProduct([...filteredProduct]);
   }
-  function searchProducts(item) {
-    console.log(item);
-    const filteredProduct = product.filter(product =>
-      product.title.toLowerCase().includes(item.toLowerCase())
-    );
-    setProduct([...filteredProduct]);
-  }
+  // function searchProducts(item) {
+  //   console.log(item);
+  //   const filteredProduct = product.filter(product =>
+  //     product.title.toLowerCase().includes(item.toLowerCase())
+  //   );
+  //   setProduct([...filteredProduct]);
+  // }
 
   return (
     <>

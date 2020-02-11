@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CategoryBar.css";
-
+import Categories from "../../customSettings/productCategory";
+import { CartContext } from "../../state/cartContext";
 
 // import custom settins of categories - dynamically display category names in navbar
 // import "";
@@ -12,26 +13,19 @@ import "./CategoryBar.css";
 
 
 function CategoryBar() {
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    setCategories(Categories);
+  }, []);
   return (
     // add as many nav.items as shop categories your shop has
     <Navbar className="CategoryBar">
       <Nav className="justify-content-center items" activeKey="/home">
         <Nav.Item className="navitem">
-          <Link className="Category" to="/category">
-            Electronics
-          </Link>
-        </Nav.Item>
-
-        <Nav.Item className="navitem">
-          <Link className="Category" to="/category">
-            Shoes
-          </Link>
-        </Nav.Item>
-
-        <Nav.Item className="navitem">
-          <Link className="Category" to="/category">
-            Category 3
-          </Link>
+          {
+            categories.map(category => <Link className="Category" to="/category"> {category} </Link>)
+          }
+          {/* {`/${category}`} */}
         </Nav.Item>
       </Nav>
     </Navbar>
