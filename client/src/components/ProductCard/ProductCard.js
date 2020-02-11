@@ -14,6 +14,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // Basic Icons
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ p }) => {
   return (
@@ -43,10 +44,10 @@ const ProductCard = ({ p }) => {
             {/* View Details */}
             {/* </Link> */}
             <Col>
-              <Button className="cardButton" href={`/product?${p._id}`}>
+              <Link className="cardButton" to={`/product?${p._id}`}>
                 View Details
                 <FontAwesomeIcon icon={faEllipsisH} className="FAIcon" />
-              </Button>
+              </Link>
             </Col>
           </Row>
         </Card.Body>
