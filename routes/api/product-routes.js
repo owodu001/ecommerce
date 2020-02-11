@@ -41,7 +41,7 @@ router.post("/add", (req, res) => {
 router.get("/", (req, res) => {
     Product.find({})
         .then(products => {
-            res.json({ products });
+            res.json(products);
             console.log(" Processing GET: /api/products/");
         })
         .catch(err => { console.log("ERROR: ", err) });
@@ -51,7 +51,7 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
     Product.findById(req.params.id)
         .then(product => {
-            res.json({ product });
+            res.json(product);
             console.log(" Processing GET: /api/:id");
         })
         .catch(err => { console.log("ERROR: ", err) });
