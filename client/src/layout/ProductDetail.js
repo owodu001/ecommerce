@@ -19,7 +19,8 @@ export default function({ p, location }) {
     const productId = location.search.split("?")[1];
     console.log(productId);
     axios
-      .get(`https://les-meilleurs.herokuapp.com/api/products/${productId}`)
+      // .get(`https://les-meilleurs.herokuapp.com/api/products/${productId}`)
+      .get(`/api/products/${productId}`)
       .then(res => setProduct(res.data));
     // console.log(location);
   }, []);
@@ -37,7 +38,6 @@ export default function({ p, location }) {
                 className="detailsImages"
                 src={product.image1}
                 alt="product image 1"
-            
               />
             </Col>
             <Col className="noPad">

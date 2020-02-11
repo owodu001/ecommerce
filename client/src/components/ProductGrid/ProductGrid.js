@@ -24,20 +24,19 @@ const ProductGrid = () => {
 
   function sortPriceLow() {
     let sortedArray = productsByPrice;
-      sortedArray.sort(function(a, b) {
-        var productA = a.price;
-        var productB = b.price;
-        if (productA < productB) {
-          return -1;
-        }
-        if (productA > productB) {
-          return 1;
-        }
-        return 0;
-      });
-      setProductsByPrice([...sortedArray]);
-    }
-
+    sortedArray.sort(function(a, b) {
+      var productA = a.price;
+      var productB = b.price;
+      if (productA < productB) {
+        return -1;
+      }
+      if (productA > productB) {
+        return 1;
+      }
+      return 0;
+    });
+    setProductsByPrice([...sortedArray]);
+  }
 
   function filterProducts(item) {
     console.log(item);
@@ -54,11 +53,14 @@ const ProductGrid = () => {
     setProduct([...filteredProduct]);
   }
 
-  console.log(product)
+  console.log(product);
   return (
     <>
       <Container>
-        <SearchComp filterProducts={filterProducts} sortPriceLow={sortPriceLow}/>
+        <SearchComp
+          filterProducts={filterProducts}
+          sortPriceLow={sortPriceLow}
+        />
 
         <Row className="gridRow">
           {product.map(p => (
