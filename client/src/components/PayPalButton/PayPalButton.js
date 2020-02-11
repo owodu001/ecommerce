@@ -11,8 +11,8 @@ export default function PayButton(props) {
       onSuccess={(details, data) => {
         alert("Transaction completed by " + details.payer.name.given_name);
         localStorage.removeItem("shoppingcart");
-        window.location.reload();
         history.push("/");
+        window.location.reload();
 
         // OPTIONAL: Call your server to save the transaction
         return fetch("/paypal-transaction-complete", {
