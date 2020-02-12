@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Card, Container, Col, Row, Tab, Tabs } from "react-bootstrap";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./ProductDetail.css";
+// import "./ail.css";
 import AddToCart from "../components/AddToCart/AddToCart";
 import FootNav from "../components/Footer/Footer";
 export default function ({ p, location }) {
@@ -22,7 +22,7 @@ export default function ({ p, location }) {
   //     console.log(res.data);
   //   });
   // }, []);
-  console.log(product)
+  console.log("Product selected: ", product)
   return (
     <>
       <Container>
@@ -46,7 +46,7 @@ export default function ({ p, location }) {
                 </Card.Text>
                 <br />
                 <br />
-                <AddToCart />
+                <AddToCart item={product} />
                 <br />
               </Card.Body>
               <Row className="Thumbs">
