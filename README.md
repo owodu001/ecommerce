@@ -25,28 +25,45 @@ One of the challenges our group faced was to incorporated PayPal into our applic
 ## Live Site on Heroku
 [Live Site](https://les-meilleurs-ecommerce.herokuapp.com/)
 
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
-## Quick Start
+## Installation
+
+### Installing package dependencies
 
 ```javascript
 // Install dependencies for server & client
 npm install && npm run client-install
+```
 
-// Run client & server with concurrently
-npm run dev
+### Starting the Server & Client (React App)
+
+```javascript
+// Run client & server with concurrently. Run command below from the project's root folder
+npm start
 
 // Server runs on http://localhost:5000 and client on http://localhost:3000
 ```
 
+### Database Setup & Product Management. 
+
+The database is setup in the config/key.js file in line 1: ``` mongoURI: process.env.MONGODB_URI || "mongodb://localhost/our_store" ```
+
+Product environment will use mongoURI: process.env.MONGODB_URI and 
+development environment will use ”mogodb://localhost/our_store”, in which “our_store” is the name of the database instance that mogoDB will automatically create.
+
+### Secret Key for Encrypting Login Token
+
+The secret key is also setup in config/key.js file in the line 2: ```secretOrKey: process.env.SECRET || "$3Cr3T" ``` .
+
+Production environment will automatically generate the key and development evironment will use "$3Cr3t" for this setup example.
+
+## Deployement
+
 For deploying to Heroku, please refer to [this](https://www.youtube.com/watch?v=71wSzpLyW9k) helpful video by TraversyMedia.
-
-## Database Setup & Product Management. 
-
-
-
 
 ## Paypal Setup
 
@@ -72,12 +89,15 @@ To change fonts across the site, you will need to edit /client/src/app.css. This
 Within /client/src/app.css - you can adjust colors in common places by finding all instances of the same color, and editing them together. 
 
 
-
-
-
-
 ### Future Developments 
  + Add Accessibility features
  + Incorporate SEO 
  + Add Pagination for large stores
  
+
+## Technologies Used
+
+* Node.js
+* React
+* MongoDB & Mongoose ORM
+* React-bootstrap component library
