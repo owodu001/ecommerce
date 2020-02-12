@@ -20,7 +20,7 @@ import { CartContext } from "../state/cartContext";
 // removeButton
 // calculateTotal
 
-export default function() {
+export default function () {
   // removeProduct = id => {
   const [total, setTotal] = useState(0);
   const cartContextValue = useContext(CartContext);
@@ -36,6 +36,7 @@ export default function() {
 
   return (
     <>
+      {console.log("Cart: ", cartContextValue.cart)}
       <hr />
       <Container>
         <Row>
